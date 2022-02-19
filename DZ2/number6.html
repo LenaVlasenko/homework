@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number6</title>
+
+    <style>
+        form{
+            margin: 10% 30%;
+        }
+        input{
+            width: 300px;
+            padding: 10px;
+            margin: 20px 1px;
+        }
+     select, button{
+            width: 150px;
+            padding: 10px;
+            background-color: aqua;
+            border-color: cornflowerblue;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<form action="#" method="post" autocomplete="on">
+    <div>
+        <label for="inSum">Введите сумму в USA</label>
+        <input type="number" placeholder="Введите сумму" id="inSum">
+        <input type="number" placeholder="Результат" id="outSum">
+    </div>
+    <button type="button" id="UAN">UAN</button>
+    <button type="button" id="EVRO">EVRO</button>
+    <button type="button" id="AZN">AZN</button>
+   <select id="goEx">
+       <option >UAN</option>
+       <option >EVRO</option>
+       <option >AZN</option>
+   </select>
+
+</form>
+
+
+<script>
+    document.getElementById('UAN').onclick = function (){
+        let sum = document.getElementById('inSum').value;
+        let uan = 28.3;
+        let result = sum * uan
+        document.getElementById('outSum').value = result
+    }
+    document.getElementById('EVRO').onclick = function (){
+        let sum = document.getElementById('inSum').value;
+        let euro = 0.88;
+        let result = sum * euro
+        document.getElementById('outSum').value = result
+    }
+    document.getElementById('AZN').onclick = function (){
+        let sum = document.getElementById('inSum').value;
+        let azn = 1.69;
+        let result = sum * azn
+        document.getElementById('outSum').value = result
+    }
+
+
+
+</script>
+</body>
+</html>
