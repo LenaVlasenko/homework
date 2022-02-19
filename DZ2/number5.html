@@ -11,7 +11,7 @@
         input{
             width: 300px;
             padding: 10px;
-            margin: 20px 0px;
+            margin: 20px 1px;
         }
         button{
             width: 150px;
@@ -44,7 +44,27 @@
 
 
 <script>
+    //выводим результат
     let result = document.getElementById('result');
+
+    //результат выводится в случае выполнения следующих условий
+    document.getElementById('btnStart').onclick = function (){
+        result.innerText = 'не палиндром'
+        let userNumber = document.getElementById('userNumber').value
+        let onenumb = userNumber[0];
+        let twonumb = userNumber[1];
+        let threenumb = userNumber[2];
+        let fournumb = userNumber[3];
+        let fivenumb = userNumber[4];
+        console.log('Пользователь ввел' + onenumb + twonumb + threenumb + fournumb + fivenumb)
+        if (onenumb === fivenumb) {
+            if (twonumb === fournumb){
+            }
+            if (threenumb === threenumb){
+            }
+            result.innerText = 'палиндром'
+        }
+    }
 
 
 </script>
