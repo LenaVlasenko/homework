@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number2</title>
+
+
+    <style>
+        form{
+            margin: 10% 30%;
+        }
+        input{
+            width: 300px;
+            padding: 10px;
+            margin: 20px 0px;
+        }
+        button{
+            width: 150px;
+            padding: 10px;
+            background-color: aqua;
+            border-color: cornflowerblue;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+        #result{
+            font-size: 20px;
+            width: 60%;
+        }
+    </style>
+
+</head>
+<body>
+
+<form action="#" method="post" autocomplete="on">
+    <div>
+        <label for="userNumber">shift+number(EN)</label>
+        <input type="number" placeholder="Введите данные" id="userNumber">
+    </div>
+    <button type="button" id="btnStart">Отправить</button>
+    <div id="result">
+
+    </div>
+</form>
+
+
+<script>
+    let result = document.getElementById('result');
+
+    document.getElementById('btnStart').onclick = function (){
+        result.innerText = 'Пользователь щелкнул на кнопку'
+        let userNumber = document.getElementById('userNumber').value
+        console.log('Пользователь ввел' + userNumber)
+        if (userNumber == 0) {
+            result.innerText = ')'
+        } else if (userNumber == 1) {
+            result.innerText = '!'
+        } else if (userNumber == 2) {
+            result.innerText = '@'
+        } else if (userNumber == 3) {
+            result.innerText = '#'
+        }else if (userNumber == 4) {
+            result.innerText = '$'
+        }else if (userNumber == 5) {
+            result.innerText = '%'
+        }else if (userNumber == 6) {
+            result.innerText = '^'
+        }else if (userNumber == 7) {
+            result.innerText = '&'
+        }else if (userNumber == 8) {
+            result.innerText = '*'
+        }else if (userNumber == 9) {
+            result.innerText = '('
+        }
+    }
+</script>
+</body>
+</html>

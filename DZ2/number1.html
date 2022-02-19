@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number1</title>
+
+    <style>
+        form{
+            margin: 10% 30%;
+        }
+        input{
+            width: 300px;
+            padding: 10px;
+            margin: 20px 0px;
+        }
+        button{
+            width: 150px;
+            padding: 10px;
+            background-color: aqua;
+            border-color: cornflowerblue;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+        #result{
+            font-size: 20px;
+            width: 60%;
+        }
+    </style>
+
+</head>
+<body>
+
+<form action="#" method="post" autocomplete="on">
+    <div>
+        <label for="userNumber">Введите ваш возраст</label>
+        <input type="number" placeholder="Введите данные" id="userNumber">
+    </div>
+    <button type="button" id="btnStart">Отправить</button>
+    <div id="result">
+
+    </div>
+</form>
+
+
+<script>
+    let result = document.getElementById('result');
+
+    document.getElementById('btnStart').onclick = function (){
+        result.innerText = 'Пользователь щелкнул на кнопку'
+        let userNumber = document.getElementById('userNumber').value
+        console.log('Пользователь ввел' + userNumber)
+        if (userNumber <= 11) {
+            result.innerText = 'вы ребенок'
+        } else if (userNumber <= 18) {
+            result.innerText = 'Вы подросток'
+        } else if (userNumber <= 60) {
+            result.innerText = 'Вы взрослый'
+        } else if (userNumber > 60) {
+            result.innerText = 'вы пенсионер'
+            document.getElementById('userNumber').style.border = '1px solid red'
+        }
+    }
+</script>
+</body>
+</html>
