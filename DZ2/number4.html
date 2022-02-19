@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number4</title>
+    <style>
+        form{
+            margin: 10% 30%;
+        }
+        input{
+            width: 300px;
+            padding: 10px;
+            margin: 20px 1px;
+        }
+        button{
+            width: 150px;
+            padding: 10px;
+            background-color: aqua;
+            border-color: cornflowerblue;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<form action="#" method="post" autocomplete="on">
+    <div>
+        <label for="inYear">Введите год и узнайте был ли он высокосным</label>
+        <input type="number" placeholder="Введите год" id="inYear">
+    </div>
+    <button type="button" id="doYear">Отправить</button>
+
+</form>
+
+
+
+<script>
+
+//*выводим данные
+    document.getElementById('doYear').onclick = function (){
+        if (isLeapYear(document.getElementById('inYear').value)){
+            document.getElementById('inYear').style.border = '2px solid green'
+        } else {
+            document.getElementById('inYear').style.border = '2px solid red'
+        }
+    }
+
+//* Функция которая решает это высокосный год или нет
+    function isLeapYear(year){
+        //* делится без остатка
+        if (year % 100 === 0){
+            if (year % 400 === 0){
+                return true
+            }
+        } else if (year % 4 ===0){
+            return true
+        }
+        return false
+    }
+</script>
+</body>
+</html>
