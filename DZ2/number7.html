@@ -33,21 +33,29 @@
     <div>
         <label for="inSum">Введите сумму и мы рассчитаем вашу скидку</label>
         <input type="number" placeholder="Введите данные" id="inSum">
-        <input type="number" placeholder="Результат" id="outSum">
+
     </div>
     <button type="button" id="btnStart">Отправить</button>
+    <div id="result">
 
+    </div>
 </form>
 
 
 <script>
-    let result = document.getElementById('outSum');
+    let result = document.getElementById('result');
 
     document.getElementById('btnStart').onclick = function (){
-        let sum = document.getElementById('inSum').value;
-        let small = 0.03;
-        let result = sum * small;
-        document.getElementById('outSum').value = result;
+        result.innerText = 'Пользователь щелкнул на кнопку'
+        let inSum = document.getElementById('inSum').value
+        console.log('Пользователь ввел' + inSum)
+        if (inSum <= 300) {
+            result.innerText = 'Сумма оплаты со скидкой ' + (inSum - (inSum * 0.03))
+        } else if (inSum >= 500){
+            result.innerText = 'Сумма оплаты со скидкой ' + (inSum - (inSum * 0.05))
+        } else if (inSum > 300){
+            result.innerText = 'Сумма оплаты со скидкой ' + (inSum - (inSum * 0.07))
+        }
     }
 
 </script>
