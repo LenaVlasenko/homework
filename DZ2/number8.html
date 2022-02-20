@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        form{
+            margin: 10% 30%;
+        }
+        input{
+            width: 300px;
+            padding: 10px;
+            margin: 20px 1px;
+        }
+        button{
+            width: 150px;
+            padding: 10px;
+            background-color: aqua;
+            border-color: cornflowerblue;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<form action="#" method="post" autocomplete="on">
+    <div>
+        <label for="diametr">Введите длину окружности</label>
+        <input type="number" placeholder="Введите данные" id="diametr">
+        <label for="perimetr">Введите периметр квадрата</label>
+        <input type="number" placeholder="Введите данные" id="perimetr">
+        <label for="out">Результат</label>
+        <input type="number" placeholder="Результат" id="out">
+    </div>
+    <button type="button" id="btnStart">Отправить</button>
+
+</form>
+
+
+<script>
+    let result = document.getElementById('out')
+
+    document.getElementById('btnStart').onclick = function (){
+        result.innerText = 'не влазит'
+        let diametr = document.getElementById('diametr').value;
+        console.log('Диаметр круга = ' + diametr)
+        let perimetr = document.getElementById('perimetr').value;
+        console.log('Периметр квадрата = ' + perimetr)
+        let storona = perimetr / 4;
+        console.log('сторона квадрата = ' + storona)
+        if (diametr <= storona){
+            result.innerText = 'влазит'
+        }
+
+
+    }
+
+</script>
+</body>
+</html>
