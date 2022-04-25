@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>masiv</title>
+</head>
+<body>
+<main>
+    <ul id="lisNamber">
+
+    </ul>
+    <div>
+        <input type="number" id="tel">
+        <input type="button" id="btnPush" value="push">
+        <input type="button" id="btnPop" value="pop">
+    </div>
+
+</main>
+
+<script>
+    let number = []
+    let lisNamber = document.getElementById('lisNamber')
+    let tel = document.getElementById('tel')
+
+    /** метод добавления элемента в масив */
+    document.getElementById('btnPush').onclick = function (){
+        /** если пользователь ничего не ввел сообщить ему об этом */
+        if ( lisNamber.value.lenght === 0){
+            alert('String is Empty')
+            return
+        }
+        /** добавить в масив номер из инпут */
+        number.push(tel.value)
+        /** Обновить строку что бы исключить дублирование элементов */
+        tel.value =
+        /** перестроить масив ведь в нем появились новые элементы */
+        buildNumberList()
+    }
+</script>
+</body>
+</html>
