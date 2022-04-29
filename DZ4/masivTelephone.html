@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>masiv</title>
+    <title>masivPushPop</title>
 </head>
 <body>
 <main>
-    <ul id="lisNamber">
+    <ul id="lstNumber">
 
     </ul>
     <div>
+        <label>введите номер телефона
         <input type="number" id="tel">
+        </label>
         <input type="button" id="btnPush" value="push">
         <input type="button" id="btnPop" value="pop">
     </div>
@@ -19,23 +21,69 @@
 
 <script>
     let number = []
-    let lisNamber = document.getElementById('lisNamber')
+    let lstNumber = document.getElementById('lstNumber')
     let tel = document.getElementById('tel')
 
-    /** метод добавления элемента в масив */
+
+    /**
+     * Метод добавления в масив
+     */
     document.getElementById('btnPush').onclick = function (){
-        /** если пользователь ничего не ввел сообщить ему об этом */
-        if ( lisNamber.value.lenght === 0){
-            alert('String is Empty')
+        /**
+         * Если пользователь ничего не ввел - сообщить ему об этом
+         */
+        if (tel.value.length === 0){
+            alert("String is Empty")
             return
         }
-        /** добавить в масив номер из инпут */
+        /**
+         * обавить в масив номер из инпута
+         */
         number.push(tel.value)
-        /** Обновить строку что бы исключить дублирование элементов */
-        tel.value =
-        /** перестроить масив ведь в нем появились новые элементы */
+        /**
+         *обнулить строку что бы исключить дублирование элементов
+         */
+        tel.value = ""
+        /**
+         * перестроить масив - ведь в нем появились новые элементы
+         */
         buildNumberList()
     }
+
+    /**
+     *
+     */
+    document.getElementById('btnPop').onclick = () => {
+        /**
+         * убрать из масива
+         */
+        number.pop()
+        /**
+         * перестроить масив - ведь в нем появились новые элементы
+         */
+        buildNumberList()
+    }
+
+
+
+    function buildNumberList(){
+        console.log('------------')
+        console.log(number)
+        lstNumber.innerHTML = ''
+        for(let i =0; i < number.length; i++){
+
+            if(number[i] === undefined) continue
+
+            let li = document.createElement("li")
+            let span = document.createElement("span")
+            span.innerText = number[i]
+            li.appendChild(span)
+            lstNumber.appendChild(li)
+        }
+    }
+
+
+    buildNumberList()
 </script>
 </body>
 </html>
