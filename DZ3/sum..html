@@ -11,7 +11,7 @@
         input{
             width: 300px;
             padding: 10px;
-            margin: 20px 0px;
+            margin: 20px 1px;
         }
         button{
             width: 150px;
@@ -34,8 +34,9 @@
 
 <form action="#" method="post" autocomplete="on">
     <div>
-        <label for="userNumber">Введите ваш возраст</label>
-        <input type="number" placeholder="Введите данные" id="userNumber">
+        <label for="number">Введите число от 1 до n, и мы подсчитаем сумму чисел</label>
+        <input type="number" placeholder="Введите данные" id="number">
+
     </div>
     <button type="button" id="btnStart">Отправить</button>
     <div id="result">
@@ -46,6 +47,19 @@
 
 
 <script>
+//Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+let result = document.getElementById('result');
+
+//Простая формула: сумма чисел от 1 до n = n * (n+1) : 2
+document.getElementById('btnStart').onclick = function (){
+    result.innerText = 'Пользователь щелкнул на кнопку'
+    let number = document.getElementById('number').value
+    console.log('Пользователь ввел' + number)
+    if (number <= 100000) {
+        result.innerText = 'Сумма чисел ' + (number + 5)
+
+    }
+}
 
 
 </script>
