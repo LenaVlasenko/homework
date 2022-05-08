@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nokia</title>
+    <style>
+        .contactName:after{
+            content: ":";
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <ul id="listContacts"></ul>
+</main>
+<hr>
+<h4>Так придумал дизайнер - такая верстка</h4>
+<ul>
+    <li>
+        <span class="contactName">Lena</span>
+        <span class="contactPhone">+380635701559</span>
+    </li>
+</ul>
+
+<script>
+
+    /**
+     * Создаю записную книгу
+     *
+     * contact - Данные об одном контакте
+     *  -- name - имя (строка)
+     *  -- phones - телефон (строка) +380671956789
+     *
+     *
+     *   contacts - колекция контактов (Array [] of contact)
+     *
+     *   -----------Методы - что будет делать моя программа
+     *  (CRUD: creat(создание) read(чтение) update(обновление) delete(удаление))
+     *
+     *
+     *  Создать контакт:
+     *  1. ввести имя и номер
+     *  2. добавить контакт в список контактов
+     *  3. перестроить список контактов
+     */
+
+    let contacts = [] // тут будут жить контакты
+    let listContacts = document.getElementById("listContacts") // тег где живут контакты
+
+
+    // Демо данные
+    contacts.push({name:"Lena Vlasenko", phone:"+380671940653"})
+
+
+    function renderContacts(){
+        listContacts.innerText = ""
+        for (let i = 0; i < contacts.length; i++){
+            let li = document.createElement("li")
+
+
+            let contactName = document.createElement("span")
+            contactName.innerText = contacts[i].name // обращаюсь по ключу по полю
+            contactName.className = "contactName"
+
+            let contactPhone = document.createElement("span")
+            contactPhone.innerText = contacts[i].phone // обращаюсь по ключу по полю
+            contactPhone.className = "contactPhone"
+
+            li.appendChild(contactName)
+            li.appendChild(contactPhone)
+
+            listContacts.appendChild(li)
+        }
+    }
+    renderContacts()
+</script>
+</body>
+</html>
