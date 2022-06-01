@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<ul>
+<ul id = "listContacts">
     <li>
         <span class="contactName">Vlasenko</span>
         <span class = "contactPhone">Lena</span>
@@ -30,34 +30,35 @@
 
 <script>
     let contacts = []
-    // let listContacts = document.getElementById("listContacts")
+    let listContacts = document.getElementById("listContacts")
 
-    // contacts.push({name: "Vlasenko Lena", phone: "+380671940653"})
+   // contacts.push({name: "Vlasenko Lena", phone: "+380671940653"})
 
-    // function renderContacts(){
-    //     listContacts.innerHTML = ""
-    //     for(let i = 0; i < contacts.length; i++){
-    //         let li = document.createElement("li")
-    //
-    //         let spanName = document.createElement("span")
-    //         spanName.innerText = contacts[i].name
-    //         spanName.className = "contactsName"
-    //
-    //         let spanPhone = document.createElement("span")
-    //         spanPhone.innerText = contacts[i].name
-    //         spanPhone.className = "contactsPhone"
-    //
-    //         li.appendChild(spanName)
-    //         li.appendChild(spanPhone)
-    //
-    //         listContacts.appendChild(li)
-    //     }
-    //
-    // }
-    // renderContacts()
+    function renderContacts(){
+        listContacts.innerHTML = ""
+        for(let i = 0; i < contacts.length; i++){
+            let li = document.createElement("li")
+
+           let spanName = document.createElement("span")
+            spanName.innerText = contacts[i].name
+            spanName.className = "contactsName"
+
+            let spanPhone = document.createElement("span")
+            spanPhone.innerText = contacts[i].phone
+            spanPhone.className = "contactsPhone"
+
+            li.appendChild(spanName)
+            li.appendChild(spanPhone)
+
+            listContacts.appendChild(li)
+            listContacts.appendChild(li)
+         }
+
+    }
+    renderContacts()
 
 
-    document.getElementById("btnAddContact").onclick = function renderContacts(){
+    document.getElementById("btnAddContact").onclick = function(){
             contacts.push(
                 {
                     name: document.getElementById("txtName").value,
