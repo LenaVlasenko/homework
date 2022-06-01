@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blocnot</title>
+</head>
+<body>
+
+<ul>
+    <li>
+        <span class="contactName">Vlasenko</span>
+        <span class = "contactPhone">Lena</span>
+    </li>
+</ul>
+
+
+<div id="formAdd">
+    <h3>Add Contact:</h3>
+    <div>
+    <label for="txtName">Name</label><input type="text" name="name" id="txtName">
+    </div>
+    <div>
+        <label for="txtPhone">Phone</label><input type="text" name="phone" id="txtPhone">
+    </div>
+    <div>
+        <input type="button" id="btnAddContact" value="push">
+    </div>
+</div>
+
+
+<script>
+    let contacts = []
+    // let listContacts = document.getElementById("listContacts")
+
+    // contacts.push({name: "Vlasenko Lena", phone: "+380671940653"})
+
+    // function renderContacts(){
+    //     listContacts.innerHTML = ""
+    //     for(let i = 0; i < contacts.length; i++){
+    //         let li = document.createElement("li")
+    //
+    //         let spanName = document.createElement("span")
+    //         spanName.innerText = contacts[i].name
+    //         spanName.className = "contactsName"
+    //
+    //         let spanPhone = document.createElement("span")
+    //         spanPhone.innerText = contacts[i].name
+    //         spanPhone.className = "contactsPhone"
+    //
+    //         li.appendChild(spanName)
+    //         li.appendChild(spanPhone)
+    //
+    //         listContacts.appendChild(li)
+    //     }
+    //
+    // }
+    // renderContacts()
+
+
+    document.getElementById("btnAddContact").onclick = function renderContacts(){
+            contacts.push(
+                {
+                    name: document.getElementById("txtName").value,
+                    phone: document.getElementById("txtPhone").value
+                })
+        renderContacts()
+    }
+
+
+</script>
+</body>
+</html>
