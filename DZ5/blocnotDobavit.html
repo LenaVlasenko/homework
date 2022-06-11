@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>blocnot</title>
+    <style>
+        #formAdd{display: flex; flex-direction: column;width: 120px;}
+        input{width: 100px}
+    </style>
 </head>
 <body>
 
@@ -20,10 +24,13 @@
     <label for="txtName">Name</label><input type="text" name="name" id="txtName">
     </div>
     <div>
-        <label for="txtPhone">Phone</label><input type="text" name="phone" id="txtPhone">
+        <label for="txtPhone">Phone</label><input type="text" name="phone" id="txtPhone" >
+        <label for="txtPhoneHome">Phone home</label><input type="text" name="phoneHome" id="txtPhoneHome" >
+        <label for="txtPhoneWork">Phone work</label><input type="text" name="phoneWork" id="txtPhoneWork">
     </div>
     <div>
-        <input type="button" id="btnAddContact" value="push">
+        <input type="button" id="btnAddContact" value="добавить">
+        <input type="button" id="btnPop" value="удалить">
     </div>
 </div>
 
@@ -39,6 +46,12 @@
         for(let i = 0; i < contacts.length; i++){
             let li = document.createElement("li")
 
+            let label = document.createElement("label")
+            label.innerText = "name"
+            li.appendChild(label)
+
+
+
            let spanName = document.createElement("span")
             spanName.innerText = contacts[i].name
             spanName.className = "contactsName"
@@ -47,9 +60,21 @@
             spanPhone.innerText = contacts[i].phone
             spanPhone.className = "contactsPhone"
 
+            let spanPhoneHome = document.createElement("span")
+            spanPhoneHome.innerText = contacts[i].phoneHome
+            spanPhoneHome.className = "spanPhoneHome"
+
+            let spanPhoneWork = document.createElement("span")
+            spanPhoneWork.innerText = contacts[i].phoneWork
+            spanPhoneWork.className = "spanPhoneWork"
+
             li.appendChild(spanName)
             li.appendChild(spanPhone)
+            li.appendChild(spanPhoneHome)
+            li.appendChild(spanPhoneWork)
 
+            listContacts.appendChild(li)
+            listContacts.appendChild(li)
             listContacts.appendChild(li)
             listContacts.appendChild(li)
          }
@@ -62,11 +87,24 @@
             contacts.push(
                 {
                     name: document.getElementById("txtName").value,
-                    phone: document.getElementById("txtPhone").value
+                    phone: document.getElementById("txtPhone").value,
+                    phoneHome: document.getElementById("txtPhoneHome").value,
+                    phoneWork: document.getElementById("txtPhoneWork").value
                 })
         renderContacts()
     }
 
+
+    document.getElementById('btnPop').onclick = () => {
+        /**
+         * убрать из масива
+         */
+        contacts.pop()
+        /**
+         * перестроить масив - ведь в нем появились новые элементы
+         */
+        renderContacts()
+    }
 
 </script>
 </body>
