@@ -7,50 +7,38 @@
 <body>
 
 
-
 <script>
-    let arrFlat = ['bedroom', 'Holl', 'bathroom', 'kitchen']
-    console.log(arrFlat)
+    let myFlat = {}
+    myFlat.rooms = []
+    myFlat.rooms[0] = {name: "bedRoom"}
+    let bedRoom = {}
+    bedRoom.description = {color: 'white', height: 300, weight: 400}
+    let bed = {material: "wood", color: "brown"}
+    let capBord = {material: "wood", color: "lightBrown"}
+    let armChair = {material: "leather", color: "brown"}
+    bedRoom = [bed, capBord, armChair]
+    myFlat.rooms[0].bedRoom = bedRoom
 
 
-    let arrBedroom = ['table', 'bad','wathTv']
-    console.log(arrBedroom)
+    let roomBath = {}
+    myFlat.rooms[1] = {name: 'bathroom'}
+    let bath = {material: "acrylic", color: "white"}
+    let toilet = {material: "acrylic", color: "white"}
+    let mirror = {height: "70", weight: '80'}
+    roomBath = [bath, toilet, mirror]
+    myFlat.rooms[1].roomBath = roomBath
 
-    let objTable = {a: 'socks', b: 'dress', c: 'jacked'}
-    console.log(objTable)
 
-    let objBad = {}
-    objBad.a = 'pillow'
-    objBad.b = 'blanket'
-    objBad.c = 'sheet'
-    console.log(objBad)
+    let holl = {}
+    myFlat.rooms[2] = {name: "holl"}
+    let capBord2 = {material: "wood", color: "lightBrown"}
+    let mirror2 = {height: "170", weight: '90'}
+    holl = [capBord2, mirror2]
+    myFlat.rooms[2].holl = holl
 
-    let arrWatchTv = ['телик']
-    console.log(arrWatchTv)
+    console.log(myFlat)
 
-    let arrHoll = ['cupboard', 'mirror']
-    console.log(arrHoll)
 
-    let objCupboard = {a: 'cap', b: 'coat', c: 'umbrella'}
-    console.log(objCupboard)
-
-    let arrMirror = 'зеркало'
-    console.log(arrMirror)
-
-    let arrBathroom = ['shower', 'toilet', 'wash basin']
-    console.log(arrBathroom)
-
-    let arrKitchen = ['plate', 'dinner table', 'washing']
-    console.log(arrKitchen)
-
-    let objPlate = {a: 'burner1', b: 'burner2', c: 'burner3', d: 'burner4'}
-    console.log(objPlate)
-
-    let arrWashing = ['мойка']
-    console.log(arrWashing)
-
-    let arrDinerTabel = ['обеденный стол']
-    console.log(arrDinerTabel)
 
 
 
