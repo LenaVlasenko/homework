@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сортировкателефонной книги</title>
+    <style>
+        #block{
+            width: 180px;
+            display: flex;
+            flex-direction: column
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="block">
+    <label for="addNumber">Введите Тип</label>
+    <input type="text" id="addNumber" pattern="[A-Za-zА-Яа-яЁё]" placeholder="Домашний/рабочий"> <br>
+    <label for="addType">Введите номер телефона</label>
+    <input type="text" id="addType" placeholder="Введите номер телефона">
+    <input type="button" value="добавить" id="addBtn"> <br>
+    <input type="button" value="Сортировать" id="btnSort"> <br>
+    <label for="strSearch">Поиск</label>
+    <input type="text" id="strSearch">
+    <ul id="resSearch"></ul>
+</div>
+<ul id="lstNumber">
+</ul>
+</body>
+</html>
+
+
+<script>
+    let users = [] //массив для хранения данных
+    let lstNumber = document.getElementById("lstNumber")
+    let addNumber = document.getElementById("addNumber")
+    let addType = document.getElementById("addType")
+    let strSearch = document.getElementById("strSearch")
+    let resSearch = document.getElementById("resSearch")
+
+    function refreshNumber() {
+        lstNumber.innerHTML = ''
+        let i=0
+        users.map (user=>{              //Цикл построения списка
+            let li = document.createElement("li")
+            let input = document.createElement("input")
+            let input2 = document.createElement("button")
+            input.value = user
+            input2.innerText = "-"
+            input2.dataset.elNumber = i++
+            input2.onclick = function (event) {
+                console.log(event.target.dataset.elNumber)
+                users.splice(parseInt(event.target.dataset.elNumber), 1)
+                refreshNumber()
+            }
+            li.appendChild(input)
+            li.appendChild(input2)
+            lstNumber.appendChild(li)
+
+
+        })
+
+    }
+    document.getElementById("addBtn").onclick =  function ()  { //
+        if (addNumber.value.length === 0) {
+            alert("пустые поля")
+            return
+        }
+        users.push (addNumber.value)
+        users.push (addType.value)
+        refreshNumber ()
+        addNumber.value = ''
+        addType.value = ''
+    }
+    document.getElementById("btnSort").onclick =  function () {
+        users.sort ()
+        refreshNumber()
+    }
+    document.getElementById("strSearch").oninput = function (event) {
+        if (strSearch.value.length === 0) {
+            resSearch.innerHTML = 'Искать нечего'
+            return
+        }
+        let arrResult = users.filter( user =>{
+            return user.includes(strSearch.value)
+        })
+        resSearch.innerText = ''
+
+        arrResult.map( user => {
+            let li = document.createElement("li")
+            let span = document.createElement("span")
+            span.innerText = user
+            li.appendChild(span)
+            resSearch.appendChild(li)
+            console.log(user)
+        })
+        console.log(arrResult)
+        console.log(users)
+
+    }
+
+
+</script>
