@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kino</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/sweetalert2/sweetalert2.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/toastr/toastr.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/adminlte.min.css">
+</head>
+<body  class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+    <div class="card-body">
+        <h4>База данных по фильмам </h4>
+        <div class="row">
+            <div class="col-5 col-sm-3">
+                <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="vert-tabs-home-tab"
+                       data-toggle="pill" href="#vert-tabs-home" role="tab" aria-controls="vert-tabs-home"
+                       aria-selected="true">Фильмы</a>
+                    <a class="nav-link" id="vert-tabs-profile-tab"
+                       data-toggle="pill" href="#vert-tabs-profile" role="tab" aria-controls="vert-tabs-profile"
+                       aria-selected="false">Деятели</a>
+                    <a class="nav-link" id="vert-tabs-messages-tab"
+                       data-toggle="pill" href="#vert-tabs-messages" role="tab" aria-controls="vert-tabs-messages"
+                       aria-selected="false">Жанры</a>
+                </div>
+            </div>
+            <div class="col-7 col-sm-9">
+                <div class="tab-content" id="vert-tabs-tabContent">
+                    <div class="tab-pane text-left fade show active" id="vert-tabs-home" role="tabpanel" aria-labelledby="vert-tabs-home-tab">
+                        <div id="listFilms"></div>
+                    </div>
+                    <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel" aria-labelledby="vert-tabs-profile-tab">
+                        <div id="listPeoples"></div>
+                    </div>
+                    <div class="tab-pane fade" id="vert-tabs-messages" role="tabpanel" aria-labelledby="vert-tabs-messages-tab">
+                        <div id="listGenres"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<main>
+
+
+
+
+
+</main>
+
+
+<!-- jQuery -->
+<script src="AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+
+<!-- подключение файлов с кодом -->
+<script src="guid.js"></script>
+<script src="genres.js"></script>
+<script src="peoples.js"></script>
+<script src="films.js"></script>
+
+<script>
+    genres.init()
+    genres.render()
+
+    peoples.init()
+    peoples.render()
+
+    films.init()
+    films.render()
+
+    // peoples.renderSelect("test", "selectDirector")
+    // genres.renderSelect("test", "selectGenres")
+</script>
+
+<script>
+    /**
+     * Создать сайт посвященный кино
+     *
+     * @link https://kinokrad.live/10043-serial-dartanyan-i-tri-mushketera-1979-smotret-onlayn.html
+     *
+     * ---- Жанр  genre
+     * id:   number  // Номер записи в базе данных Уникальное значение
+     * name: string:                : Приключения
+     *
+     * ---- Люди people
+     * id:
+     * name: string
+     *
+     * ---- Кино
+     * id:
+     * name: string:                : Д`Артаньян и три мушкетера
+     * released: Date               : 1979-12-25
+     * duration: number             : 250     // (длительность фильма в минутах)
+     * genres: Array [] of genre    : {1, Приключения}, Мюзикл, Исторический
+     * directors: Array [] of people: Георгий Юнгвальд-Хилькевич
+     * actors: Array [] of people   : Михаил Боярский, Вениамин Смехов, Игорь Старыгин ...
+     * description: string          : Четверо друзей-мушкетеров спасают честь королевы ...
+     * thumb_url: string            : Ссылка на главную картинку
+     * photos: Array [] of string   : Другие фотографии из фильма
+     * url: string                  : ссылка на фильм
+     */
+</script>
+
+</body>
+</html>
