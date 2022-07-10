@@ -1,5 +1,6 @@
 let headdress = {
     hat:[
+        {img: null, name: 'Без шляпы', className: 'none'},
         {img: 'img/hat.png', className: 'hat', name: 'шляпа'}
     ],
 
