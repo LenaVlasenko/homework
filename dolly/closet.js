@@ -7,7 +7,6 @@ let closet = {
         {img: 'img/greenDress.png', className: 'greenDress', name: 'Зеленое платье'},
         {img: 'img/lightGreenDress.png', className: 'lightGreenDress', name: 'Светло-зеленое платье'},
         {img: 'img/orangeDress.png', className: 'orangeDress', name: 'Оранжевое платье'},
-        {img: 'img/hat.png', className: 'hat', name: 'шляпа'},
 
     ],
     render() {

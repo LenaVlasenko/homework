@@ -25,6 +25,21 @@ let dolly = {
         }
         myDiv.appendChild(dressDiv)
     },
+    setHat(hat){
+        let myDiv = document.getElementById("dollyDiv")
+
+        let hatDiv = document.getElementById("hatDiv")
+        if(hatDiv) myDiv.removeChild(hatDiv)
+        hatDiv = document.createElement("div")
+
+        hatDiv.id = "hatDiv"
+        if (hat.img){
+            let img = document.createElement("img")
+            img.src = hat.img
+            hatDiv.appendChild(img)
+        }
+        myDiv.appendChild(hatDiv)
+    },
     sayName(){
         let myDiv = document.getElementById("dollyDiv")
         let nameDiv = document.createElement("div")
