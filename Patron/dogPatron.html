@@ -2,9 +2,144 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>DogPatron</title>
+    <style>
+        #dogPatron{display: block; width: 209px; height: 220px;
+            background-image: url("img/dogSprite.jpg");
+            overflow: hidden;
+        }
+        .stand { background-position: 0px 0px;}
+        .lie {background-position: 405px 0px;}
+        .sit {background-position: 830px 0px;}
+        .give {background-position: 0px 650px;}
+        .run {background-position: 425px 640px;}
+        .rest {background-position: 225px 630px;}
+    </style>
 </head>
 <body>
 
+<div id="dogPatron" class="stand">
+
+</div>
+<div>
+    <button id="btnDogLie">Лежать</button>
+    <button id="btnDogSit">Сидеть</button>
+    <select id="selectDogCommandsByClass"></select>
+    <select id="selectDogCommandsByObj"></select>
+</div>
+
+
+
+
+
+<script src="../_lib/guid.js"></script>
+
+<script>
+    // колекция команд - где каждая команда по названию класса (селект)
+    let arrCommandsByClass = ['stand', 'lie', 'sit', 'give', 'run', 'rest']
+
+    //построим выпадающий список с помощью JS (селект)
+    function buildSelectByClass() {
+        let s = document.getElementById('selectDogCommandsByClass')
+        for (let i = 0; i < arrCommandsByClass.length; i++) {
+            let o = document.createElement('option')
+            o.value = arrCommandsByClass[i]
+            o.innerText = arrCommandsByClass[i]
+            s.appendChild(o)
+
+        }
+    }
+    //(селект)
+    buildSelectByClass()
+    document.getElementById('selectDogCommandsByClass').onchange = function () {
+        dogPatron.element.className = document.getElementById('selectDogCommandsByClass').value
+    }
+
+    //
+    let arrCommandsByObj = [
+        {id: 0, className: 'stand', displayName: ' Стоять'},
+        {id: 1, className: 'sit', displayName: ' Сидеть'},
+        {id: 2, className: 'lie', displayName: ' Лежать'},
+        {id: 3, className: 'give', displayName: ' Дай лапу'},
+        {id: 4, className: 'run', displayName: ' Бежать'},
+        {id: 5, className: 'rest', displayName: ' Отдыхать'}
+    ]
+    let mySelect = document.getElementById('selectDogCommandsByObj')
+    function buildCommandsByObj() {
+        arrCommandsByObj.map( cmd => {
+            let o = document.createElement('option')
+            o.value = cmd.className
+            o.innerText = cmd.displayName
+            mySelect.appendChild(o)
+        })
+        //Такаяже запись как мэп только фор, записи эквивалентны
+         //for( let i = 0; i < arrCommandsByObj.length; i++) {
+        //    cmd === arrCommandsByObj[i]
+       //}
+    }
+    buildCommandsByObj()
+    document.getElementById('selectDogCommandsByObj').onchange = function () {
+        dogPatron.element.className = document.getElementById('selectDogCommandsByObj').value
+    }
+
+
+    //Создание обьекта
+    let dogPatron = {}
+//Описание значемых полей для обьекта
+    dogPatron.id = generateUUID()
+    dogPatron.name = 'Patron'
+    dogPatron.color = 'Orange'
+    dogPatron.whoIs = 'Dog'
+
+    //указание, внутри какого тега будет
+    dogPatron.element = document.getElementById('dogPatron')
+
+
+    dogPatron.render = function () {
+
+        //dogPatron.element.innerText = dogPatron.name
+        let ul = document.createElement('ul')
+        let liName = document.createElement('li')
+        //liName.innerText = '<label> Name: </label> <span> ' + dogPatron.name + ' </span>' почему то в этих способах оставляе теги лейбл и спан?
+        //liName.innerText = '<label>Name:</label><span>${dogPatron.name}</span>'
+        liName.innerText = ' Name:  ' + dogPatron.name + ' '
+        ul.appendChild(liName)
+
+        let liColor = document.createElement('li')
+        liColor.innerText = 'Color: ' + dogPatron.color + ''
+        //liColor.innerText = ' Color:  ' + dogPatron.color + ' '
+        ul.appendChild(liColor)
+
+
+        dogPatron.element.appendChild(ul)
+    }
+
+
+    //отдельная кнопка на каждую команду
+    dogPatron.lie = function () {
+        dogPatron.element.className = 'lie'
+    }
+    dogPatron.sit = function () {
+        dogPatron.element.className = 'sit'
+    }
+
+    //Информационная копия Патрона
+    console.log(dogPatron)
+
+    // Так мы заставили Патрона что б он появился
+    dogPatron.render()
+
+    //отдельная кнопка на каждую команду
+    document.getElementById('btnDogLie').onclick = function () {
+        dogPatron.lie()
+    }
+    document.getElementById('btnDogSit').onclick = function () {
+        dogPatron.sit()
+    }
+
+
+
+
+</script>
 </body>
 </html>
