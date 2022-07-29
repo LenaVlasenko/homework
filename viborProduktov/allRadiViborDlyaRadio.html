@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RadioButton</title>
+</head>
+<body>
+<aside id="filters">
+
+</aside>
+<div id="products">
+
+</div>
+
+<script src="../_lib/guid.js"></script>
+<script>
+    //колекция(справочник,) характеристика (атрибутов) товаров
+    let size = ["s", "m", "l", "xl", "xxl"]
+    let colors = ["w", "g", "y", "r"]
+
+    let products = [
+        {
+            id: generateUUID(),
+            name: "платье",
+            //attr: [{name: "", value: ""}], // в профисиональном
+            size: size[0],
+            color: colors[0],
+            discription: "прекрастное платье украсит ваш вечер"
+        },
+        {
+            id: generateUUID(),
+            name: "юбка",
+            size: size[1],
+            color: colors[1],
+            discription:"эту юбку не забудут ваши подруги"
+        },
+        {
+            id: generateUUID(),
+            name: "платье",
+            size: size[2],
+            color: colors[2],
+            discription: "все что вам нужно на каждый день"
+        },
+        {
+            id: generateUUID(),
+            name: "комбинизон",
+            size: size[3],
+            color: colors[3],
+            discription: "если легкость это ваш стиль, значет этот комбинизон именно для вас"
+        }
+        //....
+    ]
+
+    function renderFilers(){
+        let asize = document.getElementById("filters")
+        let ulS = document.createElement("ul")
+
+        let liDefault = document.createElement("li")
+        let inp = document.createElement("input")
+        inp.type = 'radio'
+        inp.name = 'sizes'
+        inp.value = 'all'
+        inp.checked = true
+        inp.onchange = (ev) => {
+            console.log(ev.target.value)
+            filteredBy['sizeOne'] = null
+            renderProducts()
+        }
+        let labelDefault = document.createElement("label")
+        labelDefault.innerText = "show All"
+        liDefault.appendChild(inp)
+        liDefault.appendChild(labelDefault)
+        ulS.appendChild(liDefault)
+
+        size.map(el=> {
+            let li = document.createElement("li")
+            let inp = document.createElement("input")
+            inp.type = 'radio'
+            inp.name = 'sizes'
+            inp.value = el
+            inp.onchange = (ev) => {
+                console.log(ev.target.value)
+                filteredBy['sizeOne'] = ev.target.value
+                renderProducts()
+            }
+
+
+            let label = document.createElement("label")
+            label.innerText = el
+
+            li.appendChild(inp)
+            li.appendChild(label)
+
+
+            ulS.appendChild(li)
+
+        })
+        asize.appendChild(ulS)
+    }
+    renderFilers()
+
+    //масив для передачи данных o фильтрации
+    let filteredBy = [] //{}
+    // filteredBy ['sizeOne'] = null или s// если одно конкретное значение или его не существует
+
+
+    function  renderProducts(){
+        let main = document.getElementById("products")
+        let ul = document.createElement("ul")
+
+        //ко 2му варианту фильтрации
+        let productForOut = products
+
+        //2 вариант фильтрации
+        if(filteredBy["sizeOne"]){
+            productForOut = productForOut.filter(product =>{
+                return product.size === filteredBy["sizeOne"]
+            })
+        }
+        //....тут прописать точно  так же на другое фильтрацию
+        // if(filteredBy["colorOne"]){
+        //     productForOut = productForOut.filter(product =>{
+        //         return product.size === filteredBy["colorOne"]
+        //     })
+        // }
+
+        //ко 2му варианту фильтрации
+        productForOut.map(product => {
+        //products.map(product => {//для 1го варианта фильтрации
+
+            //1 вариант
+            // if(filteredBy["sizeOne"]){
+            //     if(filteredBy["sizeOne"] !== product.size)return
+            // }
+            // if(filteredBy["colorOne"]){
+            //     if(filteredBy["colorOne"] !== product.color)return
+            // } нужно под колор создавать тоже самое что и под сайз
+
+
+            let li = document.createElement("li")
+            li.dataset.id = product.id
+            li.innerText = product.name + " " + product.size + "" + product.color//карточки товара(описание)
+            ul.appendChild(li)
+        })
+        main.innerHTML = "" //стереть все старое, если есть
+        main.appendChild(ul)
+    }
+
+    renderProducts()
+
+</script>
+</body>
+</html>
