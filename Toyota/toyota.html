@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toyota</title>
+    <style>
+        #carColorsUl li {display: inline-flex; width: 100px; height: 100px; border: 1px solid gray;background-position: center center; background-repeat: no-repeat}
+        #carColorsUl li:hover { background-size: 110%;}
+    </style>
+</head>
+<body>
+<div id="carZone">
+    <div id="carPhoto"></div>
+    <ul id="carColorsUl"></ul>
+</div>
+
+<script src="../_lib/guid.js"></script>
+<script>
+    let arrColors = [
+        {imgModel:"blackCar.jpg",bgCarZone: "#000",imgUrl:'blackColor.jpg', name: 'black', id: generateUUID()},
+        {imgModel:"greyCar.jpg",bgCarZone: "#eee",imgUrl:'greyColor.jpg', name: 'grey', id: generateUUID()},
+        {imgModel:"silverCar.jpg",bgCarZone: "#ccc",imgUrl:'silverColor.jpg', name: 'silver', id: generateUUID()},
+        {imgModel:"whiteCar.jpg",bgCarZone: "#fff",imgUrl:'whiteColor.jpg', name: 'white', id: generateUUID()},
+    ]
+
+    function renderColorsLi(){
+        let ul = document.getElementById('carColorsUl')
+        arrColors.map(color => {
+            let li = document.createElement('li')
+            li.dataset.id = color.id
+            li.dataset.bgZone = color.bgCarZone
+            li.dataset.imgModel = color.imgModel
+            li.style.backgroundImage = "url('img/colors/" + color.imgUrl + "')"
+            li.title = color.name
+
+            li.onclick = (ev)=> {
+                document.getElementById("carZone").style.backgroundColor
+                    = ev.target.dataset.bgZone
+                let img = document.createElement("img")
+                img.src = 'img/models/' + ev.target.dataset.imgModel
+
+                let divImg = document.getElementById("carPhoto")
+                divImg.innerHTML =''
+                divImg.appendChild(img)
+            }
+            ul.appendChild(li)
+        })
+    }
+    renderColorsLi()
+
+</script>
+</body>
+</html>
