@@ -11,6 +11,9 @@
 <div>
     <button id="reset">RESET</button>
 </div>
+<div>
+    <button id="All">ALL</button>
+</div>
 <div id="products">
 
 </div>
@@ -151,6 +154,14 @@
     document.getElementById('reset').onclick = function () {
         for (let i = 0; i < checkBox.length; i++) {
             checkBox[i].checked = false
+        }
+
+    }
+
+    let checkBox2 = document.querySelectorAll("input")
+    document.getElementById('All').onclick = function () {
+        for (let i = 0; i < checkBox.length; i++) {
+            checkBox[i].checked = true
         }
 
     }
