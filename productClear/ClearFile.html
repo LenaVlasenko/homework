@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<aside id="filters">
+
+</aside>
+<div>
+    <button id="reset">RESET</button>
+</div>
+<div id="products">
+
+</div>
+
+
+
+<script src="../_lib/guid.js"></script>
+<script>
+    //колекция(справочник,) характеристика (атрибутов) товаров
+    let size = ["s", "m", "l", "xl", "xxl"]
+    let colors = ["w", "g", "y"]
+
+    //масив для передачи данных o фильтрации
+    let filteredBy = {}
+    filteredBy["sizeMany"] = []//сразу обьявить [s,l]
+    //filteredBy["colorMany"] = []//если фильтр по цвету
+
+    let products = [
+        {
+            id: generateUUID(),
+            name: "платье",
+            //attr: [{name: "", value: ""}], // в профисиональном
+            size: size[0],
+            color: colors[0],
+            discription: "прекрастное платье украсит ваш вечер"
+        },
+        {
+            id: generateUUID(),
+            name: "платье",
+            //attr: [{name: "", value: ""}], // в профисиональном
+            size: size[0,4],
+            color: colors[0,2],
+            discription: "прекрастное платье украсит ваш вечер"
+        },
+        {
+            id: generateUUID(),
+            name: "юбка",
+            size: size[1],
+            color: colors[1],
+            discription:"эту юбку не забудут ваши подруги"
+        },
+        {
+            id: generateUUID(),
+            name: "юбка",
+            size: size[1,4],
+            color: colors[1,2],
+            discription:"эту юбку не забудут ваши подруги"
+        },
+        {
+            id: generateUUID(),
+            name: "платье",
+            size: size[2],
+            color: colors[2],
+            discription: "все что вам нужно на каждый день"
+        },
+        {
+            id: generateUUID(),
+            name: "комбинизон",
+            size: size[3],
+            color: colors[3],
+            discription: "если легкость это ваш стиль, значет этот комбинизон именно для вас"
+        },
+        {
+            id: generateUUID(),
+            name: "комбинизон",
+            size: size[3,2],
+            color: colors[3,1],
+            discription: "если легкость это ваш стиль, значет этот комбинизон именно для вас"
+        },
+        //....
+    ]
+
+    function renderFilers(){
+        let asize = document.getElementById("filters")
+        let ulS = document.createElement("ul")
+
+        size.map(el=>{
+            let li = document.createElement("li")
+            let inp = document.createElement("input")
+            inp.type = "checkbox"
+            inp.value = el
+            inp.onchange = (ev) => {
+                let el = filteredBy['sizeMany'].findIndex(f => {
+                    return f === ev.target.value})
+                console.log(el)
+                if (el !== -1) {
+                    filteredBy['sizeMany'].splice(el,1)
+                } else {
+                    filteredBy['sizeMany'].push(ev.target.value)
+                }
+                console.log(filteredBy)
+                renderProducts()
+            }
+
+            let label = document.createElement("label")
+            label.innerText = el
+
+            li.appendChild(inp)
+            li.appendChild(label)
+
+            ulS.appendChild(li)
+        })
+        asize.appendChild(ulS)
+    }
+    renderFilers()
+
+
+
+
+
+    function  renderProducts(){
+        let main = document.getElementById("products")
+        let ul = document.createElement("ul")
+        products.map(product => {
+            //первый вариант фильтрации
+            if(filteredBy['sizeMany'].length > 0) {
+                let inFilter = false
+                for(let i = 0; i < filteredBy['sizeMany'].length; i++){
+                    if(product.size === filteredBy['sizeMany'][i]) {
+                        inFilter = true
+                        break//выхожу из цикла
+                    }
+                }
+                if(!inFilter) return// если не попадае под фильтр то не включаем
+            }
+
+            let li = document.createElement("li")
+            li.dataset.id = product.id
+            li.innerText = product.name
+            ul.appendChild(li)
+        })
+        main.innerHTML = "" //стереть все старое, если есть
+        main.appendChild(ul)
+    }
+    renderProducts()
+
+    let checkBox = document.querySelectorAll("input")
+    document.getElementById('reset').onclick = function () {
+        for (let i = 0; i < checkBox.length; i++) {
+            checkBox[i].checked = false
+        }
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
