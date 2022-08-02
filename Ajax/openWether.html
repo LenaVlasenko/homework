@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WetherAll</title>
+</head>
+<body>
+
+
+<input id="cityName" type="text"><input id="askWeather" type="button">
+
+<script>
+    let apiKey = "3c8dbd164152ad7ac28a4944c04d6e54"
+
+    let apiUrl = "https://api.openweathermap.org/data/2.5/weather"
+
+    let city = "Mykolayiv"
+
+    document.getElementById("askWeather").onclick = function () {
+        city = document.getElementById("cityName").value
+    // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} что записали в фетч
+        fetch(apiUrl + "?q=" + city + "&appid=" + apiKey + '&units=metric')
+            .then(respons => { // тех ответ сервера
+                console.log(respons)
+                return respons.json()
+            })
+            .then(data => {//получаем данные как ренде или билд
+                console.log(data)
+            })
+            .catch(err=> console.log(err)) // обработка ошибки
+        }
+
+</script>
+
+</body>
+</html>
