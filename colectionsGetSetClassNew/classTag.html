@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassTag</title>
+</head>
+<body>
+
+<div id="main">
+
+</div>
+
+
+<script>
+    class Tag {
+        //куда вставляем, по айди куда вставляем
+        constructor(id, type/* = "div" - тогда не нужен if*/) {
+            if(!id) {throw("where id")}
+            this._id = id
+            if(!type) {type = "div"}//если нет тайп считать что имел ввиду див
+            this._type = type
+            this._element = document.getElementById(id)
+            if(!this._element){
+                //если нет родового элемента
+                throw ("no parent")
+            }
+
+           this.zero()
+        }
+
+        zero(){
+            this._marginTop = 0;
+            this._marginRight = 0;
+            this._marginBottom = 0;
+            this._marginLeft = 0;
+        }
+
+        get margin(){
+            return `${this._marginTop}px ${this._marginRight}px ${this._marginBottom}px ${this._marginLeft}px`
+        }
+
+        set margin(value){
+            if(Number.isInteger(value)){
+                this.zero()
+                this._marginTop = 0;
+                this._marginRight = 0;
+                this._marginBottom = 0;
+                this._marginLeft = 0;
+
+                return
+            }
+
+            let arr = value.split(" ")
+            console.log(arr)
+            console.log(arr.length)
+            if (arr.length === 1) {
+                this._marginTop = arr[1]
+                this._marginRight = arr[1]
+                this._marginBottom = arr[1]
+                this._marginLeft = arr[1]
+            } else if (arr.length === 2) {
+                this._marginTop = arr[0]
+                this._marginRight = arr[1]
+                this._marginBottom = arr[0]
+                this._marginLeft = arr[1]
+            } else if (arr.length === 3) {
+                this._marginTop = arr[1]
+                this._marginRight = arr[2]
+                this._marginBottom = arr[1]
+                this._marginLeft = arr[3]
+            } else if (arr.length === 4) {
+                this._marginTop = arr[0]
+                this._marginRight = arr[1]
+                this._marginBottom = arr[2]
+                this._marginLeft = arr[3]
+            }
+            ul.render()
+            console.log(this._marginTop)
+            console.log(this._marginRight)
+            console.log(this._marginBottom)
+            console.log(this._marginLeft)
+            console.log()
+
+        }
+
+
+        set marginTop(value){
+            if(!Number.isInteger(value)){
+                throw("this not number")
+            }
+            this._marginTop = value
+        }
+
+        get marginTop(){
+            return this._marginTop
+        }
+
+        //генерирует элемент что вставлять. втавили в див юл
+        render(){
+            this._element.innerText = " "
+            let el = document.createElement(this._type)
+            el.innerText = "element"
+            el.style.margin = this.margin
+            this._element.append(el)
+        }
+
+    }
+
+    let ul = new Tag("main", "span")
+    ul.render()
+
+    ul.margin = "30 20 10 40"
+    //ul.margin = "1,2,3,4"
+    //ul.marginTop = 40
+    //console.log(ul.marginTop)
+    console.log(ul.margin)
+
+    //ul.margin = "10"
+    // ul.margin = "10 10"
+     //[1ul.margin = "10 10 30"
+
+</script>
+</body>
+</html>
