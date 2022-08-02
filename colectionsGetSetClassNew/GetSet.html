@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GetSet</title>
+</head>
+<body>
+
+<script src="../_lib/guid.js"></script>
+<script>
+
+    class Student {
+        id = generateUUID()
+
+        constructor(name = "NoName") {
+            this.name = name
+        }
+
+        // описывает метод которы обязательно запускается в момент когда мы спрашиваем имя группы
+        // от слова взять
+        get group(){
+            return this._group
+        }
+
+        //метод запускается в момент когда я собираюсь назначить информацию для какого то поля
+        set group(newGroup){
+            if(newGroup.length < 3){
+                throw ("длина названия группы")// операция которая вызывает ошибку и прекращает код
+            }else {
+                this._group = newGroup
+            }
+        }
+
+    }
+    let alex = new Student ("Alex")
+    alex.group = "f12"// seter
+    console.log(alex.group)// geter
+    console.log(alex._group)// для хранения данных принято использовать нижние подчеркивание
+
+    // console.log(alex.id)
+    // console.log(alex.name)
+
+</script>
+</body>
+</html>
