@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WetherMykolayv</title>
+</head>
+<body>
+
+<table id="weatherTable"></table>
+
+<script>
+    let apiKey = "3c8dbd164152ad7ac28a4944c04d6e54"
+
+    let apiUrl = "https://api.openweathermap.org/data/2.5/weather"
+
+    let city = "Mykolayiv"
+
+
+        fetch(apiUrl + "?q=" + city + "&appid=" + apiKey + '&units=metric')
+            .then(respons => {
+                console.log(respons)
+                return respons.json()
+            })
+            .then(data => {
+                console.log(data)
+
+                let tbl = document.getElementById("weatherTable")
+
+                for (let i = 0; i <= length; i++) {
+                    let tr = document.createElement('tr')
+                    let td1 = document.createElement('td')
+                    let td2 = document.createElement('td')
+                    let td3 = document.createElement('td')
+
+                    td1.innerText = "Країна: " + data.sys.country
+                    td2.innerText = "Назва міста: " + data.name
+                    td3.innerText = "Температура: " + data.main.temp
+
+
+                    tr.appendChild(td1)
+                    tr.appendChild(td2)
+                    tr.appendChild(td3)
+
+                    tbl.appendChild(tr)
+                }
+            })
+            .catch(err=> console.log(err))
+
+
+</script>
+
+
+</body>
+</html>
