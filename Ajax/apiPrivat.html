@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ApiPrivat</title>
+</head>
+<body>
+
+<table id="dataTable" border="1"></table>
+
+<script>
+
+    console.log("start script")
+    let isRes = false
+
+    // Отправка запроса (endPoint):
+    // URL , METHOD ( GET, POST etc) , HEADER (заголовки) , BODY (тело)
+    //для того что б подать запрос нужно описать фетч кого спросить
+    fetch("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5")
+
+        //действие после получения запроса (ответа) зен
+        .then(response =>{//респонс технический ответ с разной информацией
+            console.log("came answer")
+            console.log(response)
+            return response.json()
+        })
+        .then(json =>{//действия с данныими из ответа респонс
+            console.log("данные из обьекта")
+            console.log(json)
+
+            let tbl = document.getElementById("dataTable")
+
+            for (let i = 0; i < json.length; i++) {
+                let tr = document.createElement('tr')
+                let td1 = document.createElement('td')
+                let td2 = document.createElement('td')
+                let td3 = document.createElement('td')
+                let td4 = document.createElement('td')
+
+                td1.innerText = json[i].ccy
+                td2.innerText = json[i].base_ccy
+                td3.innerText = json[i].buy
+                td4.innerText = json[i].sale
+
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+                tr.appendChild(td4)
+
+                tbl.appendChild(tr)
+            }
+
+        })
+
+        //поймать ошибку
+        .catch( error =>{
+            console.log("Error")
+            console.log(error)
+        })
+
+//*------------------------------------------------------
+
+    // //для того что б подать запрос нужно описать фетч кого спросить
+    // fetch("https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5")
+    //     //действие после получения запроса (ответа) зен
+    //     .then(response =>{//респонс технический ответ с разной информацией
+    //         console.log("came answer")
+    //         console.log(response)
+    //         return response.text()
+    //     })
+    //     .then(varName =>{//действия с данныими из ответа респонс
+    //         console.log("данные из обьекта")
+    //         console.log(varName)// text что возвращаем из тех ответа
+    //
+    //     })
+    //     //поймать ошибку
+    //     .catch( error =>{
+    //         console.log("Error")
+    //         console.log(error)
+    //     })
+
+
+
+    console.log("the and script")
+
+    // //запустили цикл
+    // for (let i = 0; i < 100; i++){
+    //     if (i%100)//выводить только кратные 100
+    //         console.log(i)
+    // }
+
+
+
+</script>
+</body>
+</html>
