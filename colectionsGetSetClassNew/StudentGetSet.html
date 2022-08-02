@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentGetSet</title>
+</head>
+<body>
+
+
+<script src="../_lib/guid.js"></script>
+<script>
+
+    class Student {
+        id = generateUUID()
+
+        constructor(firstName, secondName) {
+            this.firstName = firstName
+            this.secondName = secondName
+        }
+
+        get fullName(){
+            // опишем ошибку
+            if(!this.firstName)throw ("not name")
+            if(!this.secondName)throw ("not name")
+            //выдаст полное иф
+            return this.firstName + " " + this.secondName
+        }
+
+    }
+    let alex = new Student ("Alex", "Nikitin")
+    console.log(alex.fullName)
+    //выдаст ошибку смело
+    let lena = new Student ()
+    console.log(lena.fullName)
+    // console.log(alex.id)
+    // console.log(alex.name)
+
+</script>
+</body>
+</html>
