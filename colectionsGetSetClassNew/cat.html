@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAT</title>
+</head>
+<body>
+
+
+<script src="../_lib/guid.js"></script>
+<script>
+
+    class Cat {
+        myType = "Cat type"
+
+//конструктор может быть только один на класс
+        constructor(sex = "m", name, color) {
+            this.sex = sex//секс добавиди дополнительным параметром
+            if (!name) {
+                this.name = "Чебурек"
+                console.log("no name")
+            }else {
+                this.name = name
+            }
+
+            if(color) {
+                this.color = color
+            }else {
+                this.color = "no color"
+            }
+
+            this.id = generateUUID()
+
+        }
+
+        sayMay() {
+            console.log("May")
+            console.log(this.name)
+        }
+    }
+
+    let tom = new Cat("m", "Tom", "green")
+    console.log(tom.constructor.name)// имя класса
+
+    console.log(tom.sex)//секс добавлен дополнительным параметром
+    console.log(tom.myType)
+    console.log(tom.color)
+    tom.sayMay()
+    //
+    // //выдаст эрор потому что нет имени
+    // let murka = new Cat()
+    // murka.sayMay()
+
+</script>
+</body>
+</html>
