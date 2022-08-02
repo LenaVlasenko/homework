@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PatronSayGav</title>
+</head>
+<body>
+
+<script src="../_lib/guid.js"></script>
+
+<script>
+    // описание конкретного обьекта
+    let PatronObj = {
+        id: generateUUID(),
+        name: "Patron",
+        sayGav: function () {
+            console.log("Gav")
+        }
+
+    }
+    PatronObj.sayGav()
+
+
+    // сначала опишем собаку вообще, через класс не относится в данном случаее к патрону
+    class Dog {
+
+        constructor() {
+            //this означае что действия будет у меня
+            this.id = generateUUID()
+            // this.onmouseover = ""
+            // this.onmouseout = ""
+            // //...
+            // this.className = ""
+            // //...
+
+            console.log("кто то создал собачек")
+        }
+
+        sayGav(){
+            console.log(this.name)
+            console.log("gav from: " + this.id)
+
+        }
+    }
+
+    //класс и нью связаны, слово класс в переменной писатьне обязательно, больше для ореинтира сейчас
+
+    let LessiFromClass = new Dog()
+    LessiFromClass.name = "Lessi"
+    LessiFromClass.id = generateUUID()
+    LessiFromClass.sayGav()
+
+
+    let RexClassDog = new Dog()
+    RexClassDog.name = "Rex"
+    RexClassDog.id = generateUUID()
+    RexClassDog.sayGav()
+
+
+</script>
+</body>
+</html>
