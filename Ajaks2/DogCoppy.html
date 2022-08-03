@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>coppyDog</title>
+</head>
+<body>
+
+<div id="main">
+
+</div>
+
+<script>
+
+    function buildMedia(url) {
+        if (url.includes(".mp4")){
+            let video = document.createElement("video")
+            video.src = url
+            video.control = true
+                document.getElementById("main").appendChild(video)
+
+        }else {
+            let img = new Image()
+            img.src = url
+            img.onload = function () {
+                document.getElementById("main").appendChild(img)
+        }
+        }
+    }
+
+    //Бэк возвращает мне имя файла - чистый текст
+    fetch("https://random.dog/woof")
+        .then(res => {
+            console.log(res)
+            return res.text()// я дальше передаю информацию
+        })
+        .then(data => {
+            console.log(data)
+            buildMedia("https://random.dog/" + data)
+        })
+        .catch(err => {
+            console.log("Error")
+            console.log(err)
+        })
+
+
+
+    //Бэк возвращает обьект Json
+    fetch("https://random.dog/woof.json")
+        .then(res => {
+            console.log(res)
+            return res.json()
+        })
+        .then(data => {
+            console.log(data)
+            // let img = new Image()
+            // img.src = data.url//Читаю url из полученого кода
+            // img.onload = function () {
+            //     document.getElementById("main").appendChild(img)
+            // }
+            buildMedia(data.url)
+        })
+        .catch(err => {
+            console.log("Error")
+            console.log(err)
+        })
+
+
+
+</script>
+</body>
+</html>
