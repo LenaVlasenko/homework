@@ -8,7 +8,7 @@
 <ul id="main"></ul>
 
 <script>
-    let id = 1000
+    let id = 1
 
     let mainUl = document.getElementById('main')
 
@@ -16,8 +16,7 @@
         // .then( res => res.json())
         .then(res => {
             if (res.status === 404){
-                console.log('not found')
-                return {msg: 'Not Found'}
+                console.log("not found")
             }
             return res.json()
         })
@@ -25,13 +24,7 @@
             console.log(data.sprites)
             for (const spritesKey in data.sprites) {
 
-                if(spritesKey === 'other') {
-
-                }
-                else if (spritesKey === 'versions'){
-
-                }
-                else if(data.sprites[spritesKey] !== null) {
+                if(data.sprites[spritesKey] !== null) {
                     let li = document.createElement('li')
                     let img = document.createElement('img')
                     img.src = data.sprites[spritesKey]
