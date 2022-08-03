@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card Desk</title>
+    <style>
+
+        #main img {
+            width: 400px;
+            animation-name: Appearance;
+            animation-duration: 3s;
+            animation-timing-function: cubic-bezier(.1,-.6,.2,0);
+        }
+
+        @-webkit-keyframes Appearance {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        @-o-keyframes Appearance {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+        @-moz-keyframes Appearance {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="main">
+
+</div>
+
+<script>
+    let mainEl = document.getElementById('main')
+
+    function buildCat(cat) {
+        let img = new Image()
+        img.src = cat['image']
+        img.style.opacity = '0'
+
+        img.onload = function () {
+            mainEl.innerText = ''
+            mainEl.appendChild(img)
+            img.style.opacity = '1'
+        }
+
+    }
+
+    function  apiGetRandomCat() {
+        mainEl.innerHTML = ''
+        mainEl.innerText = 'Loading'
+        fetch("https://aws.random.cat/meow")
+            .then(res => {
+                console.log(res)
+                return res.json()
+            })
+            .then(cat => {
+                console.log(cat)
+                buildCat(cat)
+            })
+            .catch(err => {
+                console.log('Err')
+                console.log(err)
+            })
+    }
+
+    apiGetRandomCat()
+
+</script>
+</body>
+</html>
