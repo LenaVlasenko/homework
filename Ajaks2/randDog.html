@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>randDog</title>
+</head>
+<body>
+
+<div id="main">
+
+</div>
+
+
+
+<script>
+
+    fetch("https://random.dog/woof.json")
+        .then(res =>{
+            console.log(res)
+            return res.text()
+        })
+        .then(data =>{
+            console.log(data)
+            let img = new Image()
+            img.src = ("https://random.dog/" + data)
+            img.onload = function () {
+                document.getElementById("main").appendChild(img)
+            }
+        })
+        .catch(err => {
+            console.log("Error")
+            console.log(err)
+        })
+
+</script>
+</body>
+</html>
