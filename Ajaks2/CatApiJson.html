@@ -55,10 +55,7 @@
         mainEl.innerHTML = ''
         mainEl.innerText = 'Loading'
         fetch("https://aws.random.cat/meow")
-            .then(res => {
-                console.log(res)
-                return res.json()
-            })
+            .then(res => res.json())
             .then(cat => {
                 console.log(cat)
                 buildCat(cat)
