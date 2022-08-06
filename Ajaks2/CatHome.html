@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cat</title>
+    <title>Cat home</title>
     <style>
 
         #main img {
@@ -35,8 +35,10 @@
 
 </div>
 
+
 <script>
     let mainEl = document.getElementById('main')
+
 
     function buildCat(cat) {
         let img = new Image()
@@ -55,7 +57,7 @@
         mainEl.innerHTML = ''
         mainEl.innerText = 'Loading'
         fetch("https://aws.random.cat/meow")
-            .then(res => res.json())
+            .then( res => res.json())
             .then(cat => {
                 console.log(cat)
                 buildCat(cat)
