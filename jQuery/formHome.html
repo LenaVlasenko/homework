@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWorkForm</title>
+    <style>
+        form{display: flex; flex-direction: column; width: 20%;}
+        input{margin-top: 5px;margin-bottom: 5px;}
+    </style>
+</head>
+<body>
+<form action>
+    <input name="myEmail" type="text" id="myEmail">
+    <label for="myEmail">Введите имя</label>
+    <input name="myName" type="text" id="myName">
+    <label for="myName">Введите email</label>
+    <button type="submit">отправить</button>
+</form>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+        let validName = false
+        let validEmail = false
+
+        $("form").submit(function(event) {
+            event.preventDefault();
+
+            let name = $("#myName").val();
+            let email = $("#myEmail").val();
+
+            if(name === ""){
+                $("#myName").css("border", "1px solid red")
+                alert("поле пустое")
+            }else {
+                $("#myName").css("border", "1px solid green")
+                validName = true
+            }
+
+            if(email === ""){
+                $("#myEmail").css("border", "1px solid red")
+                alert("поле пустое")
+            }else {
+                $("#myEmail").css("border", "1px solid green")
+                validEmail = true
+            }
+            if (validName === true && validEmail === true){
+                $("form").unbind("submit").submit()
+            }
+        });
+    });
+
+
+
+
+</script>
+</body>
+</html>
