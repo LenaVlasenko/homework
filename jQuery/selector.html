@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>selector</title>
+</head>
+<body>
+
+<ul>
+    <li class="sel">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li class="sel">5</li>
+    <li>6</li>
+</ul>
+
+<p>1111</p>
+<p class="sel">222222222222</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    let colectionLi = $( ".sel, li" )
+
+    console.log(colectionLi)
+    colectionLi.css("border", "1px solid green")
+
+    colectionLi.first().css("background", "yellow")
+
+    //ефект при наведении
+    colectionLi.even().mouseover(function (ev) {
+        ev.target.style.border = '2px solid red'
+    })
+    //вместо эвент можно ставить ферст
+    colectionLi.even().mouseout(function (ev) {
+        ev.target.style.border = '3px solid green'
+    })
+</script>
+</body>
+</html>

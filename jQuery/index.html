@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+</head>
+<body>
+
+
+<button id="btnClickMe">Click me</button>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+    $( "#btnClickMe" ).click(function() {
+       this.style.background = "red"
+    });
+    //тоже самое через байАйди
+    // document.getElementById("btnClickMe").onclick = function (ev) {
+    //     ev.target.style.background = "red"
+    // }
+
+
+    //версия JQ
+    //$("li").css("border", "1px solid green")
+    let collectionLi = $("li")
+    collectionLi.css("border", "1px solid green")
+    //версия современного JS
+    // let collectionLi = document.getElementsByTagName("li")
+    // for (let i = 0; i < collectionLi.length; i++) {
+    //     collectionLi[i].style.border = "1px solid green"
+    // }
+
+</script>
+
+</body>
+</html>
