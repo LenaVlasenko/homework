@@ -1,12 +1,11 @@
 let express = require('express');
 let router = express.Router();
+//получить модуть управления продуктами
+let cProducts = require("./../controllers/productsController")
 
-// Получить модуль управления продуктами
-let cProducts = require('./../controllers/productsController')
+//назначить маршрут в корень метод
+router.get("/", cProducts.index)
 
-// назначить маршрут в корень на метод
-router.get('/', cProducts.index);
-
-// CRUD - каждой операции свой метод и маршрут
+// - каждой операции свой метод и маршрут
 
 module.exports = router;

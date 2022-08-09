@@ -1,7 +1,5 @@
 let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+let path = require('path'); let cookieParser = require('cookie-parser'); let logger = require('morgan');
 
 
 
@@ -13,15 +11,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Настройка машрутов
-let indexRouter = require('./routes/index');
-app.use('/', indexRouter);
-let usersRouter = require('./routes/users');
-app.use('/users', usersRouter);
 
-let productRouter = require('./routes/products');
-app.use('/api/products', productRouter);
-let studentRouter = require('./routes/students');
-app.use('/api/students', studentRouter);
+//настройка маршрутов
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
+let productsRouter = require('./routes/products');
+let studentsRouter = require('./routes/students');
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/api/products', productsRouter);
+app.use('/api/students', studentsRouter);
 
 module.exports = app;
