@@ -11,4 +11,4 @@ exports.index = function (request, response) {
 };
 
 
-// CRUD
+// CRUD - Create, Read, Update, Delete

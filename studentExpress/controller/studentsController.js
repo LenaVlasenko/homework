@@ -3,9 +3,7 @@ let students = [
     {id: 2, name: "Вася", age:19},
 ]
 
+//Read
 exports.index = function (request, response) {
     return response.status(200).json(students);
 };
-
-
-// CRUD - Create, Read, Update, Delete
