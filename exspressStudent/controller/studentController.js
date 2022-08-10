@@ -41,11 +41,26 @@ exports.update = function (request, response) {
     let findStudent = students.findIndex(s => s._id === findId)
 
     console.log(findStudent)
-    if(findStudent === nul && typeof (findStudent) === undefined) {
+    if(findStudent === null && typeof (findStudent) === undefined) {
         console.log('нет студента')
-        return response.status(404)
+        return response.status(404).send()
     }
     students[findStudent] = request.body
     console.log('Все обновляется')
     return response.status(204).send()
 }
+
+//DELETE
+exports.delete = function (request, response) {
+    let findId = request.params.studentId
+    let findStudent = students.findIndex(s => s._id === findId)
+
+    console.log(findStudent)
+    if(findStudent === null && typeof (findStudent) === undefined) {
+        console.log('нет студента')
+        return response.status(404).send()
+    }
+
+    students.splice(findStudent,1)
+    return  response.status(200).send()
+};

@@ -12,9 +12,11 @@ router.get("/", cStudents.index)
 //read (one) === GET, на параметр
 router.get("/:studentId", cStudents.show)
 
-//read (one) === GET, на параметр
+//update
 router.put("/:studentId", cStudents.update)
 
+//DELETE
+router.delete("/:studentId", cStudents.delete)
 
 
 //CRUD

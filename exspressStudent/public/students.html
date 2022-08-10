@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>student</title>
+    <style>
+        span{color: indianred}
+    </style>
 </head>
 <body>
 
@@ -139,13 +142,41 @@
 
     //построить список студентов
     function  renderList() {
-        lstStudents.innerText = ""
+        lstStudents.innerHTML = ""
         if (students === null) return
         students.map( student => {
             let li = document.createElement('li')
             li.dataset.id = student._id
             li.innerText = student.name
             li.ondblclick = renderForm
+
+            let span = document.createElement('span')
+            span.innerText = "Delete"
+            span.onclick = function (ev) {
+                let id = ev.target.parentNode.dataset.id
+                fetch('/api/students/' + id, {
+                    method: 'DELETE'
+                })
+                    .then(res=> {
+                        console.log('Delete Response')
+                        console.log(res)
+                        // if(res.status !== 200){
+                        //     throw "Server8 Error"
+                        // }
+                        students.splice(students.findIndex(s => s._id === id),1)
+                        oldStudentOnDoubleClick = null
+                        oldStudent = null
+                        oldElement = null
+                        renderList()
+                        //построить список
+                    })
+                    .catch(err=>{
+                        console.log(err)
+                        console.log('Error:')
+                    })
+            }
+            li.appendChild(span)
+
             lstStudents.appendChild(li)
         });
     }
