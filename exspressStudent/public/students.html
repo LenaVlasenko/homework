@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>StudentsCRUD</title>
+    <title>student</title>
 </head>
 <body>
 
@@ -17,39 +17,36 @@
 
     let lstStudents = document.getElementById('lstStudents')
 
-    function renderlist(students) {
-        lstStudents.innerText = ''
-        if(students === null) return
-        students.map(student =>{
+    function  renderList(students) {
+        lstStudents.innerText = ""
+        if (students === null) return
+        students.map( student => {
             let li = document.createElement('li')
             li.dataset.id = student.id
             li.innerText = student.name
             lstStudents.appendChild(li)
-        })
+        });
     }
 
-
-    function read() {
+    function read(){
         fetch('/api/students')
-            .then(res=>{
+            .then(res=> {
                 if(res.status !== 200){
-                    throw 'Server Error'
+                    throw "Server Error"
                 }
                 return res.json()
             })
             .then(students => {
                 console.log(students)
-                //тут должет быть chartJS
-                renderlist(students)
-
+                renderList(students)
             })
-        .catch(err=> {
-            console.log("Error")
-            console.log(err)
-        })
+            .catch(err=>{
+                console.log(err)
+                console.log('Error:')
+            })
     }
-    read()
 
+    read()
 </script>
 </body>
 </html>

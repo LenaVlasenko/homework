@@ -5,7 +5,7 @@
  */
 
 let app = require('../app');
-let debug = require('debug')('studentexpress:server');
+let debug = require('debug')('exspressstudent:server');
 let http = require('http');
 
 /**
