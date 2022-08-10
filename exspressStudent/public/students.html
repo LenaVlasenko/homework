@@ -11,18 +11,23 @@
 
     </ul>
 </div>
+<form>
+    <input type="text" name="newName">
+    <input type="number" name="newAge">
+    <input type="button" value="Create" id="btnCreate">
+</form>
 
 
 <script>
-
+    let students = []
     let lstStudents = document.getElementById('lstStudents')
 
-    function  renderList(students) {
+    function  renderList() {
         lstStudents.innerText = ""
         if (students === null) return
         students.map( student => {
             let li = document.createElement('li')
-            li.dataset.id = student.id
+            li.dataset.id = student._id
             li.innerText = student.name
             lstStudents.appendChild(li)
         });
@@ -32,21 +37,58 @@
         fetch('/api/students')
             .then(res=> {
                 if(res.status !== 200){
-                    throw "Server Error"
+                    throw "Server1 Error"
                 }
                 return res.json()
             })
-            .then(students => {
-                console.log(students)
-                renderList(students)
+            .then(serverStudent => {
+                students = serverStudent
+                renderList()
             })
             .catch(err=>{
                 console.log(err)
                 console.log('Error:')
             })
     }
-
     read()
+// create new student
+    function create() {
+        //подготовить данные для отправки на сервер
+        let newStudent = {
+            name: document.getElementsByName('newName').item(0).value,
+            age: document.getElementsByName('newAge').item(0).value,
+        }
+        console.log(newStudent)
+
+        //push server
+        fetch('/api/students',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(newStudent)
+        })
+            .then(res=> {
+                //почему то с этим иф выдает эррор на кэтч
+                // if(res.status !== 200){
+                //     throw "Server2 Error"
+                // }
+                return res.json()
+            })
+            .then(student => {
+                console.log(student)// new student
+                students.push(student)
+                document.getElementsByName('newName').item(0).value = ''
+                document.getElementsByName('newAge').item(0).value = 0
+                renderList()
+            })
+            .catch(err=>{
+                console.log(err)
+                console.log('Error:')
+            })
+    }
+    document.getElementById('btnCreate').onclick = create
 </script>
 </body>
 </html>

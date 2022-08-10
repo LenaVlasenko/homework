@@ -1,6 +1,8 @@
-function generateUUID() { // Public Domain/MIT
+exports.generateUUID = function () { // Public Domain/MIT
     let d = new Date().getTime();//Timestamp
-    let d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+    let d2 = (
+        (typeof performance !== 'undefined') &&
+        performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
         .replace(/[xy]/g,
             function(c) {
