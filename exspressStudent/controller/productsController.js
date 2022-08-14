@@ -1,65 +1,58 @@
-
 // Получить модуль работы с базой данных
-const Student = require('./../models/students')
+const ProductModel = require('./../models/products');
 
-//создать нового студента
+
 exports.create = function (request, response) {
     // Получили нового студента на сервере
-    let bodyStudent = request.body
+    let bodyProduct = request.body
     // Создали запись в базе даннх
-    const newStudent = new Student(bodyStudent)
+    const newProduct = new Student(bodyProduct)
 
     // Сохранили запись в базе данных
-    newStudent.save(function(err){
-        if(err) { // Если ошибка - вернуть ошибку
+    newProduct.save(function (err) {
+        if (err) { // Если ошибка - вернуть ошибку
             console.log(err)
             return response.status(422).json(err)
-        }
-        else { // Если все хорошо - вренуть нового студента
-            return response.status(201).json(newStudent);
+        } else { // Если все хорошо - вренуть нового студента
+            return response.status(201).json(newProduct);
         }
     });
-
-    // Теперь за хранение отвечает база данных
 }
 
-//вернуть всех студентов
 exports.index = function (request, response) {
-    Student.find({}, function(err, allStudents){
+    ProductModel.find({}, function(err, allProducts){
 
         if(err) {
             console.log(err);
             return response.status(404).json(err);
         }
         else {
-            return response.status(200).json(allStudents);
+            return response.status(200).json(allProducts);
         }
     });
 }
 
-// метод read ONE === GET, вернуть конкретного
 exports.show = function (request, response) { //получили всех студентов и отправили со статусом 201
 
-    let findId = request.params.studentId
+    let findId = request.params.productId
 
-    Student.findById(findId, function(err, allStudents){
+    ProductModel.findById(findId, function(err, allProducts){
 
         if(err) {
             console.log(err);
             return response.status(404).json(err);
         }
         else {
-            return response.status(200).json(allStudents);
+            return response.status(200).json(allProducts);
         }
     });
 }
 
-//обновить конкретного студента
 exports.update = function (request, response) {
-    let findId = request.params.studentId
-    let upStudent = request.body
+    let findId = request.params.productId
+    let upProduct = request.body
 
-    Student.findByIdAndUpdate(findId, upStudent, function (err, newStudent) {
+    Student.findByIdAndUpdate(findId, upProduct, function (err, newProduct) {
         if(err) {
             console.log(err);
             return response.status(500).json(err);
@@ -71,11 +64,10 @@ exports.update = function (request, response) {
     })
 }
 
-//DELETE
 exports.delete = function (request, response) {
-    let findId = request.params.studentId
+    let findId = request.params.productId
 
-    Student.findByIdAndDelete(findId, function(err){
+    ProductModel.findByIdAndDelete(findId, function(err){
 
         if(err) {
             console.log(err);

@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 
-let cStudents = require("../controller/studentController_array2")
+let cStudents = require("../controller/studentController")
 
 //создать новую запись === POST
 router.post("/", cStudents.create)
