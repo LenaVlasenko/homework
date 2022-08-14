@@ -160,9 +160,9 @@
                     .then(res=> {
                         console.log('Delete Response')
                         console.log(res)
-                        // if(res.status !== 200){
-                        //     throw "Server8 Error"
-                        // }
+                        if(res.status !== 200){
+                            throw "Server8 Error"
+                        }
                         students.splice(students.findIndex(s => s._id === id),1)
                         oldStudentOnDoubleClick = null
                         oldStudent = null
@@ -190,8 +190,8 @@
                 }
                 return res.json()
             })
-            .then(serverStudent => {
-                students = serverStudent
+            .then(serverStudents => {
+                students = serverStudents
                 renderList()
             })
             .catch(err=>{
@@ -220,9 +220,9 @@
         })
             .then(res=> {
                 //почему то с этим иф выдает эррор на кэтч
-                // if(res.status !== 200){
-                //     throw "Server2 Error"
-                // }
+                if(res.status !== 201){
+                    throw "Server2 Error"
+                }
                 return res.json()
             })
             .then(student => {
@@ -241,6 +241,7 @@
     //подключение методов
     document.getElementById('btnCreate').onclick = create
     read()
+
 </script>
 </body>
 </html>

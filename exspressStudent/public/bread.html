@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bread</title>
+</head>
+<body>
+
+<script>
+
+    fetch('http://localhost:3000/api/bread')
+        .then(res=> res.json())
+        .then(bread=> {
+            console.log(bread)
+            console.log(bread.ingredients[0].value)//вывели 1кг
+        }).catch(err=>{
+        console.log("Error")
+        console.log(err)
+    })
+
+</script>
+
+
+</body>
+</html>
