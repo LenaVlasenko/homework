@@ -6,7 +6,7 @@ exports.create = function (request, response) {
     // Получили нового студента на сервере
     let bodyProduct = request.body
     // Создали запись в базе даннх
-    const newProduct = new Student(bodyProduct)
+    const newProduct = new ProductModel(bodyProduct)
 
     // Сохранили запись в базе данных
     newProduct.save(function (err) {
@@ -52,7 +52,7 @@ exports.update = function (request, response) {
     let findId = request.params.productId
     let upProduct = request.body
 
-    Student.findByIdAndUpdate(findId, upProduct, function (err, newProduct) {
+    ProductModel.findByIdAndUpdate(findId, upProduct, function (err, newProduct) {
         if(err) {
             console.log(err);
             return response.status(500).json(err);
