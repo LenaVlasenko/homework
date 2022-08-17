@@ -42,5 +42,6 @@ app.use('/api/bread', breadRouter);
 let productRouter = require('./routes/products');
 app.use('/api/products', productRouter);
 
+
 //подготовка модуля к работе
 module.exports = app;

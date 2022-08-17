@@ -9,4 +9,4 @@ const productsSchema = new mongoose.Schema({
     //полей может быть сколько угодно
 });
 
-module.exports = mongoose.model("produts", productsSchema);
+module.exports = mongoose.model("products", productsSchema);
