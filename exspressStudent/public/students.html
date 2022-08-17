@@ -19,6 +19,10 @@
     <input type="number" name="newAge">
     <input type="button" value="Create" id="btnCreate">
 </form>
+<div>
+    <input type="text" name="txtFind" id="txtFind">
+    <input type="button" value="Find" id="btnFind">
+</div>
 
 
 <script>
@@ -237,8 +241,34 @@
             })
     }
 
+
     //подключение методов
     document.getElementById('btnCreate').onclick = create
+
+    document.getElementById('btnFind').onclick = function (el){
+        let bodyToFind = {
+            txtFind: document.getElementById("txtFind").value
+        }
+        fetch('/api/students/find', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(bodyToFind)
+        })
+            .then(res=> res.json())
+            .then(pr=> {
+                console.log('get')
+                console.log(pr)
+                students = pr
+                renderList()
+            })
+            .catch(err=> {
+                console.log('Err')
+                console.log(err)
+            })
+    }
     read()
 
 </script>

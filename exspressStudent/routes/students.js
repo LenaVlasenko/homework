@@ -18,6 +18,9 @@ router.put("/:studentId", cStudents.update)
 //DELETE
 router.delete("/:studentId", cStudents.delete)
 
+//Find POST
+router.post('/find', cStudents.find)
+
 
 //CRUD
 module.exports = router;
