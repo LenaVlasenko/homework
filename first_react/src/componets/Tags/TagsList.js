@@ -45,8 +45,9 @@ class TagsList extends React.Component{
         //для первой загрузки делаем тут
         //фетч тут
 
-        //эмитация задержки получения данных
-        setTimeout(this.getDataFromServer.bind(this), 3000)
+        //эмитация задержки получения данных на 1 сек
+        //bind(this) - разрешить обращение к компоненту
+        setTimeout(this.getDataFromServer.bind(this), 1000)
     }
 
 
@@ -93,9 +94,11 @@ class TagsList extends React.Component{
     //выводим состояние - жду получение данных
     renderPreload(){
         return(
-            <div>
-                Ожидание получения данных
+
+            <div className="spinner-border text-danger" role="status">
+                <span className="visually-hidden">Loading...</span>
             </div>
+
         )
     }
 }
