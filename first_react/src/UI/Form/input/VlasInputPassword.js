@@ -14,10 +14,17 @@ class VlasInputPassword extends React.Component {
         }
     }
 
+    onChange(ev){
+        this.checkValid(ev)
+        if(this.props.onChange){
+            this.props.onChange(ev)
+        }
+    }
+
     //Валидация
     checkValid(ev){
         let pass = ev.target.value
-        //console.log(pass)
+        console.log(pass)
         let err = []
 
         // Регулярное выражение на наличие цифры
@@ -48,6 +55,7 @@ class VlasInputPassword extends React.Component {
         }
         oldState.err = err
         this.setState(oldState)
+        console.log(err)
     }
 
 
@@ -57,19 +65,26 @@ class VlasInputPassword extends React.Component {
         let err = ""
         if(!this.state.isValid) {
             err = (
-                <p> Есть ошибки </p>
-                // <ul>
-                //     {this.state.err.map( e => {
-                //       <li key={Date.now()}> {e} </li>
-                //     })}
-                // </ul>
+                <ul>
+                    {this.state.err.map( e => {
+                        return (
+                            <li> {e} </li>
+                        )
+                    })}
+                </ul>
             )
         }
-        //console.log(err)
+
+        let label = ''
+
+        if(this.props.label){
+            label = (<label>{this.props.label}</label>)
+        }
 
         return(
             <>
-                <input type="password" onKeyDown={this.checkValid.bind(this)}/>
+                {label}
+                <input type="password" onChange={this.onChange.bind(this)}/>
                 {err}
             </>
         )

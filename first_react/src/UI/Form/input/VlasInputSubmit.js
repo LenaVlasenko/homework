@@ -7,9 +7,9 @@ class VlasInputSubmit extends React.Component {
     //То как он будет выводится
     render() {
         return(
-            <>
+            <div>
                 <input type="submit"/>
-            </>
+            </div>
         )
     }
 }

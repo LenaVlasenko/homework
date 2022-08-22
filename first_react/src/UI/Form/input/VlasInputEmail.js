@@ -6,9 +6,9 @@ class VlasInputEmail extends React.Component {
     //То как он будет выводится
     render() {
         return(
-            <>
+            <div>
                 <input type="email"/>
-            </>
+            </div>
         )
     }
 }
