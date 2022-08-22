@@ -1,6 +1,9 @@
 //подключение модуля РЕАКТ
 import React from "react";
-import "./TagList.css";//подключили стили
+import "./TagList.css";
+import TagAdd from "./TagAdd";
+
+//подключили стили
 
 class TagsList extends React.Component{
 
@@ -19,6 +22,28 @@ class TagsList extends React.Component{
             isLoaded: false,// храним состояние - загрузилисьь ли данные
             tags: [], // место, где будут хранится мои данные в данном случае
         }
+        this.deleteElement = this.deleteElement.bind(this);
+    }
+
+
+    deleteElement(e){
+        console.log("Delete")
+        console.log(e.currentTarget.parentNode.getAttribute("data-key"))
+        let id = e.currentTarget.parentNode.getAttribute("data-key")
+        const oldState = this.state;
+        oldState.tags.splice(oldState.tags.findIndex(el=> el.id == id),1)
+        this.setState(oldState);
+    }
+
+    //метод, который добавит новую метку к имеющемся масиву
+    addNewTag(newTagName){
+        const oldState = this.state;
+        let newTag = {
+            id : Date.now(),
+            name : newTagName
+        }
+        oldState.tags.push(newTag);
+        this.setState(oldState);
     }
 
     //эмитация получения данных с сервера
@@ -55,14 +80,20 @@ class TagsList extends React.Component{
     renderData() {
         console.log("Работает рендер")
         return(
+            <>
             <ul>
                 {
                     this.state.tags.map(tag =>(
-                        <li key={tag.id}>{tag.name}</li>
+                        <li data-key={tag.id} key={tag.id}>{tag.name}
+                            <span onClick={this.deleteElement}>-</span>
+                        </li>
                     ))
                 }
 
             </ul>
+                <TagAdd addNewTag={this.addNewTag.bind(this)}></TagAdd>
+
+            </>
         )
     }
 

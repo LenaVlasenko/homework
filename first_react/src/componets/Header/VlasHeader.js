@@ -16,4 +16,4 @@ class VlasHeader extends React.Component {
     }
 }
 
-export default VlasHeader
+export default VlasHeader;
