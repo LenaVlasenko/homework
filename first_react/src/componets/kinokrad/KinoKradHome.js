@@ -1,5 +1,6 @@
 import React from "react";
 import "./kinokrad.css"
+import KinoKradItem from "./KinoKradItem";
 
 class KinoKradHome extends React.Component{
 
@@ -13,6 +14,7 @@ class KinoKradHome extends React.Component{
         }
     }
 
+    //наполнение данными
     getSimpleData(){
         let f1 ={
             id: Date.now(),
@@ -35,21 +37,22 @@ class KinoKradHome extends React.Component{
         console.log("Работает рендер")
         return(
             <>
-                <ul>
+                <div className="row">
                     {
                         this.state.items.map(item =>(
-                            <li key={item.id} className="clearfix">
-                                <h4>{item.name}</h4>
-                                <div>
-                                    <img src={item.imgUrl} style={{float: "left"}}/>
-                                    <p>{item.des}</p>
-                                </div>
-
-                            </li>
+                            <KinoKradItem key={item.id} item={item}></KinoKradItem>
+                            // <li key={item.id} className="clearfix">
+                            //     <h4>{item.name}</h4>
+                            //     <div>
+                            //         <img src={item.imgUrl} style={{float: "left"}}/>
+                            //         <p>{item.des}</p>
+                            //     </div>
+                            //
+                            // </li>
                         ))
                     }
 
-                </ul>
+                </div>
 
             </>
         )

@@ -9,7 +9,7 @@ import KinoKradHome from "./componets/kinokrad/KinoKradHome";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App conteiner">
         <VlasHeader></VlasHeader>
         <KinoKradHome></KinoKradHome>
         <VlasFooter></VlasFooter>
