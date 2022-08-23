@@ -6,6 +6,8 @@ class KinoKradItem extends React.Component{
         super(props);
     }
 
+    //тут мы используем только один рендер
+    //поскольку это статический компонент - он не меняет свое состояние
     render(){
         return(
             <div className="card" style={{width: "18rem"}}>

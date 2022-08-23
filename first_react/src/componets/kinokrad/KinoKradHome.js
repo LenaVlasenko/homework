@@ -28,6 +28,7 @@ class KinoKradHome extends React.Component{
         this.setState(oldState)
     }
 
+    //запускается когда компонент уже на стронице
     componentDidMount() {
         this.getSimpleData()
     }
