@@ -1,6 +1,7 @@
 import React from "react";
 import "./kinokrad.css"
 import KinoKradItem from "./KinoKradItem";
+import KinoKradAdd from "./KinoKradAdd";
 
 class KinoKradHome extends React.Component{
 
@@ -13,6 +14,29 @@ class KinoKradHome extends React.Component{
             items: [], // место, где будут хранится мои данные в данном случае
         }
     }
+
+    //сохранение элемента в колекции
+    saveItem(item){
+        const oldState = this.state
+        oldState.items.push(item)
+        this.setState(oldState)
+    }
+
+    saveAll(){
+        localStorage.setItem("films", JSON.stringify(this.state.items))
+
+    }
+
+    LoadAll(){
+        const oldState = this.state
+        if(localStorage.getItem("films"))
+        oldState.items = JSON.parse(localStorage.getItem("films"))
+        else
+            oldState.items = []
+        this.setState(oldState)
+
+    }
+
 
     //наполнение данными
     getSimpleData(){
@@ -39,17 +63,25 @@ class KinoKradHome extends React.Component{
         return(
             <>
                 <div className="row">
+                    <div className="col-2">
+                    <KinoKradAdd save={this.saveItem.bind(this)}></KinoKradAdd>
+                    </div>
+                    <div className="col-2">
+                        <button onClick={this.saveAll.bind(this)} type="button" className="btn btn-info">
+                            Save
+                        </button>
+                    </div>
+                    <div className="col-2">
+                        <button onClick={this.LoadAll.bind(this)} type="button" className="btn btn-warning">
+                            Load
+                        </button>
+                    </div>
+
+                </div>
+                <div className="row">
                     {
                         this.state.items.map(item =>(
                             <KinoKradItem key={item.id} item={item}></KinoKradItem>
-                            // <li key={item.id} className="clearfix">
-                            //     <h4>{item.name}</h4>
-                            //     <div>
-                            //         <img src={item.imgUrl} style={{float: "left"}}/>
-                            //         <p>{item.des}</p>
-                            //     </div>
-                            //
-                            // </li>
                         ))
                     }
 

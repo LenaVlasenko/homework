@@ -18,6 +18,11 @@ class KinoKradAdd extends React.Component{
         this.setState(oldState);
     }
 
+    //метод который передаст информацию в главный компонент
+    onSave(){
+        this.props.save(this.state);
+    }
+
     render() {
         return(
             <>
@@ -44,7 +49,7 @@ class KinoKradAdd extends React.Component{
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" data-bs-dismiss="modal" className="btn btn-primary">Save changes</button>
+                                <button onClick={this.onSave.bind(this)} type="button" data-bs-dismiss="modal" className="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
