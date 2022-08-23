@@ -70,4 +70,4 @@ class TagAdd extends React.Component{
 }
 
 
-export default TagAdd;
+export default TagAdd

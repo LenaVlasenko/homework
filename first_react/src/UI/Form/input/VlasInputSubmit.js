@@ -15,4 +15,4 @@ class VlasInputSubmit extends React.Component {
 }
 
 
-export default VlasInputSubmit;
+export default VlasInputSubmit

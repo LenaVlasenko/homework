@@ -82,14 +82,14 @@ class VlasInputPassword extends React.Component {
         }
 
         return(
-            <>
+            <div>
                 {label}
                 <input type="password" onChange={this.onChange.bind(this)}/>
                 {err}
-            </>
+            </div>
         )
     }
 }
 
 
- export default VlasInputPassword;
+ export default VlasInputPassword

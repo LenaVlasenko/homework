@@ -15,6 +15,7 @@ class FormSingUp extends React.Component {
         }
     }
 
+
     onPasswordChange(ev){
         let oldState = this.state;
         oldState.p = ev.target.value;
@@ -34,9 +35,11 @@ class FormSingUp extends React.Component {
         let err = []
         if (this.state.p !== this.state.cp) {
             err.push('Пароли не совпадают')
-        }else{
-            err.push("пароли совпадают")
+        }else {
+            err.push('Пароли совпадают')
         }
+
+
 
         let oldState = this.state;
         if(err.length > 0) {
@@ -69,9 +72,9 @@ class FormSingUp extends React.Component {
 
         return(
             <>
-                <VlasInputEmail></VlasInputEmail>
-                <VlasInputPassword label="Prol" onChange={this.onPasswordChange.bind(this)}></VlasInputPassword>
-                <VlasInputPassword onChange={this.onPasswordConfirmChange.bind(this)}></VlasInputPassword>
+                <VlasInputEmail label="Email: "></VlasInputEmail>
+                <VlasInputPassword label="Parol: " onChange={this.onPasswordChange.bind(this)}></VlasInputPassword>
+                <VlasInputPassword label="Parol: " onChange={this.onPasswordConfirmChange.bind(this)}></VlasInputPassword>
                 {err}
                 <VlasInputSubmit></VlasInputSubmit>
             </>
@@ -79,4 +82,4 @@ class FormSingUp extends React.Component {
     }
 }
 
-export default FormSingUp;
+export default FormSingUp

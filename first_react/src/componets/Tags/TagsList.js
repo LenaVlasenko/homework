@@ -134,4 +134,4 @@ class TagsList extends React.Component{
     }
 }
 
-export default TagsList;
+export default TagsList

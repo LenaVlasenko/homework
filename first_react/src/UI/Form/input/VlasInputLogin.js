@@ -15,7 +15,7 @@ class VlasInputLogin extends React.Component {
 }
 
 
-export default VlasInputLogin;
+export default VlasInputLogin
 
 /*
  <div>
