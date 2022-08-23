@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class picturesAdd extends React.Component{
+class PicturesAdd extends React.Component{
 
     constructor(props) {
         super(props);
@@ -59,4 +59,4 @@ class picturesAdd extends React.Component{
     }
 }
 
-export default picturesAdd;
+export default PicturesAdd;

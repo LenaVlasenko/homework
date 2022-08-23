@@ -1,7 +1,7 @@
 import React from "react";
 import "./pictures.css"
 
-class picturesItem extends React.Component{
+class PicturesItem extends React.Component{
     constructor(props) {
         super(props);
     }
@@ -22,4 +22,4 @@ class picturesItem extends React.Component{
 
 }
 
-export default picturesItem;
+export default PicturesItem;

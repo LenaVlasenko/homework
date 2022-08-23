@@ -1,12 +1,10 @@
 import React from "react";
 import "./pictures.css"
-import picturesAdd from "./picturesAdd";
-import picturesItem from "./picturesItem"
 import PicturesAdd from "./picturesAdd";
 import PicturesItem from "./picturesItem";
 
 
-class picturesHome extends React.Component{
+class PicturesHome extends React.Component{
 
     constructor(props) {
         super(props);
@@ -132,4 +130,4 @@ class picturesHome extends React.Component{
     }
 }
 
-export default picturesHome;
+export default PicturesHome;
