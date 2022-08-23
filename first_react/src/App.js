@@ -2,7 +2,7 @@
 //import './App.css';
 import VlasHeader from "./componets/Header/VlasHeader";
 import VlasFooter from "./componets/Footer/VlasFooter";
-import FormSingUp from "./componets/Form/auth/FormSingUp";
+import KinoKradHome from "./componets/kinokrad/KinoKradHome";
 //import TagsList from "./componets/Tags/TagsList"; <TagsList></TagsList>
 
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
         <VlasHeader></VlasHeader>
-        <FormSingUp></FormSingUp>
+        <KinoKradHome></KinoKradHome>
         <VlasFooter></VlasFooter>
     </div>
   );

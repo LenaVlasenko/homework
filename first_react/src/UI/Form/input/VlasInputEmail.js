@@ -36,7 +36,6 @@ class VlasInputEmail extends React.Component {
         }
 
 
-
         let oldState = this.state
         if(err.length > 0){
             oldState.isValid = false
