@@ -2,7 +2,7 @@
 //import './App.css';
 import VlasHeader from "./componets/Header/VlasHeader";
 import VlasFooter from "./componets/Footer/VlasFooter";
-import KinoKradHome from "./componets/kinokrad/KinoKradHome";
+import PicturesHome from "./componets/Pictures/picturesHome";
 //import TagsList from "./componets/Tags/TagsList"; <TagsList></TagsList>
 
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App conteiner">
         <VlasHeader></VlasHeader>
-        <KinoKradHome></KinoKradHome>
+        <PicturesHome></PicturesHome>
         <VlasFooter></VlasFooter>
     </div>
   );
