@@ -10,7 +10,7 @@ class PhoneBook extends React.Component{
         super(props);
 
         this.state = {
-            contacts: [], //колекция телефонной книги
+            contacts: [] //колекция телефонной книги
         }
     }
         //Сохраняет коллекцию в локальное хранилище
@@ -41,6 +41,17 @@ class PhoneBook extends React.Component{
             }
             const oldState = this.state
             oldState.contacts.push(newEl)
+            this.setState(oldState)
+        }
+
+        update(id, newData){
+            const oldState = this.state
+            oldState.contacts[oldState.contacts.findIndex(el=> el.id === id)] ={
+                id: id,
+                name: newData.name,
+                subName: newData.subName,
+                number: newData.number,
+            }
             this.setState(oldState)
         }
 
@@ -93,13 +104,21 @@ class PhoneBook extends React.Component{
                         <button onClick={this.saveToLs.bind(this)}> Save </button>
                         <button onClick={this.loadSimpleData.bind(this)}> Simpele </button>
                     </div>
-                    <table>
+                    <table className="table" id="tblPhoneBook">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Subname</th>
+                                <th>Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             {
                                 this.state.contacts.map(contact=> (
                                     <>
                                         <Contact  key={contact.id} contact={contact}
-                                                  //update={this.update.bind(this)}
+                                                  update={this.update.bind(this)}
                                                   delete={this.deleteByEl.bind(this)}>
 
                                         </Contact>

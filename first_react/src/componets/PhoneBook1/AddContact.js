@@ -9,8 +9,26 @@ class AddContact extends React.Component {
             name: '',
             subName: "",
             number: "",
+            isValid: false,//все ли поля верны
+            err: [],//есть ли ошибки
         }
         this.onChange = this.onChange.bind(this)//Разрешить методу доступ к классу
+    }
+
+
+    validate(){
+        let err = []
+        if(this.state.name.length === 0)err.push("имя короткое")
+        if(this.state.name.length === 0)err.push("введите фамилию")
+        if(this.state.name.length === 0)err.push("введите номер телеона")
+
+        const oldState = this.state
+        oldState.err = err
+        if(err.length === 0)
+            oldState.isValid = true
+        else
+            oldState.isValid = false
+        this.setState(oldState)
     }
 
     //динамический перенос данных
@@ -18,6 +36,7 @@ class AddContact extends React.Component {
         const oldState = this.state;
         oldState[e.target.name] = e.target.value;
         this.setState(oldState);
+        this.validate()
     }
 
     //метод который передаст информацию в главный компонент
@@ -50,7 +69,7 @@ class AddContact extends React.Component {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button onClick={this.onSave.bind(this)} type="button" data-bs-dismiss="modal" className="btn btn-primary">Save changes</button>
+                                <button disabled={!this.state.isValid} onClick={this.onSave.bind(this)} type="button" data-bs-dismiss="modal" className="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
