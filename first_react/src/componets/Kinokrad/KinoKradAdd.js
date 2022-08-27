@@ -59,4 +59,4 @@ class KinoKradAdd extends React.Component{
     }
 }
 
-export default KinoKradAdd;
+export default KinoKradAdd

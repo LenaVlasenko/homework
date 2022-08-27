@@ -1,6 +1,6 @@
 //подключение модуля РЕАКТ
 import React from "react";
-import "./TagList.css";
+//import "./TagList.css";
 import TagAdd from "./TagAdd";
 
 //подключили стили

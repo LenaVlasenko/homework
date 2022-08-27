@@ -30,7 +30,7 @@ class PhoneBook extends React.Component{
         this.setState(oldState) // Обновляю хранилище компонента
     }
 
-        //метод который отвечает за поиещение нового контакта в колекцию
+        //метод который отвечает за помещение нового контакта в колекцию
     create(newContact) {
         let newEl = {
             id: Date.now() + "_" + Math.random(),
