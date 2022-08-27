@@ -3,6 +3,7 @@
 import VlasHeader from "./componets/Header/VlasHeader";
 import VlasFooter from "./componets/Footer/VlasFooter";
 import PhoneBook from "./componets/PhoneBook1/PhoneBook";
+import ShopIndex from "./componets/Shop/ShopIndex";
 //import TagsList from "./componets/Tags/TagsList"; <TagsList></TagsList>
 
 

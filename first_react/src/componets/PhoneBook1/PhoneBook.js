@@ -33,7 +33,7 @@ class PhoneBook extends React.Component{
         //метод который отвечает за поиещение нового контакта в колекцию
     create(newContact) {
         let newEl = {
-            id: Date.now(), // + "_" + Math.random(),
+            id: Date.now() + "_" + Math.random(),
             name: newContact.name,
             subName: newContact.subName,
             number: newContact.number
@@ -62,6 +62,7 @@ class PhoneBook extends React.Component{
         console.log(index)
         oldState.contacts.splice( index, 1)
         this.setState(oldState)
+        console.log(contactId)
     }
 
         //Эелемнт, в котором в атрибуте data-id зафиксирован Id записи
