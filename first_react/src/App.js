@@ -14,30 +14,33 @@ import PagePhoneBook from "./pages/PhoneBook";
 import PageKinokrad from "./pages/Kinokrad";
 import PagePictures from "./pages/Pictures";
 import PageTags from "./pages/Tags";
+import TagsList from "./componets/Tags/TagsList";
+import ShopIndex from "./componets/Shop/ShopIndex";
 //import TagsList from "./componets/Tags/TagsList"; <TagsList></TagsList>
 
 
 
 function App() {
   return (
-      <BrowserRouter>
+      //<BrowserRouter>
         <div className="App conteiner">
             <VlasHeader></VlasHeader>
-            <Main></Main>
+            <ShopIndex></ShopIndex>
+            {/*<Main></Main>*/}
 
-                <Routes>
-                    <Route path="/" element={<PageHome />} />
-                    <Route path="about" element={<PageAbout />} />
-                    <Route path="phone" element={<PagePhoneBook />} />
-                    <Route path="kino" element={<PageKinokrad />} />
-                    <Route path="pictures" element={<PagePictures />} />
-                    <Route path="tag" element={<PageTags />} />
-                    <Route path="*" element={<PageError />} />
-                </Routes>
+                {/*<Routes>*/}
+                {/*    <Route path="/" element={<PageHome />} />*/}
+                {/*    <Route path="about" element={<PageAbout />} />*/}
+                {/*    <Route path="phone" element={<PagePhoneBook />} />*/}
+                {/*    <Route path="kino" element={<PageKinokrad />} />*/}
+                {/*    <Route path="pictures" element={<PagePictures />} />*/}
+                {/*    <Route path="tag" element={<PageTags />} />*/}
+                {/*    <Route path="*" element={<PageError />} />*/}
+                {/*</Routes>*/}
 
             <VlasFooter></VlasFooter>
         </div>
-      </BrowserRouter>
+      //</BrowserRouter>
   );
 }
 
