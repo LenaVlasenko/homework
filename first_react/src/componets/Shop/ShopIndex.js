@@ -1,5 +1,6 @@
 import React from "react";
-import TagAdd from "../Tags/TagAdd";
+import "./ShopIndex.css"
+
 
 //1
 class ShopIndex extends React.Component{
@@ -36,7 +37,7 @@ class ShopIndex extends React.Component{
                 {
                     id: Date.now() + "_" + Math.random(),
                     name: "платье",
-                    size:["l ", "xl "],
+                    size:["m ", "xl "],
                     color:["black ", "red ",],
                     imgUrl:"https://a.lmcdn.ru/img236x341/M/P/MP002XW04BWI_13039493_1_v1_2x.jpg",
                     des:"Красота",
@@ -45,7 +46,7 @@ class ShopIndex extends React.Component{
                     id: Date.now() + "_" + Math.random(),
                     name: "платье",
                     size:["s ", "l ",],
-                    color:["pink", "red",],
+                    color:["pink ", "red ",],
                     imgUrl:"https://a.lmcdn.ru/img236x341/M/P/MP002XW1GY9Q_7473135_1_v1.jpg",
                     des:"Красота",
                 },
@@ -61,7 +62,7 @@ class ShopIndex extends React.Component{
                     id: Date.now() + "_" + Math.random(),
                     name: "платье",
                     size:["s ", "m ", "l ", "xl "],
-                    color:["black ", "pink ", "red ",],
+                    color:["black ", "pink ",],
                     imgUrl:"https://a.lmcdn.ru/img236x341/M/P/MP002XW0867Z_14846895_1_v1_2x.jpg",
                     des:"Красота",
                 },
@@ -69,7 +70,7 @@ class ShopIndex extends React.Component{
                     id: Date.now() + "_" + Math.random(),
                     name: "платье",
                     size:["s ", "m ",],
-                    color:["black " , "pink ", "yellow ",],
+                    color:["black " , "yellow ",],
                     imgUrl:"https://a.lmcdn.ru/img236x341/M/P/MP002XW0KCA1_17850247_1_v1_2x.jpg",
                     des:"Красота",
                 },
@@ -100,15 +101,15 @@ class ShopIndex extends React.Component{
     renderData() {
         console.log("Работает рендер")
         return(
-            <div>
+            <div id="cloth">
                 <ul>
                     {
                         this.state.clothes.map(clothes =>(
                            <li key={clothes.id}>
-                               <h4>название: {clothes.name}</h4>
-                               <h4>цвет: {clothes.color}</h4>
-                               <h4>размер: {clothes.size}</h4>
-                               <div>
+                               <h6>название: {clothes.name}</h6>
+                               <h6>цвет: {clothes.color}</h6>
+                               <h6>размер: {clothes.size}</h6>
+                               <div id="sizeImg">
                                    <img src={clothes.imgUrl}  />
                                     <p>{clothes.des}</p>
                                </div>
