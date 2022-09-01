@@ -14,7 +14,8 @@ import PagePhoneBook from "./pages/PhoneBook";
 import PageKinokrad from "./pages/Kinokrad";
 import PagePictures from "./pages/Pictures";
 import PageTags from "./pages/Tags";
-import TagsList from "./componets/Tags/TagsList";
+
+
 import ShopIndex from "./componets/Shop/ShopIndex";
 //import TagsList from "./componets/Tags/TagsList"; <TagsList></TagsList>
 
