@@ -33,6 +33,9 @@ class Main extends React.Component{
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/tag">My Tags</Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/shop">My site</Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
