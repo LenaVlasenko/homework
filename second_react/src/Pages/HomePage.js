@@ -4,7 +4,8 @@ class HomePage extends  React.Component{
 
 
     componentDidMount() {
-        document.getElementById("pageHeaderBg").style.backgroundImage = "url('/assets/img/home-bg.jpg'')"
+        document.getElementById("pageHeaderBg").style.backgroundImage = "url('/assets/img/home-bg.jpg')"
+        document.getElementById("pageHeaderBg").style.transition = "background-image 2s"
         document.getElementById("pageHeaderTitle").innerText = "Clean Blog"
         document.getElementById("pageHeaderSlogan").innerText = "A Blog Theme by Start Bootstrap"
     }
