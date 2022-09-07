@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdd2c527-195f-42e4-8de2-9ff55b4d1002" name="Changes" comment="BootStrapSiteReact2">
+    <list default="true" id="fdd2c527-195f-42e4-8de2-9ff55b4d1002" name="Changes" comment="transition">
+      <change afterPath="$PROJECT_DIR$/../exspressStudent/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exspressStudent/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exspressStudent/config/mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/config/mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exspressStudent/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exspressStudent/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AboutPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ContactPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ContactPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/PostPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PostPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/desing/PageHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/desing/PageHeader.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exspressStudent" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -91,7 +92,8 @@
       <workItem from="1662310982124" duration="2086000" />
       <workItem from="1662389365422" duration="1070000" />
       <workItem from="1662480237547" duration="7635000" />
-      <workItem from="1662558112712" duration="9788000" />
+      <workItem from="1662558112712" duration="21076000" />
+      <workItem from="1662583082176" duration="960000" />
     </task>
     <task id="LOCAL-00001" summary="BootStrapSiteReact">
       <created>1662238226204</created>
@@ -107,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662559118177</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="transition">
+      <created>1662570303063</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662570303063</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +137,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="BootStrapSiteReact" />
     <MESSAGE value="BootStrapSiteReact2" />
-    <option name="LAST_COMMIT_MESSAGE" value="BootStrapSiteReact2" />
+    <MESSAGE value="transition" />
+    <option name="LAST_COMMIT_MESSAGE" value="transition" />
   </component>
 </project>
