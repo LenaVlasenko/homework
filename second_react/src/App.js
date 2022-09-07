@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React from "react"
 import HomePage from "./Pages/HomePage";
 import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/ContactPage";
@@ -12,8 +12,9 @@ import Footer from "./components/desing/Footer";
 
 function App() {
   return (
-    <div className="App">
+
       <BrowserRouter>
+        <div className="App">
         <Navigation></Navigation>
         <PageHeader></PageHeader>
         <main className="mb-4">
@@ -21,22 +22,21 @@ function App() {
             <div className="row gx-4 gx-lg-5 justify-content-center">
               <div className="col-md-10 col-lg-8 col-xl-7">
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="blog" element={<PostPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="about" element={<AboutPage />} />
+                  <Route path="blog" element={<PostPage />} />
+                  <Route path="contact" element={<ContactPage />} />
+                  <Route path="*" element={<ErrorPage />} />
+                </Routes>
 
               </div>
             </div>
           </div>
         </main>
           <Footer></Footer>
-      </BrowserRouter>
-
     </div>
+</BrowserRouter>
   );
 }
 

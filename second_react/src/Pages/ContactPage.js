@@ -2,9 +2,6 @@ import React from "react"
 
 class ContactPage extends  React.Component{
 
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         document.getElementById("pageHeaderBg").style.backgroundImage = "url('/assets/img/contact-bg.jpg')"
