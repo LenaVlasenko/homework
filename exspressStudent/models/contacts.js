@@ -1,0 +1,14 @@
+// Подключиение модуля работы с базой
+const mongoose = require("mongoose");
+const {Schema} = require("mongoose");
+
+// Настройка полей (схемы)
+const contactsSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    message: String,
+    created_at: Date,
+});
+
+module.exports = mongoose.model("contacts", contactsSchema);

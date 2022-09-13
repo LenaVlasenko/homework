@@ -1,7 +1,7 @@
 // Подключить модуль работы с базами данных
 const mongoose = require("mongoose");
 
-//строка соеденения с сервером базы данных
+//строка соеденения с сервером базы данных, спрятали в .env
 //const MONGO_URI = 'mongodb+srv://Olena:233211@cluster0.x6vdqf6.mongodb.net/MONGO?retryWrites=true&w=majority'
 
 // Стандартная система подключения к базе банных

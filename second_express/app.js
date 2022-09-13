@@ -1,6 +1,3 @@
-//чтение файла из .env
-require('dotenv').config();
-
 //сам веб сервер
 let express = require('express');
 let app = express();
@@ -10,9 +7,6 @@ let app = express();
 let logger = require('morgan');
 app.use(logger('dev'));
 
-//для разрешения получения запросов с любого сайта
-let cors = require('cors')
-app.use(cors())
 
 //для работы с JSON
 app.use(express.json());
@@ -39,18 +33,10 @@ app.use('/', indexRouter);
 let usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
 
+let userRouter = require('./routes/userRouter');
+app.use('/api/userRouter', userRouter);
 
-let studentsRouter = require('./routes/students');
-app.use('/api/students', studentsRouter);
 
-let breadRouter = require('./routes/bread');
-app.use('/api/bread', breadRouter);
-
-let productRouter = require('./routes/products');
-app.use('/api/products', productRouter);
-
-let contactRouter = require('./routes/contacts');
-app.use('/api/contacts', contactRouter);
 
 
 //подготовка модуля к работе
