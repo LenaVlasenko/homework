@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="startBack">
-      <change afterPath="$PROJECT_DIR$/../front/src/components/auth/forms/FormRegister.js" afterDir="false" />
+    <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="registerUser">
+      <change afterPath="$PROJECT_DIR$/../front/src/components/auth/forms/FormLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AuthController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../second_react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../second_react/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../second_react/src/Pages/ContactPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../second_react/src/Pages/ContactPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663772534196</updated>
-      <workItem from="1663772535736" duration="6961000" />
+      <workItem from="1663772535736" duration="11030000" />
     </task>
     <task id="LOCAL-00001" summary="startBack">
       <created>1663772707301</created>
@@ -111,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="startBack" />
-    <option name="LAST_COMMIT_MESSAGE" value="startBack" />
+    <MESSAGE value="registerUser" />
+    <option name="LAST_COMMIT_MESSAGE" value="registerUser" />
   </component>
 </project>

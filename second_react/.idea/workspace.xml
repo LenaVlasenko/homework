@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdd2c527-195f-42e4-8de2-9ff55b4d1002" name="Changes" comment="telegrammUKRnet">
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/components/auth/forms/FormRegister.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth/front/src/components/auth/forms/FormLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth/back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth/back/controller/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/controller/AuthController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/back/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/routes/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth/front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/front/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ContactPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ContactPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
