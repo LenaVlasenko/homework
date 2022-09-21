@@ -83,7 +83,7 @@ class ContactPage extends  React.Component{
             phone: this.state.phone,
             message: this.state.message,
         }
-console.log(data)
+        console.log(data)
         fetch('http://localhost:3333/api/contacts', {
             method: 'POST',
             headers: {

@@ -5,45 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdd2c527-195f-42e4-8de2-9ff55b4d1002" name="Changes" comment="telegrammUKRnet">
-      <change afterPath="$PROJECT_DIR$/../auth/back/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/back/config/mongo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/back/controller/AuthController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/back/lib/guid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/back/models/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/back/public/iconsFacebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/back/routes/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/.idea/front.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/front/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/routes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/routes/users.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth/front/src/components/auth/forms/FormRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/back/controller/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/controller/AuthController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/back/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/front/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ContactPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ContactPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +102,7 @@
       <workItem from="1663148885995" duration="662000" />
       <workItem from="1663170209438" duration="1734000" />
       <workItem from="1663601180050" duration="2229000" />
-      <workItem from="1663769760702" duration="3079000" />
+      <workItem from="1663769760702" duration="4992000" />
     </task>
     <task id="LOCAL-00001" summary="BootStrapSiteReact">
       <created>1662238226204</created>

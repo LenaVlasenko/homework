@@ -5,45 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="startBack">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/mongo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/AuthController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/guid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/iconsFacebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/.idea/front.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/components/auth/forms/FormRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AuthController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../second_react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../second_react/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../second_react/src/Pages/ContactPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../second_react/src/Pages/ContactPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663772534196</updated>
-      <workItem from="1663772535736" duration="5145000" />
+      <workItem from="1663772535736" duration="6961000" />
     </task>
     <task id="LOCAL-00001" summary="startBack">
       <created>1663772707301</created>
@@ -115,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663772707301</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="startBack">
+      <created>1663788931294</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663788931294</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

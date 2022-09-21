@@ -5,6 +5,8 @@ exports.register = function (request,response) {
     let user = request.body
     const newUser = new userModel(user)
 
+    console.log(user)
+
     newUser.save( async function (err) {
         if (err){
             console.log(err)

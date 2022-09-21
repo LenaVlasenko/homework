@@ -4,11 +4,11 @@ const {Schema} = require("mongoose");
 
 // Настройка полей (схемы)
 const contactsSchema = new mongoose.Schema({
-    name: String,
+    email: {type: String, unique: true},
     password: String,
 
     //относится к профилю пользователя
-    // email: String,
+    //name: String,
     // phone: String,
     // message: String,
     // created_at: Date,
