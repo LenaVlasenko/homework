@@ -1,5 +1,7 @@
 const contactModel = require("../models/contacts");
-const nodemailer = require("nodemailer")
+const nodemailer = require("nodemailer");
+const fetch = require("node-fetch");
+const {log} = require("debug");
 
 
 exports.create = function (request, response) {
@@ -10,7 +12,7 @@ exports.create = function (request, response) {
 
     // Создали запись в базе даннх
     const newContact = new contactModel(bodyContact)
-
+console.log(newContact)
     // Сохранили запись в базе данных
     newContact.save( async function (err) {
         if (err) { // Если ошибка - вернуть ошибку
@@ -33,7 +35,7 @@ exports.create = function (request, response) {
             //это обращение к моему сотруднику
             let toMe = await transporter.sendMail({
                 from: process.env.MAIL_FROM_ADDRESS, // sender address
-                to: "vlasenko925@gmail.com", // list of receivers
+                to: "vlasenko925@ukr.net", // list of receivers
                 subject: "New Contact", // Subject line
                 text: JSON.stringify(newContact), // plain text body
                 html: JSON.stringify(newContact), // html body
@@ -48,12 +50,20 @@ exports.create = function (request, response) {
                 html: JSON.stringify(newContact), // html body
             });
 
-            console.log(toMe.messageId)
-            console.log(toUser.messageId)
+            //отправить сообщение в телеграмм
+            let api = "https://api.telegram.org/bot" + process.env.TG_API
+                + "/sendMessage?chat_id=" + process.env.TG_ID + "&text=";
 
+            //подготовить сообщение(заменить пробелы на %20 и поставить переносы
+            let msg = JSON.stringify(newContact) // Сообщение
+            msg =  msg.replace(/ /g, '%20').split('\n').join('%0A');
+            await fetch(api + msg)
+
+            //фиксируем номер отправки по данным сервера
             newContact.sendToMe = toMe.messageId
             newContact.sendToUser = toUser.messageId
 
+            //сохраняем номера отправки почты на сервер
             newContact.save(function(err){
                 if (err) { // Если ошибка - вернуть ошибку
                     console.log(err)

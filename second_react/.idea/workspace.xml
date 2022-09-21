@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fdd2c527-195f-42e4-8de2-9ff55b4d1002" name="Changes" comment="transition">
       <change beforePath="$PROJECT_DIR$/../exspressStudent/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exspressStudent/config/mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/config/mongo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exspressStudent/controller/contactController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/controller/contactController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exspressStudent/models/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/models/contacts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exspressStudent/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exspressStudent/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ContactPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ContactPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,12 @@
       <workItem from="1662646479895" duration="2529000" />
       <workItem from="1662735334126" duration="2159000" />
       <workItem from="1662967663790" duration="2475000" />
-      <workItem from="1663054716491" duration="2824000" />
+      <workItem from="1663054716491" duration="2838000" />
+      <workItem from="1663098295572" duration="1423000" />
+      <workItem from="1663148885995" duration="662000" />
+      <workItem from="1663170209438" duration="1734000" />
+      <workItem from="1663601180050" duration="2229000" />
+      <workItem from="1663769760702" duration="1342000" />
     </task>
     <task id="LOCAL-00001" summary="BootStrapSiteReact">
       <created>1662238226204</created>
