@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="registerUser">
-      <change afterPath="$PROJECT_DIR$/../front/src/components/auth/forms/FormLogin.js" afterDir="false" />
+    <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="loginUser">
+      <change afterPath="$PROJECT_DIR$/midellwares/AuthMidellwares.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AuthController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/components/auth/forms/FormRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/auth/forms/FormRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exspressStudent/controller/contactController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../exspressStudent/controller/contactController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../first_react/src/componets/Form/auth/FormSingUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../first_react/src/componets/Form/auth/FormSingUp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../second_react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../second_react/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +78,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663772534196</updated>
-      <workItem from="1663772535736" duration="11030000" />
+      <workItem from="1663772535736" duration="11613000" />
+      <workItem from="1663863728466" duration="9648000" />
     </task>
     <task id="LOCAL-00001" summary="startBack">
       <created>1663772707301</created>
@@ -89,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663788931294</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="loginUser">
+      <created>1663797369911</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663797369911</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +123,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="startBack" />
     <MESSAGE value="registerUser" />
-    <option name="LAST_COMMIT_MESSAGE" value="registerUser" />
+    <MESSAGE value="loginUser" />
+    <option name="LAST_COMMIT_MESSAGE" value="loginUser" />
   </component>
 </project>

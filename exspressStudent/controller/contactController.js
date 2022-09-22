@@ -37,6 +37,7 @@ console.log(newContact)
                 from: process.env.MAIL_FROM_ADDRESS, // sender address
                 to: "vlasenko925@ukr.net", // list of receivers
                 subject: "New Contact", // Subject line
+                messageToMe: "У нас новыей пользователь!",
                 text: JSON.stringify(newContact), // plain text body
                 html: JSON.stringify(newContact), // html body
             });

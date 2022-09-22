@@ -42,7 +42,7 @@ class FormSingUp extends React.Component {
 
 
         let oldState = this.state;
-        if(err.length > 0) {
+        if (err.length > 0) {
             oldState.isValid = false
         } else {
             oldState.isValid = true

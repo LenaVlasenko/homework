@@ -1,3 +1,4 @@
+jwt = require('jsonwebtoken')
 const userModel = require('./../models/User')
 
 //Авторизация пользователя
@@ -19,7 +20,15 @@ exports.login = function (request,response){
             }
             console.log("Find")
             console.log(dbUser)
-            return response.status(201).json(dbUser)
+            let jwtUser = {
+                //user: dbUser,  посылать данные - ну можно имя например
+                token: jwt.sign(
+                    {_id:dbUser._id,
+                        email: dbUser.email
+                    },//что я шифрую
+                    process.env.JWT_KEY)// ключ шифра
+            }
+            return response.status(201).json(jwtUser)
         }
     )
 }
