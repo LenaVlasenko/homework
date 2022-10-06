@@ -45,6 +45,7 @@ class FormRegister extends  React.Component{
                 return res.json()
             })
             .then(data => {
+                data.token = undefined;
                 console.log(data)
                 localStorage.setItem('jwtToken', data.token)//при каждом запрос добавляем ключ токена
             })

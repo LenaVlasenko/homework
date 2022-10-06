@@ -6,7 +6,7 @@ function App() {
     <div className="App">
         <FormRegister></FormRegister>
         <hr/>
-      <FormLogin></FormLogin>
+        <FormLogin></FormLogin>
     </div>
   );
 }

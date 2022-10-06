@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdd2c527-195f-42e4-8de2-9ff55b4d1002" name="Changes" comment="telegrammUKRnet">
-      <change afterPath="$PROJECT_DIR$/../auth/back/midellwares/AuthMidellwares.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/controller/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/controller/AuthController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/back/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/back/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/front/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/front/src/components/auth/forms/FormRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/front/src/components/auth/forms/FormRegister.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/.idea/socet.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socet/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exspressStudent/controller/contactController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../exspressStudent/controller/contactController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../first_react/src/componets/Form/auth/FormSingUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../first_react/src/componets/Form/auth/FormSingUp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +107,8 @@
       <workItem from="1663601180050" duration="2229000" />
       <workItem from="1663769760702" duration="4992000" />
       <workItem from="1663797921349" duration="52000" />
-      <workItem from="1663863672188" duration="1502000" />
+      <workItem from="1663863672188" duration="1808000" />
+      <workItem from="1664179983135" duration="5425000" />
     </task>
     <task id="LOCAL-00001" summary="BootStrapSiteReact">
       <created>1662238226204</created>

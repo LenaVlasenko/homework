@@ -12,7 +12,8 @@ exports.create = function (request, response) {
 
     // Создали запись в базе даннх
     const newContact = new contactModel(bodyContact)
-console.log(newContact)
+    newContact.email = newContact.email;
+    console.log(newContact)
     // Сохранили запись в базе данных
     newContact.save( async function (err) {
         if (err) { // Если ошибка - вернуть ошибку
@@ -37,9 +38,21 @@ console.log(newContact)
                 from: process.env.MAIL_FROM_ADDRESS, // sender address
                 to: "vlasenko925@ukr.net", // list of receivers
                 subject: "New Contact", // Subject line
-                messageToMe: "У нас новыей пользователь!",
                 text: JSON.stringify(newContact), // plain text body
-                html: JSON.stringify(newContact), // html body
+                html: "<table>\n" +
+                    "  <tr>\n" +
+                    "    <td>Создан новый контакт с именем:</td>" +
+                    "    <td>"+newContact.name+"</td>\n" +
+                    "  </tr>\n" +
+                    "  <tr>\n" +
+                    "    <td>Создан новый контакт с email:</td>\n" +
+                    "    <td> "+newContact.email+"</td>\n" +
+                    "  </tr>\n" +
+                    "  <tr>\n" +
+                    "    <td>Создан новый контакт с номером телефона:</td>\n" +
+                    "    <td> "+newContact.phone+"</td>\n" +
+                    "  </tr>\n" +
+                    "</table>", // html body
             });
 
             //это письмо к клиенту, что он очент важен для нас
@@ -48,7 +61,23 @@ console.log(newContact)
                 to: newContact.email, // list of receivers
                 subject: "Спасибо за обращение", // Subject line
                 text: JSON.stringify(newContact), // plain text body
-                html: JSON.stringify(newContact), // html body
+                html: "<table>\n" +
+                    "  <tr>\n" +
+                    "    <td>Вы успешно зарегестрировались с именем:</td>\n" +
+                    "    <td>"+newContact.name+"</td>\n" +
+                    "  </tr>\n" +
+                    "  <tr>\n" +
+                    "    <td>Вы успешно зарегестрировались с email:</td>\n" +
+                    "    <td>"+newContact.email+"</td>\n" +
+                    "  </tr>\n" +
+                    "  <tr>\n" +
+                    "    <td>Вы успешно зарегестрировались с номером телефона:</td>\n" +
+                    "    <td>"+newContact.phone+"</td>\n" +
+                    "  </tr>\n" +
+                    "  <tr>\n" +
+                    "    <td>Если у Вас есть вопросы, напишите нам на почту: <a href=\"#\">vlasenko925@ukr.net</a></td>\n" +
+                    "  </tr>\n" +
+                    "</table>",// html body
             });
 
             //отправить сообщение в телеграмм
