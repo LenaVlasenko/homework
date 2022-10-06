@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="tokenBack">
+    <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="bcrypt">
+      <change afterPath="$PROJECT_DIR$/models/EmailConfirmation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AuthController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,7 @@
       <updated>1663772534196</updated>
       <workItem from="1663772535736" duration="11613000" />
       <workItem from="1663863728466" duration="9716000" />
-      <workItem from="1665038132927" duration="6795000" />
+      <workItem from="1665038132927" duration="11297000" />
     </task>
     <task id="LOCAL-00001" summary="startBack">
       <created>1663772707301</created>
@@ -110,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665038157096</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bcrypt">
+      <created>1665050015521</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665050015521</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +140,7 @@
     <MESSAGE value="registerUser" />
     <MESSAGE value="loginUser" />
     <MESSAGE value="tokenBack" />
-    <option name="LAST_COMMIT_MESSAGE" value="tokenBack" />
+    <MESSAGE value="bcrypt" />
+    <option name="LAST_COMMIT_MESSAGE" value="bcrypt" />
   </component>
 </project>

@@ -1,13 +1,12 @@
 // Подключиение модуля работы с базой
 const mongoose = require("mongoose");
-const {Schema} = require("mongoose");
+
 
 // Настройка полей (схемы)
 const contactsSchema = new mongoose.Schema({
     email: {type: String, unique: true},
-    password: String,
-    created_at: Date,
-    verify_at: Date, // дата проверки пользователя
+    key: { type: String, unique: true},
+    sendToUser: String,
 
     //относится к профилю пользователя
     //name: String,
