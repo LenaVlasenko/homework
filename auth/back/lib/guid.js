@@ -1,8 +1,9 @@
 exports.generateUUID = function () { // Public Domain/MIT
     let d = new Date().getTime();//Timestamp
+    //Time in microseconds since page-load or 0 if unsupported
     let d2 = (
         (typeof performance !== 'undefined') &&
-        performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+        performance.now && (performance.now()*1000)) || 0;
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
         .replace(/[xy]/g,
             function(c) {

@@ -17,4 +17,4 @@ const contactsSchema = new mongoose.Schema({
     // sendToUser: String,
 });
 
-module.exports = mongoose.model("users", contactsSchema);
+module.exports = mongoose.model("emailConfirmation", contactsSchema);
