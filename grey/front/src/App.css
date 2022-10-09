@@ -9,9 +9,6 @@
   transform: rotate(360deg);
 }
 
-#about, #masthead, #contact, #error, #projects, #signup {
-  /*position: absolute;*/
-}
 
 #about {z-index: 10}
 #masthead {z-index: 20}
@@ -20,7 +17,5 @@
 #projects {z-index: 50}
 #signup {z-index: 60}
 
-.out {position: absolute}
-.inner {position: relative}
 
 

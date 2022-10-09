@@ -1,13 +1,21 @@
 import {useEffect} from "react";
 
+import {useSpring, animated} from "react-spring";
+
 export default function Masthead(){
 
-    useEffect(() => {    // Оновлюємо заголовок документа, використовуючи API браузера
-        // document.title = `Ви натиснули ${count} разів`;
-        console.log('use Effect')
-        document.getElementById("masthead").classList.remove("onLoad")
-        document.getElementById("masthead").classList.add("onLoad")
-    });
+    // useEffect(() => {    // Оновлюємо заголовок документа, використовуючи API браузера
+    //     // document.title = `Ви натиснули ${count} разів`;
+    //     console.log('use Effect')
+    // });
+    //
+    // const animateStyles = useSpring({
+    //     from: { opacity: 0 },
+    //     to:{opacity: 1, background: "#f00" },
+    //     leave: { opacity: 0 },
+    //     delay: 0,
+    // })
+
 
     return(
         <header className="masthead" id="masthead">
