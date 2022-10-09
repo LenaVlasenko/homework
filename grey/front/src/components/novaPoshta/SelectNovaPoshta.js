@@ -16,6 +16,7 @@ export default function SelectNovaPoshta(){
             "calledMethod": "getAreas",
         }
 
+        //появление данных
         fetch('https://api.novaposhta.ua/v2.0/json/', {
             method: 'POST',
             body: JSON.stringify(data)
@@ -26,7 +27,7 @@ export default function SelectNovaPoshta(){
             })
             .then(inAreas => {
                 console.log(inAreas)
-                setAreas(inAreas)
+                setAreas(inAreas.data)
             })
             .catch(err=> {
                 console.log("err")
