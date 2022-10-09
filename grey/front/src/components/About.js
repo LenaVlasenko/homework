@@ -1,5 +1,14 @@
+import {useEffect} from "react";
 
 export default function About(){
+
+    useEffect(() => {    // Оновлюємо заголовок документа, використовуючи API браузера
+        // document.title = `Ви натиснули ${count} разів`;
+        console.log('use Effect')
+        document.getElementById("about").classList.remove("onLoad")
+        document.getElementById("about").classList.add("onLoad")
+    });
+
     return(
         <section className="about-section text-center" id="about">
             <div className="container px-4 px-lg-5">
@@ -14,7 +23,7 @@ export default function About(){
                         </p>
                     </div>
                 </div>
-                <img className="img-fluid" src="assets/img/ipad.png" alt="..."/>
+                <img className="img-fluid" src="/assets/img/ipad.png" alt="..."/>
             </div>
         </section>
 

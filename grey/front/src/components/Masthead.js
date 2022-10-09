@@ -1,7 +1,16 @@
+import {useEffect} from "react";
 
 export default function Masthead(){
+
+    useEffect(() => {    // Оновлюємо заголовок документа, використовуючи API браузера
+        // document.title = `Ви натиснули ${count} разів`;
+        console.log('use Effect')
+        document.getElementById("masthead").classList.remove("onLoad")
+        document.getElementById("masthead").classList.add("onLoad")
+    });
+
     return(
-        <header className="masthead">
+        <header className="masthead" id="masthead">
             <div className="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div className="d-flex justify-content-center">
                     <div className="text-center">

@@ -1,5 +1,5 @@
 
-export default function Projeckts(){
+export default function Projects(){
     return(
         <section className="projects-section bg-light" id="projects">
             <div className="container px-4 px-lg-5">
