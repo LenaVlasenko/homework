@@ -1,5 +1,6 @@
 import {useState} from "react";
 
+
 export default function SelectNovaPoshta(){
 
 
@@ -40,7 +41,25 @@ export default function SelectNovaPoshta(){
 
     return(
         <>
-            <button type="button" onClick={loadAreas}>load</button>
+            {/*<button type="button" onClick={loadAreas}>load</button>*/}
+
+            <div className="btn-group">
+                <button type="button" className="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false" onClick={loadAreas}>
+                    load
+                </button>
+
+                <ul className="dropdown-menu">
+                    {areas.map(area =>(
+                        <li key={area.ref}>
+                            <a className="dropdown-item" href="#" >
+                                {area.Description}
+                            </a>
+                         </li>
+                    ))}
+                </ul>
+
+            </div>
         </>
     )
 }
