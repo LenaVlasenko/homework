@@ -6,7 +6,7 @@ export default function SelectNovaPoshta(props){
     // console.log(props)
 
     //ключ
-    const key = "edcb75117704d71c9355d8f535288be4"
+    const key = process.env.REACT_APP_NOVAPOSHTA_API_KEY
 
     //Место хранения областей
     const [areas, setAreas] = useState([]);
@@ -104,12 +104,14 @@ export default function SelectNovaPoshta(props){
 
 
 
+
     return(
         <>
             <button type="button" onClick={loadAreas}>load</button>
             <select onChange={changeSelectedArea}>
                 {areas.map(area => (
                     <option key={area.Ref} value={area.Ref}>{area.Description}</option>
+
                 ))}
             </select>
             <select onChange={changeSelectedCity}>
@@ -140,6 +142,42 @@ export default function SelectNovaPoshta(props){
             {/*    </ul>*/}
 
             {/*</div>*/}
+
+
+
+            {/*<table className="table" onChange={changeSelectedCity}>*/}
+            {/*    <thead>*/}
+            {/*    <tr>*/}
+            {/*        <th scope="col">Область</th>*/}
+            {/*        <th scope="col">Населений пункт</th>*/}
+            {/*        <th scope="col">Відділення до</th>*/}
+            {/*    </tr>*/}
+            {/*    </thead>*/}
+            {/*    <tbody>*/}
+            {/*    <tr>*/}
+            {/*        <th scope="row">*/}
+            {/*        {*/}
+            {/*            <p>{areas.Description}</p>*/}
+            {/*        }*/}
+            {/*        </th>*/}
+
+            {/*            <td>*/}
+            {/*                {cities.map(city => (*/}
+            {/*                    <p key={city.Ref} value={city.Ref}>{city.Description}</p>*/}
+            {/*                ))}*/}
+            {/*            </td>*/}
+
+            {/*            <td>*/}
+            {/*                {warehouses.map(warehouse => (*/}
+            {/*                    <p key={warehouse.Ref} value={warehouse.Ref}>{warehouse.Description}</p>*/}
+            {/*                ))}*/}
+            {/*            </td>*/}
+            {/*        /!*<th scope="row">{area.Description}</th>*!/*/}
+            {/*        /!*<td>{city.Description}</td>*!/*/}
+            {/*        /!*<td>{warehouses.Description}</td>*!/*/}
+            {/*    </tr>*/}
+            {/*    </tbody>*/}
+            {/*</table>*/}
         </>
     )
 }
