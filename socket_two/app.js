@@ -10,18 +10,57 @@ const io = new Server(httpServer, {
     }
 });
 
-/**
- * Поведение нашей системы - когда кто-то пытается присоединиться
- */
-io.on("connection" , (socket) => {
-    // Когда кто-то приходит - отправляем ему сообщение типа Hello
-    console.log("New Connection")
+// При открытии магазина у нас 10 яблок
+let appleCount = 10
 
-    socket.on('disconnect', function (){
-        console.log('Кто ушел из магазина')
+
+// Поведение нашей системы - когда кто-то пытается присоединиться
+io.on("connection" , (socket) => {
+    console.log("+ Кто то пришел в магазин")
+
+    // Тому кто пришел говорим сколько у нас яблок
+    socket.send(appleCount)
+
+    socket.on('plus', () => {
+        appleCount++
+        socket.emit('plus', appleCount)//отправить себе
+        socket.broadcast.emit('plus', appleCount)//всем кроме себя
     })
 
+    socket.on('minus', () => {
+        appleCount++
+        socket.emit('minus', appleCount)//отправить себе
+        socket.broadcast.emit('minus', appleCount)//всем кроме себя
+    })
+
+    // Просто слушаем, что нам говорят
+    socket.on('message', (world) => {
+        console.log('! Кто то сказал: ' + world);
+        // Происходит разбор, что мне сказали
+        if(world === 'plus') {
+            appleCount++
+            socket.emit('plus', appleCount)//отправить себе
+            socket.broadcast.emit('plus', appleCount)//всем кроме себя
+        }
+        else {
+            appleCount--
+            socket.emit('minus', appleCount)//отправить себе
+
+            socket.broadcast.emit('minus', appleCount)
+        }
+        //*--  Я говорю только одному - кто приходил
+        socket.send(appleCount)
+        //*-- Я говорю всем, кроме того кто приходил
+        socket.broadcast.emit('message', appleCount)
+    })
+
+    socket.on('disconnect', function() {
+        console.log('- Кто то ушел с магазина');
+    })
 })
+
+
+
 
 httpServer.listen(3000);
 
