@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 export default function SelectNovaPoshta(props){
@@ -111,7 +111,6 @@ export default function SelectNovaPoshta(props){
             <select onChange={changeSelectedArea}>
                 {areas.map(area => (
                     <option key={area.Ref} value={area.Ref}>{area.Description}</option>
-
                 ))}
             </select>
             <select onChange={changeSelectedCity}>
@@ -145,39 +144,6 @@ export default function SelectNovaPoshta(props){
 
 
 
-            {/*<table className="table" onChange={changeSelectedCity}>*/}
-            {/*    <thead>*/}
-            {/*    <tr>*/}
-            {/*        <th scope="col">Область</th>*/}
-            {/*        <th scope="col">Населений пункт</th>*/}
-            {/*        <th scope="col">Відділення до</th>*/}
-            {/*    </tr>*/}
-            {/*    </thead>*/}
-            {/*    <tbody>*/}
-            {/*    <tr>*/}
-            {/*        <th scope="row">*/}
-            {/*        {*/}
-            {/*            <p>{areas.Description}</p>*/}
-            {/*        }*/}
-            {/*        </th>*/}
-
-            {/*            <td>*/}
-            {/*                {cities.map(city => (*/}
-            {/*                    <p key={city.Ref} value={city.Ref}>{city.Description}</p>*/}
-            {/*                ))}*/}
-            {/*            </td>*/}
-
-            {/*            <td>*/}
-            {/*                {warehouses.map(warehouse => (*/}
-            {/*                    <p key={warehouse.Ref} value={warehouse.Ref}>{warehouse.Description}</p>*/}
-            {/*                ))}*/}
-            {/*            </td>*/}
-            {/*        /!*<th scope="row">{area.Description}</th>*!/*/}
-            {/*        /!*<td>{city.Description}</td>*!/*/}
-            {/*        /!*<td>{warehouses.Description}</td>*!/*/}
-            {/*    </tr>*/}
-            {/*    </tbody>*/}
-            {/*</table>*/}
         </>
     )
 }
