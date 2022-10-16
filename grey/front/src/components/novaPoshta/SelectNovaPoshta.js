@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-
+import MapNovaPoshta from "./MapNovaPoshta";
 
 export default function SelectNovaPoshta(props){
     // console.log("Props")
@@ -36,6 +36,11 @@ export default function SelectNovaPoshta(props){
                 console.log(err)
             })
     }
+
+    useEffect( () => {
+        // Оновлюємо заголовок документа, використовуючи API браузера
+        loadAreas()
+    }, []);
 
     //Метод получения городов
     const [cities, setCities] = useState([])
@@ -107,7 +112,7 @@ export default function SelectNovaPoshta(props){
 
     return(
         <>
-            <button type="button" onClick={loadAreas}>load</button>
+            {/*<button type="button" onClick={loadAreas}>load</button>*/}
             <select onChange={changeSelectedArea}>
                 {areas.map(area => (
                     <option key={area.Ref} value={area.Ref}>{area.Description}</option>
@@ -123,6 +128,7 @@ export default function SelectNovaPoshta(props){
                     <option key={warehouse.Ref} value={warehouse.Ref}>{warehouse.Description}</option>
                 ))}
             </select>
+            <MapNovaPoshta warehouses={warehouses}></MapNovaPoshta>
 
             {/*<div className="btn-group">*/}
             {/*    <button type="button" className="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"*/}
