@@ -23,14 +23,14 @@ export default function HookMethod(){
         localStorage.setItem('counter_hook', counter)
     }
 
-    const onSubmit = () => {
-        let data = {
-            counter: counter,
-            // name: userName,
-            // email: userEmail,
-        }
-        console.log(data)
-    }
+    // const onSubmit = () => {
+    //     let data = {
+    //         counter: counter,
+    //         // name: userName,
+    //         // email: userEmail,
+    //     }
+    //     console.log(data)
+    // }
 
 
     return(
@@ -44,7 +44,8 @@ export default function HookMethod(){
             {/*<input type="text"*/}
             {/*       value={userEmail}*/}
             {/*       onChange={(e) => {setUserEmail(e.target.value)}}/>*/}
-            <button onClick={onSubmit} type="button">Send</button>
+
+            {/*<button onClick={onSubmit} type="button">Send</button>*/}
 
         </>
     )

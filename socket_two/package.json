@@ -3,6 +3,8 @@
   "name": "socket_two",
   "version": "1.0.0",
   "dependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
+    "express": "^4.18.2",
     "socket.io": "^4.5.2"
   }
 }
