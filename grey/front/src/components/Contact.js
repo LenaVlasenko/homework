@@ -2,7 +2,7 @@ import ClassMethod from "./useState/ClassMethod";
 import HookMethod from "./useState/HookMethod";
 import SelectNovaPoshta from "./novaPoshta/SelectNovaPoshta";
 import ContactForm from "./forms/ContactForm";
-import PasswordForm from "./useState/PasswordForm";
+import PasswordForm from "./forms/PasswordForm";
 
 export default function Contact(){
     return(

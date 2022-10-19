@@ -24,16 +24,16 @@ function App() {
 
   return (
    <>
-       <SlickSliderClass></SlickSliderClass>
+       {/*<SlickSliderClass></SlickSliderClass>*/}
 
 
-       {/*<BrowserRouter>*/}
+       <BrowserRouter>
 
-       {/*<Navigation></Navigation>*/}
-       {/*             <MyRouters></MyRouters>*/}
-       {/*</BrowserRouter>*/}
+       <Navigation></Navigation>
+                    <MyRouters></MyRouters>
+       </BrowserRouter>
 
-       {/* <Footer></Footer>*/}
+        <Footer></Footer>
    </>
   );
 }
