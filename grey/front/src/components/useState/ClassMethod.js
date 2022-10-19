@@ -39,12 +39,10 @@ export default class ClassMethod extends React.Component{
 
     componentDidMount() {
         console.log("I am was born")
-        alert("I am was born")
     }
 
     componentWillUnmount() {
         console.log("I am died")
-        alert("I am died")
     }
 
 
