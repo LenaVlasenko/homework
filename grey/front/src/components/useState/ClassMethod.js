@@ -41,6 +41,10 @@ export default class ClassMethod extends React.Component{
         console.log("I am was born")
     }
 
+    componentDidUpdate() {
+        document.title = `Ви натиснули ${this.state.count} разів`;
+    }
+
     componentWillUnmount() {
         console.log("I am died")
     }

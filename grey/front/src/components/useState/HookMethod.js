@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 
@@ -11,6 +11,20 @@ export default function HookMethod(){
     const [userName, setUserName] = useState('name');
     const [userEmail, setUserEmail] = useState('email');
 
+    useEffect( () => {
+        console.log("Я создался")
+        return () => {
+            alert("Do some cleanup");
+        }
+    }, [])
+
+    useEffect( () => {
+        console.log("1 Будет запускаться когда сменится counter")
+    }, [counter])
+
+    useEffect( () => {
+        console.log("2 Будет запускаться когда сменится counter")
+    }, [counter])
 
 
     const plus = () => {
