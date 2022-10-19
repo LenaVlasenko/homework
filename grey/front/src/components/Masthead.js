@@ -3,6 +3,8 @@ import {useEffect} from "react";
 import {useSpring, animated} from "react-spring";
 import GoogleMapTest from "./testing/GoogleMapTest";
 import GoogleMapTestModule from "./testing/GoogleMapTestModule";
+import SimpleSlider from "./sliders/slick/SlickSliderClass";
+import SlickSliderClass from "./sliders/slick/SlickSliderClass";
 
 export default function Masthead(){
 
