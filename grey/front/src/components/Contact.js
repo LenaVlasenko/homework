@@ -3,6 +3,7 @@ import HookMethod from "./useState/HookMethod";
 import SelectNovaPoshta from "./novaPoshta/SelectNovaPoshta";
 import ContactForm from "./forms/ContactForm";
 import PasswordForm from "./forms/PasswordForm";
+import MessageUser from "./forms/MessageUser";
 
 export default function Contact(){
     return(
@@ -16,7 +17,7 @@ export default function Contact(){
                                 <h4 className="text-uppercase m-0">Address</h4>
                                 <hr className="my-4 mx-auto"/>
 
-                                <PasswordForm></PasswordForm>
+                                <MessageUser></MessageUser>
 
                                 <div className="small text-black-50">4923 Market Street, Orlando FL</div>
                             </div>
