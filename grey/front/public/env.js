@@ -15,7 +15,7 @@ window.env = {
   "HOME": "C:\\Users\\vlase",
   "HOMEDRIVE": "C:",
   "HOMEPATH": "\\Users\\vlase",
-  "IDEA_INITIAL_DIRECTORY": "C:\\WINDOWS\\System32",
+  "IDEA_INITIAL_DIRECTORY": "C:\\Program Files\\JetBrains\\PhpStorm 2021.3.2\\bin",
   "INIT_CWD": "D:\\homework\\grey\\front",
   "LOCALAPPDATA": "C:\\Users\\vlase\\AppData\\Local",
   "LOGONSERVER": "\\\\DESKTOP-U2OEJ62",

@@ -25,7 +25,7 @@ export default function PasswordForm() {
     }
     return (
         <div className="container mt-5">
-            <h5>React Confirm Password Validation Example</h5>
+            <h6>React Confirm Password Validation Example</h6>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label>Email</label>

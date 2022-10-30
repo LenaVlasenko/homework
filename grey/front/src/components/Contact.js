@@ -29,7 +29,10 @@ export default function Contact(){
                                 <i className="fas fa-envelope text-primary mb-2"></i>
                                 <h4 className="text-uppercase m-0">Email</h4>
                                 <hr className="my-4 mx-auto"/>
-                                <div className="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                                {/*<div className="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>*/}
+
+                                <PasswordForm></PasswordForm>
+
                             </div>
                         </div>
                     </div>
@@ -40,6 +43,11 @@ export default function Contact(){
                                 <h4 className="text-uppercase m-0">Phone</h4>
                                 <hr className="my-4 mx-auto"/>
                                 <div className="small text-black-50">+1 (555) 902-8832</div>
+
+                                <ContactForm></ContactForm>
+
+
+
                             </div>
                         </div>
                     </div>
