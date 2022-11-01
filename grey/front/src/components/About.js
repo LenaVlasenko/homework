@@ -2,9 +2,14 @@ import {useEffect} from "react";
 import TransitionArray from "./animate/TransitionArray";
 import Toggle from "./animate/Toggle";
 import Opticality from "./animate/Opticality";
-import {useSpring, animated} from "react-spring";
+import {useSpring, animated} from "react-spring"
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function About(){
+
+    const notify = () => toast("Wow so easy!");
 
     useEffect(() => {    // Оновлюємо заголовок документа, використовуючи API браузера
         // document.title = `Ви натиснули ${count} разів`;
@@ -31,7 +36,10 @@ export default function About(){
                             <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
                             The theme is open source, and you can use it for any purpose, personal or commercial.
                         </p>
-                        <Opticality></Opticality>
+
+                        <button onClick={notify}>Notify!</button>
+                        <ToastContainer />
+
                         <Toggle />
                     </div>
                 </div>

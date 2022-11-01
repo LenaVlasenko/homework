@@ -109,47 +109,50 @@ export default function SelectNovaPoshta(props){
 
 
 
+    return (
+        <div> Hello World </div>
+    );
 
-    return(
-        <>
-            {/*<button type="button" onClick={loadAreas}>load</button>*/}
-            <select onChange={changeSelectedArea}>
-                {areas.map(area => (
-                    <option key={area.Ref} value={area.Ref}>{area.Description}</option>
-                ))}
-            </select>
-            <select onChange={changeSelectedCity}>
-                {cities.map(city => (
-                    <option key={city.Ref} value={city.Ref}>{city.Description}</option>
-                ))}
-            </select>
-            <select>
-                {warehouses.map(warehouse => (
-                    <option key={warehouse.Ref} value={warehouse.Ref}>{warehouse.Description}</option>
-                ))}
-            </select>
-            <MapNovaPoshta warehouses={warehouses}></MapNovaPoshta>
-
-            {/*<div className="btn-group">*/}
-            {/*    <button type="button" className="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"*/}
-            {/*            aria-expanded="false" onClick={loadAreas}>*/}
-            {/*        load*/}
-            {/*    </button>*/}
-
-            {/*    <ul className="dropdown-menu">*/}
-            {/*        {areas.map(area =>(*/}
-            {/*            <li key={area.Ref}>*/}
-            {/*                <a className="dropdown-item" href="#" >*/}
-            {/*                    {area.Description}*/}
-            {/*                </a>*/}
-            {/*             </li>*/}
-            {/*        ))}*/}
-            {/*    </ul>*/}
-
-            {/*</div>*/}
-
-
-
-        </>
-    )
+    // return(
+    //     <>
+    //         {/*<button type="button" onClick={loadAreas}>load</button>*/}
+    //         <select onChange={changeSelectedArea}>
+    //             {areas.map(area => (
+    //                 <option key={area.Ref} value={area.Ref}>{area.Description}</option>
+    //             ))}
+    //         </select>
+    //         <select onChange={changeSelectedCity}>
+    //             {cities.map(city => (
+    //                 <option key={city.Ref} value={city.Ref}>{city.Description}</option>
+    //             ))}
+    //         </select>
+    //         <select>
+    //             {warehouses.map(warehouse => (
+    //                 <option key={warehouse.Ref} value={warehouse.Ref}>{warehouse.Description}</option>
+    //             ))}
+    //         </select>
+    //         <MapNovaPoshta warehouses={warehouses}></MapNovaPoshta>
+    //
+    //         {/*<div className="btn-group">*/}
+    //         {/*    <button type="button" className="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"*/}
+    //         {/*            aria-expanded="false" onClick={loadAreas}>*/}
+    //         {/*        load*/}
+    //         {/*    </button>*/}
+    //
+    //         {/*    <ul className="dropdown-menu">*/}
+    //         {/*        {areas.map(area =>(*/}
+    //         {/*            <li key={area.Ref}>*/}
+    //         {/*                <a className="dropdown-item" href="#" >*/}
+    //         {/*                    {area.Description}*/}
+    //         {/*                </a>*/}
+    //         {/*             </li>*/}
+    //         {/*        ))}*/}
+    //         {/*    </ul>*/}
+    //
+    //         {/*</div>*/}
+    //
+    //
+    //
+    //     </>
+    // )
 }
