@@ -35,14 +35,28 @@ exports.login = function (request, response) {
                 if(dbUser=== null) {
                     return response.status(403).json('{"err":"Auth"}')
                 }
-                console.log('Find')
+                // console.log('Find')
+                // console.log(dbUser)
+
+                //Всегда удалять не нужную информацию
+                dbUser['password'] = null
+                delete dbUser["password"]
                 console.log(dbUser)
+
+                //Или формируйте ответ по условиям задачи
+                let sendUser = {
+                    email: dbUser.email,
+                    role: dbUser.role
+                }
+
+
                 let jwtUser = {
-                    // user: dbUser, // Посылать данные - ну можно имя например
+                    user: sendUser, // Посылать данные - ну можно имя например
                     token: jwt.sign(
                         {
                             _id: dbUser._id,
-                            email: dbUser.email
+                            email: dbUser.email,
+                            role: dbUser.role
                         }, // Что я шифрую
                         process.env.JWT_KEY) // Ключ шифра
                 }
