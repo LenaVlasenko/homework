@@ -62,12 +62,12 @@ exports.register = function (request, response) {
     user.role = "user" // говорю о том что это простой клиент
     user.created_at = Date.now() // Когда пользователь зарегистрировался
     user.verify_at = null // Когда он подтвердил свою почту
-    console.log(user)
+    //console.log(user)
     bcrypt.hash(user.password, salt, function (err, result) {
 
         if (err) {
             console.log(err)
-            return response.status(422).json(err)
+            return response.status(422).json(err.message)
         }
         user.password = result
 
@@ -76,8 +76,8 @@ exports.register = function (request, response) {
 
         newUser.save( async function (err) {
             if (err) { // Если ошибка - вернуть ошибку
-                console.log(err)
-                return response.status(422).json(err)
+                console.log(err.toString())
+                return response.status(403).json(err.toString())
             }
             // Отправить письмо пользователю
             // с сформированной ссылкой

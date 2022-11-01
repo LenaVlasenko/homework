@@ -1,4 +1,6 @@
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 import { useTransition, animated } from 'react-spring';
@@ -14,6 +16,7 @@ import Projects from "./components/Projects";
 import Error404 from "./components/Error404";
 import MyRouters from "./MyRouters";
 import SlickSliderClass from "./components/sliders/slick/SlickSliderClass";
+import {ToastContainer} from "react-toastify";
 
 
 
@@ -30,8 +33,14 @@ function App() {
        <BrowserRouter>
 
        <Navigation></Navigation>
+           <div className="out conteiner-fluid">
+               <div className="inner">
                     <MyRouters></MyRouters>
+               </div>
+           </div>
        </BrowserRouter>
+
+       <ToastContainer />
 
         <Footer></Footer>
    </>

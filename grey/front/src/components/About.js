@@ -5,7 +5,6 @@ import Opticality from "./animate/Opticality";
 import {useSpring, animated} from "react-spring"
 
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 export default function About(){
 
@@ -38,9 +37,9 @@ export default function About(){
                         </p>
 
                         <button onClick={notify}>Notify!</button>
-                        <ToastContainer />
 
-                        <Toggle />
+
+
                     </div>
                 </div>
                 <img className="img-fluid" src="/assets/img/ipad.png" alt="..."/>

@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+import {toast} from "react-toastify";
 
 export default function FormRegistration() {
 
@@ -33,21 +34,38 @@ export default function FormRegistration() {
             body: JSON.stringify(data)
         })
             .then(res => {
-                console.log(res)
+                let a = res.json()
+                console.log(a)
+                if (res.status !== 201){
+                    switch (res.status){
+                        case 422:
+                            toast.error(" Сервер не может зашифровать пароль")
+                            break
+                        case 403:
+                            toast.error(" Такой пользователь уже существует")
+                            break
+                    }
+                    return null
+                }
                 return res.json()
             })
             .then(data => {
+                if (data === null) {
+                    // Ответ от сервера с ошибкой
+                    console.log("Я ничего не делаю")
+                    return
+                }
                 console.log(data)
+                localStorage.setItem('jwtToken', data.token)
             })
             .catch(err => {
-                console.log(err)
-                console.log('Error')
+                toast.error("<h4>Произошла ошибка</h4>" + err.message())
             })
     }
 
     return (
         <div className="container mt-5">
-            <h6>React Confirm Password Validation Example</h6>
+            <h6>Регистрация пользователя</h6>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label>Email</label>
