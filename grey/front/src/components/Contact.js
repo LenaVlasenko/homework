@@ -1,9 +1,3 @@
-import ClassMethod from "./useState/ClassMethod";
-import HookMethod from "./useState/HookMethod";
-import SelectNovaPoshta from "./novaPoshta/SelectNovaPoshta";
-import ContactForm from "./forms/ContactForm";
-import PasswordForm from "./forms/PasswordForm";
-import MessageUser from "./forms/MessageUser";
 import FormRegistration from "./auth/forms/FormRegistration";
 import FormLogin from "./auth/forms/FormLogin";
 
@@ -33,6 +27,7 @@ export default function Contact(){
                                 <hr className="my-4 mx-auto"/>
                                 {/*<div className="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>*/}
 
+                                <FormLogin></FormLogin>
 
                             </div>
                         </div>
