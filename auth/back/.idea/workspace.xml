@@ -5,53 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="EmailConfirm">
-      <change afterPath="$PROJECT_DIR$/../../grey/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/.idea/grey.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/assets/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/assets/img/bg-masthead.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/assets/img/bg-signup.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/assets/img/demo-image-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/assets/img/demo-image-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/assets/img/ipad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/dising/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/assets/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/assets/img/bg-masthead.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/assets/img/bg-signup.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/assets/img/demo-image-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/assets/img/demo-image-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/assets/img/ipad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/About.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/Contact.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/Masthead.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/Navigation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/Projects.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/Signup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../grey/back/auth/UserController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../grey/back/auth/authMiddleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/auth/forms/FormEditUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../grey/back/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/back/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../grey/back/auth/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/back/auth/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../grey/front/public/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/front/public/env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../grey/front/src/components/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/front/src/components/Contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../grey/front/src/components/auth/forms/FormLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/front/src/components/auth/forms/FormLogin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +81,8 @@
       <workItem from="1665038132927" duration="13106000" />
       <workItem from="1665056541643" duration="7662000" />
       <workItem from="1665126072235" duration="1667000" />
+      <workItem from="1667322485668" duration="1388000" />
+      <workItem from="1667381697850" duration="763000" />
     </task>
     <task id="LOCAL-00001" summary="startBack">
       <created>1663772707301</created>

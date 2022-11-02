@@ -45,7 +45,9 @@ export default function FormLogin(){
                     return
                 }
                 toast.success("Вы успешно вошли в систему")
+                //toast.success(data.token)
                 console.log(data)
+                localStorage.setItem('jwtToken', data.token)
             })
             .catch(err=>{
                 console.log(err)
