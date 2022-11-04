@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47451b19-d9eb-4163-8683-4435b10c75d7" name="Changes" comment="EmailConfirm">
-      <change afterPath="$PROJECT_DIR$/../../grey/back/auth/UserController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/back/auth/authMiddleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../grey/front/src/components/auth/forms/FormEditUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../grey/back/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/back/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../grey/back/auth/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/back/auth/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../grey/front/public/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/front/public/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../grey/front/src/components/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/front/src/components/Contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../grey/front/src/components/auth/forms/FormLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../grey/front/src/components/auth/forms/FormLogin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

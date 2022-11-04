@@ -32,7 +32,7 @@ window.env = {
   "npm_config_prefix": "C:\\Users\\vlase\\AppData\\Roaming\\npm",
   "npm_config_scripts_prepend_node_path": "auto",
   "npm_config_userconfig": "C:\\Users\\vlase\\.npmrc",
-  "npm_config_user_agent": "npm/8.11.0 node/v16.15.1 win32 x64 workspaces/false",
+  "npm_config_user_agent": "npm/8.19.2 node/v18.12.0 win32 x64 workspaces/false",
   "npm_execpath": "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
   "npm_lifecycle_event": "start",
   "npm_lifecycle_script": "react-dotenv && react-scripts start",

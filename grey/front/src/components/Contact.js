@@ -1,6 +1,7 @@
 import FormRegistration from "./auth/forms/FormRegistration";
 import FormLogin from "./auth/forms/FormLogin";
 import FormEditUser from "./auth/forms/FormEditUser";
+import FileForm from "./forms/FileForm";
 
 export default function Contact(){
     return(
@@ -42,6 +43,8 @@ export default function Contact(){
                                 <div className="small text-black-50">+1 (555) 902-8832</div>
 
                                 <FormEditUser></FormEditUser>
+                                <hr/>
+                                <FileForm></FileForm>
 
                             </div>
                         </div>
