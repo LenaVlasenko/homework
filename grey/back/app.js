@@ -17,6 +17,14 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+//Для работы с файлами
+let fileupload = require ("express-fileupload");
+app.use(
+    fileupload({
+        createParentPath: true,
+    }),
+);
+
 //для работы с кукакми
 let cookieParser = require('cookie-parser');
 app.use(cookieParser());

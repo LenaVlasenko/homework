@@ -28,7 +28,8 @@ export  default function FileForm(){
             method: "POST",
             body: formData,
         }).then((res) => res.json());
-        alert(JSON.stringify(`${res.message}, status: ${res.status}`));
+        console.log(res);
+        //alert(JSON.stringify(`${res.message}, status: ${res.status}`));
     };
 
 
