@@ -40,11 +40,10 @@ export default function Contact(){
                                 <i className="fas fa-mobile-alt text-primary mb-2"></i>
                                 <h4 className="text-uppercase m-0">Phone</h4>
                                 <hr className="my-4 mx-auto"/>
-                                <div className="small text-black-50">+1 (555) 902-8832</div>
 
                                 <FormEditUser></FormEditUser>
                                 <hr/>
-                                <FileForm></FileForm>
+
 
                             </div>
                         </div>

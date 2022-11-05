@@ -9,6 +9,10 @@ const contactsSchema = new mongoose.Schema({
     role: String, // разделение пользователей на группы
     created_at: Date,
     verify_at: Date, // дата проверки пользователя
+    avatar: String,//храница ссылка на аватар пользователя
+    name: String,
+    phone: String,
+    status: String,// подпись под аватар
 
     //относится к профилю пользователя
     //name: String,
