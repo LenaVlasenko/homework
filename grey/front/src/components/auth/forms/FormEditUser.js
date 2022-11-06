@@ -162,6 +162,7 @@ export  default function FormEditUser(){
                 </div>
                 <div className="form-group">
                     <label>Avatar</label>
+                    <img src={'http://localHost:3333' + user.avatar} height='100'/>
                     <input
                         name="avatar"
                         type="file"
