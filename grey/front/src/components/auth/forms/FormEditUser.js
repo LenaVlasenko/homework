@@ -24,7 +24,7 @@ export  default function FormEditUser(){
 
 
     //обновление данных пользователя
-    const onSubmit = function (data){
+    const setMe = function (data){
         // Объект для отправки данных на сервер
         const formData = new FormData();
 
@@ -68,7 +68,7 @@ export  default function FormEditUser(){
     }
 
     //Получение данных о текущем  пользователе по ключю
-    const getUser = function (){
+    const getMe = function (){
 
         fetch("http://localhost:3333/api" +
             "/auth/getMe", {
@@ -117,7 +117,7 @@ export  default function FormEditUser(){
     // Получить данные о пользователе при создании компонента
     useEffect(() =>{
         console.log(" Получить данные о пользователе")
-        getUser()
+        getMe()
     }, [])
 
     //если была ошибка обращения к серверу вывести ее пользователю
@@ -147,7 +147,7 @@ export  default function FormEditUser(){
         <div className="container mt-5">
             <h2>Ваш пароль</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(setMe)}>
                 <div className="form-group">
                     <label>Email</label>
                     <input
