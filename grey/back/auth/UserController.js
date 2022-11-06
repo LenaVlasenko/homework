@@ -67,9 +67,9 @@ exports.setMe = function (request, response){
                 if (request.files) {
                     //2сохранить в папку где лежат аватары
                     let avatarFile = request.files.avatar
-                    let avatarDir = './public/avatars/' + request.user._id + avatarFile.name
+                    let avatarDir = './public/store/avatars/' + request.user._id + '.jpg'//+ avatarFile.name
                     await avatarFile.mv(avatarDir) // переместить файл
-                    updateUser.avatar = '/avatars/' + request.user._id + avatarFile.name
+                    updateUser.avatar = '/store/avatars/' + request.user._id + '.jpg'//+ avatarFile.name
                 }
 
                 //3 обновить данные в базе данных
