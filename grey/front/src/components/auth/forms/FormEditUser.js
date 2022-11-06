@@ -7,9 +7,9 @@ import {toast} from "react-toastify";
 export  default function FormEditUser(){
 
     const formSchema = Yup.object().shape({
-        email: Yup.string()
-            .required('Почта обязательна')
-            .email('Формат почты не верный'),
+        // email: Yup.string()
+        //     .required('Почта обязательна')
+        //     .email('Формат почты не верный'),
         name: Yup.string()
             .required('Имя обязательна'),
         password: Yup.string()
@@ -25,6 +25,45 @@ export  default function FormEditUser(){
 
     //обновление данных пользователя
     const onSubmit = function (data){
+        // Объект для отправки данных на сервер
+        const formData = new FormData();
+
+        // Перенесем данные в формат formData
+        for ( let key in data ) {
+            if (key === 'avatar') {
+                formData.append("avatar", data.avatar[0]);
+            } else {
+                formData.append(key, data[key]);
+            }
+        }
+
+
+        //Отошлем данные
+        fetch('http://localhost:3333/api' + '/auth/setMe/', {
+            method: "POST",
+            body: formData,
+            headers: {
+                'authorization': localStorage.getItem('jwtToken')
+            }
+        })
+            .then((res) => {
+                if (res.status === 204){
+                    toast.success("Ваши данные обновлены")
+                    return null
+                }
+                return res.json()
+            })
+            .then(data => {
+                if (data === null){
+                    return
+                }
+                console.log(data)
+            })
+            .catch(err => {
+                console.log(err)
+                toast.error(err)
+                setError(err)
+            })
 
     }
 
@@ -115,7 +154,7 @@ export  default function FormEditUser(){
                         disabled
                         name="email"
                         type="email"
-                        value={user.email}
+                        defaultValue={user.email}
                         {...register('email')}
                         className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                     />
@@ -136,7 +175,7 @@ export  default function FormEditUser(){
                     <input
                         name="name"
                         type="text"
-                        value={user.name}
+                        defaultValue={user.name}
                         {...register('name')}
                         className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                     />
@@ -147,7 +186,7 @@ export  default function FormEditUser(){
                     <input
                         name="phone"
                         type="tel"
-                        value={user.phone}
+                        defaultValue={user.phone}
                         {...register('phone')}
                         className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
                     />
@@ -158,7 +197,7 @@ export  default function FormEditUser(){
                     <input
                         name="status"
                         type="text"
-                        value={user.status}
+                        defaultValue={user.status}
                         {...register('status')}
                         className={`form-control ${errors.status ? 'is-invalid' : ''}`}
                     />

@@ -12,6 +12,7 @@ router.post("/register", authController.register)
 router.post("/login", authController.login)
 
 router.get('/getMe', userController.getMe)
+router.post('/setMe', userController.setMe)
 
 
 //подготовится к подключению к общей сети дорог
