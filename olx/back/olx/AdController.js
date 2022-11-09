@@ -20,6 +20,8 @@ exports.create = function (request, response){
 
     let newAd = new adModel(bodyAd)
 
+    console.log(newAd)
+
     // Сохранили запись в базе данных
     newAd.save(function(err){
         if(err) { // Если ошибка - вернуть ошибку

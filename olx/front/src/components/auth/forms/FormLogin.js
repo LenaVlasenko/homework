@@ -51,6 +51,7 @@ export default function FormLogin(){
             })
             .catch(err=>{
                 console.log(err)
+                toast.error(err)
             })
     }
 
