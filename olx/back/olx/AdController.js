@@ -7,7 +7,7 @@ exports.create = function (request, response){
 
     //Если пользователь не авторизован - нет ключа. Он не может подать обьявление
     if (!request.user){
-        return response.status(403).json({message: "Вы не вошли в систему"})
+        return response.status(401).json({message: "Вы не вошли в систему"})
     }
 
 
@@ -36,6 +36,8 @@ exports.create = function (request, response){
 
 //вернуть все обьявления
 exports.index = function (request, response) {
+    console.log("Пришел за всеми объявлениями")
+
     adModel.find({}, function(err, allAds){
 
         if(err) {
@@ -63,5 +65,49 @@ exports.show = function (request, response) { //получили всех сту
             return response.status(200).json(ad);
         }
     });
+}
+
+//DELETE
+exports.delete = function (request, response) {
+
+    //Если пользователь не авторизован - нет ключа. Он не может подать обьявление
+    if (!request.user){
+        return response.status(401).json({message: "Вы не вошли в систему"})
+    }
+
+    let findId = request.params.ad_id
+
+    // Ищу запись по базе данных
+    adModel.findById(findId, function(err, ad){
+
+        if(err) {
+            console.log(err);
+            return response.status(404).json(err);
+        }
+        else {
+            //Если автор не совпадает - ошибка доступа
+            //console.log(ad.author_id + " " + request.user._id)
+            // console.log(typeof (ad.author_id) + " " + typeof (request.user._id))
+            if (ad.author_id.toString() !== request.user._id){
+                return response.status(403).json({message: "У вас нет права удалить это обьявление"})
+            }
+
+            adModel.findByIdAndDelete(findId, function (err){
+                if(err) {
+                    console.log(err);
+                    return response.status(422).json(err);
+                }
+
+                return response.status(204).send("Success!")
+
+            })
+
+        }
+    });
+
+    //Найти то что нужно удалить
+    // Сравнить автора и того кто удаляет, если они равны только тогда разрешить удаление
+
+
 }
 
