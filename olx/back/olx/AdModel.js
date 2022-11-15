@@ -17,6 +17,13 @@ const adSchema = new mongoose.Schema({
     isOpen: Boolean, // Октивно ли обьявление
     category: Number, // Кодкатегории 0 - недвижимость, 1 - быт тех, 2 - авто
 
+
+    // One To Many
+    likes:[],  // (ad_id) user_id - сохранить кто лайкнул пост тут
+    //favorites: [],
+    rating: [], // (ad_id) (level, user_id) - оценка пользователя
+    //comments: [], // (ad_id) (message, user_id) - коментарий
+
 });
 
 module.exports = mongoose.model("ads", adSchema)

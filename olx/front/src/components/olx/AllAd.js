@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
 import "./olxAd.css"
+import CreateAd from "./CreateAd";
 
 export default function AllAd(){
 

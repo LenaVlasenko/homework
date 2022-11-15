@@ -45,9 +45,60 @@ exports.index = function (request, response) {
             return response.status(404).json(err);
         }
         else {
+            // ???? А видят ли все кто лайкнул?
+            for (i = 0; i < allAds.length; i++){
+                if (allAds[i]['likeTotal'])
+                    allAds[i]['likeTotal'] = allAds[i]['like'].length
+                else
+                    allAds[i]['likeTotal'] = 0
+                if (request.user){// Если пользователь зарегестрирован
+                    if (allAds[i]['like'].find(request.user._id))
+                        allAds[i]['youLike'] = true
+                    else
+                        allAds[i]['youLike'] = false
+
+                }
+            }
             return response.status(200).json(allAds);
         }
     });
+}
+
+
+//поставить лайк
+exports.like = function (request, response){
+    //Если пользователь не авторизован - нет ключа. Он не может подать обьявление
+    if (!request.user){
+        return response.status(401).json({message: "Вы не вошли в систему"})
+    }
+
+    let findId = request.params.ad_id
+    let user_id = request.user._id
+
+    // Ищу запись по базе данных
+    adModel.findById(findId, function(err, ad){
+
+        if(err) {
+            console.log(err);
+            return response.status(404).json(err);
+        }
+        else {
+            // Принимаю решение - а может ли лайкнуть этот пользователь???
+
+            if (ad.likes.find(user_id)){
+                //этот пользователь лайкнул это обьявление
+                return response.status(202).json({"message": "you like ad"});
+            }
+            else {
+                ad.like.add(user_id)
+                adModel.updateOne(ad)
+                return response.status(201).json(ad);
+
+            }
+
+        }
+    });
+
 }
 
 // метод read ONE === GET, вернуть конкретное обьявление
@@ -66,6 +117,44 @@ exports.show = function (request, response) { //получили всех сту
         }
     });
 }
+
+
+exports.update = function (request, response){
+    //Если пользователь не авторизован - нет ключа. Он не может подать обьявление
+    if (!request.user){
+        return response.status(401).json({message: "Вы не вошли в систему"})
+    }
+
+    // Ищу запись по базе данных
+    adModel.findById(findId, function(err, ad){
+
+        if(err) {
+            console.log(err);
+            return response.status(404).json(err);
+        }
+        else {
+            //Если автор не совпадает - ошибка доступа
+            //console.log(ad.author_id + " " + request.user._id)
+            // console.log(typeof (ad.author_id) + " " + typeof (request.user._id))
+            if (ad.author_id.toString() !== request.user._id){
+                return response.status(403).json({message: "У вас нет права изменить это обьявление"})
+            }
+
+            adModel.findOneAndUpdate(findId, function (err){
+                if(err) {
+                    console.log(err);
+                    return response.status(422).json(err);
+                }
+
+                return response.status(204).send("Success!")
+
+            })
+
+        }
+    });
+
+}
+
 
 //DELETE
 exports.delete = function (request, response) {

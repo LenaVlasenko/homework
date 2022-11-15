@@ -10,6 +10,8 @@ router.get('/:ad_id', adController.show)
 
 router.delete('/:ad_id', adController.delete)
 
+router.post('/like/:ad_id', adController.like)
+
 
 
 module.exports = router;
