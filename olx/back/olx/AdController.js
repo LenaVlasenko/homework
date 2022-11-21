@@ -38,6 +38,22 @@ exports.create = function (request, response){
 exports.index = function (request, response) {
     console.log("Пришел за всеми объявлениями")
 
+
+    //Данные для постраничного вывода
+
+    // количество обьявлений на странице
+    let per_page = 2;
+    if (request.query.per_page !== undefined) per_page = request.query.per_page
+
+
+    // Текущая страница
+    let page = 1;
+    if (request.query.page !== undefined) page = request.query.page
+
+
+    console.log("Элементов на странице" + per_page)
+    console.log("Текущая страница" + page)
+
     adModel.find({}, function(err, allAds){
 
         if(err) {
