@@ -35,7 +35,7 @@ exports.create = function (request, response){
 }
 
 //вернуть все обьявления
-exports.index = function (request, response) {
+exports.index = async function (request, response) {
     console.log("Пришел за всеми объявлениями")
 
 
@@ -54,38 +54,51 @@ exports.index = function (request, response) {
     console.log("Элементов на странице" + per_page)
     console.log("Текущая страница" + page)
 
-    adModel.find({}, function(err, allAds){
 
-        if(err) {
-            console.log(err);
-            return response.status(404).json(err);
-        }
-        else {
-            // ???? А видят ли все кто лайкнул?
-            for (let i = 0; i < allAds.length; i++){
-                // console.log(allAds[i])
-                if (allAds[i]['likeTotal'])
-                    allAds[i]['likeTotal'] = allAds[i]['like'].length
-                else
-                    allAds[i]['likeTotal'] = 0
-                // Если есть пользователь и есть запись о лайках то:
-                if (request.user && allAds[i]['like']){// Если пользователь зарегестрирован
-                    try {
-                        console.log("Likes: ")
-                        console.log(allAds[i]['like'])// Нет лайков - вот и все
-                        if (allAds[i]['like'].find(request.user._id))
-                            allAds[i]['youLike'] = true
-                        else
-                            allAds[i]['youLike'] = false
-                    } catch (e) {
-                        console.log(e)
-                    }
+    let total = await adModel.count();
+    let allAds = await adModel.find({}).sort('created_at').skip((per_page*(page - 1))).limit(per_page);
+    let send = {
+        total: total,// Сколько всего в колекции
+        page: page,// Какая сейчас страница открыта
+        per_page: per_page,// Сколько элементов на страницу
+        data: allAds// Сами элементы данной страницы
+    }
 
-                }
-            }
-            return response.status(200).json(allAds);
-        }
-    });
+    console.log(send)
+    return response.status(200).json(send);
+
+    // adModel.find({}, function(err, allAds){
+    //
+    //     if(err) {
+    //         console.log(err);
+    //         return response.status(404).json(err);
+    //     }
+    //     else {
+    //         // ???? А видят ли все кто лайкнул?
+    //         for (let i = 0; i < allAds.length; i++){
+    //             // console.log(allAds[i])
+    //             if (allAds[i]['likeTotal'])
+    //                 allAds[i]['likeTotal'] = allAds[i]['like'].length
+    //             else
+    //                 allAds[i]['likeTotal'] = 0
+    //             // Если есть пользователь и есть запись о лайках то:
+    //             if (request.user && allAds[i]['like']){// Если пользователь зарегестрирован
+    //                 try {
+    //                     console.log("Likes: ")
+    //                     console.log(allAds[i]['like'])// Нет лайков - вот и все
+    //                     if (allAds[i]['like'].find(request.user._id))
+    //                         allAds[i]['youLike'] = true
+    //                     else
+    //                         allAds[i]['youLike'] = false
+    //                 } catch (e) {
+    //                     console.log(e)
+    //                 }
+    //
+    //             }
+    //         }
+    //         return response.status(200).json(allAds);
+    //     }
+    // });
 }
 
 
