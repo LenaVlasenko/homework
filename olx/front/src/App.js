@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="out conteiner-fluid">
+        <div className="out container-fluid">
           <div className="inner">
             <MyRoutes></MyRoutes>
           </div>

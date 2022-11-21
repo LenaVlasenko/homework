@@ -131,7 +131,7 @@ exports.update = function (request, response){
     //Если пользователь не авторизован - нет ключа. Он не может подать обьявление
     //Проверка авторизации пользователя
     if (!request.user){
-        return response.status(401).json({message: "Вы не вошли в систему"})
+        return response.status(401).json({message: "У вас нет прав редактировать это обьявление"})
     }
 
     //Получаем id обьявления из маршрута ( с клиента )
@@ -152,6 +152,12 @@ exports.update = function (request, response){
             if (ad.author_id.toString() !== request.user._id){
                 return response.status(403).json({message: "У вас нет права изменить это обьявление"})
             }
+
+            //получаем поля для обновления ( с клиента )
+            let bodyAd = request.body
+            //TODO - перенести данные
+            ad.title = "Новый заголовок" //bodyAd.title (переданые заголовок с клиента)
+            ad.save() //метод библиотеки Mongoose
 
                 return response.status(204).send("Success!")
 
