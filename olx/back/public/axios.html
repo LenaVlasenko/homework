@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Axios</title>
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+
+    function loadAd_Axios() {
+
+
+
+        axios.get("http://localhost:3333/api" + "/ad/", {
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': localStorage.getItem('jwtToken')
+            }
+        })
+
+            .then(response => {
+                // обробка успішного запиту
+                console.log(" 1 then Axios")
+                console.log(response);
+                console.log(response.status)
+                console.log(response.data)
+            })
+            //.catch(function (error) {
+            .catch(error => {
+                // обробка помилки
+                console.log(" Error Axios")
+                console.log(error);
+            })
+            // .then(function () {
+            //     // виконується завжди
+            //     console.log("Выполняюсь всегда")
+            // });
+
+    }
+
+        loadAd_Axios()
+
+</script>
+
+<script>
+
+    function loadAd_Fetch (){
+        fetch("http://localhost:3333/api" + "/ad/", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': localStorage.getItem('jwtToken')
+            }
+        })
+            .then(res => {
+                console.log(" 1 then Fetch")
+                console.log(res)
+                if (res.status !== 200){
+                    return null
+                }
+                return res.json()
+            })
+            .then(data =>{
+                console.log(" 2 then Fetch")
+                if (data === null) {
+                    // Ответ от сервера с ошибкой
+                    console.log("Я ничего не делаю")
+                    return
+                }
+                console.log(data)
+            })
+            .catch(err=>{
+                console.log(" Error Fetch")
+                console.log(err)
+            })
+
+    }
+
+    loadAd_Fetch()
+
+</script>
+
+
+
+
+</body>
+</html>
