@@ -13,7 +13,7 @@ app.use(logger('dev'));
 let cors = require('cors')
 app.use(cors())
 
-//для работы с JSON
+// Для работы JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

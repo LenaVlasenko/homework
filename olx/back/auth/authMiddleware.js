@@ -12,7 +12,7 @@ const authMiddleware = function (request, response, next){
         request.headers["x-access-token"] ||
         request.headers.authorization;
 
-    //console.log("Проверяю ключ: " + token)
+    console.log("Проверяю ключ: " + token)
 
 
    // Если передали ключ проверю его
@@ -31,8 +31,8 @@ const authMiddleware = function (request, response, next){
                    // console.log(err)
                 }//если есть ошибка просто пойду дальше
                 else {
-                    //console.log('Восстановленные данные')
-                    //console.log(jwtUser)
+                    console.log('Восстановленные данные')
+                    console.log(jwtUser)
                     request.user = jwtUser // передаю всем кто пришел
                 }
             }

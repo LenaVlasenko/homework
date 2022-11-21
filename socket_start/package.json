@@ -1,0 +1,8 @@
+{
+  "name": "socket_start",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "socket.io": "^4.5.3"
+  }
+}

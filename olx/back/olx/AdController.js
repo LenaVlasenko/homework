@@ -46,16 +46,24 @@ exports.index = function (request, response) {
         }
         else {
             // ???? А видят ли все кто лайкнул?
-            for (i = 0; i < allAds.length; i++){
+            for (let i = 0; i < allAds.length; i++){
+                // console.log(allAds[i])
                 if (allAds[i]['likeTotal'])
                     allAds[i]['likeTotal'] = allAds[i]['like'].length
                 else
                     allAds[i]['likeTotal'] = 0
-                if (request.user){// Если пользователь зарегестрирован
-                    if (allAds[i]['like'].find(request.user._id))
-                        allAds[i]['youLike'] = true
-                    else
-                        allAds[i]['youLike'] = false
+                // Если есть пользователь и есть запись о лайках то:
+                if (request.user && allAds[i]['like']){// Если пользователь зарегестрирован
+                    try {
+                        console.log("Likes: ")
+                        console.log(allAds[i]['like'])// Нет лайков - вот и все
+                        if (allAds[i]['like'].find(request.user._id))
+                            allAds[i]['youLike'] = true
+                        else
+                            allAds[i]['youLike'] = false
+                    } catch (e) {
+                        console.log(e)
+                    }
 
                 }
             }
@@ -121,13 +129,18 @@ exports.show = function (request, response) { //получили всех сту
 
 exports.update = function (request, response){
     //Если пользователь не авторизован - нет ключа. Он не может подать обьявление
+    //Проверка авторизации пользователя
     if (!request.user){
         return response.status(401).json({message: "Вы не вошли в систему"})
     }
 
+    //Получаем id обьявления из маршрута ( с клиента )
+    let findId = request.params.ad_id
+
     // Ищу запись по базе данных
     adModel.findById(findId, function(err, ad){
 
+        //Если база данных выдала ошибку то вернуть 404
         if(err) {
             console.log(err);
             return response.status(404).json(err);
@@ -140,15 +153,7 @@ exports.update = function (request, response){
                 return response.status(403).json({message: "У вас нет права изменить это обьявление"})
             }
 
-            adModel.findOneAndUpdate(findId, function (err){
-                if(err) {
-                    console.log(err);
-                    return response.status(422).json(err);
-                }
-
                 return response.status(204).send("Success!")
-
-            })
 
         }
     });

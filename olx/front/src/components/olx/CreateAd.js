@@ -78,6 +78,8 @@ export default function CreateAd(){
 
 
 
+
+
     return (
         <div className="container mt-5">
             <h6>Создать обьявление</h6>

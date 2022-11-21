@@ -10,7 +10,7 @@ export default function AllAd(){
     const [user, setUser] = useState({name: "гость", _id: 0}) // по умолчанию у нас гость
 
     const loadAd = function (){
-            fetch("http://localhost:3333/api" + "/ad", {
+            fetch("http://localhost:3333/api" + "/ad/", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,11 +72,42 @@ export default function AllAd(){
             })
     }
 
+    // const updateAd = function (ev){
+    //     console.log("Start update")
+    //     console.log(ev.target.value)
+    //     let id = ev.target.value
+    //
+    //     fetch("http://localhost:3333/api" + "/ad/" + id, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'authorization': localStorage.getItem('jwtToken')
+    //
+    //         }
+    //     })
+    //         .then(res => {
+    //             if (res.status === 204){
+    //                 toast.success(" Вы успешно обновили обьявление ")
+    //                 loadAd()
+    //                 return
+    //             }
+    //             toast.error(" Произошла ошибка ")
+    //
+    //         })
+    //
+    //         .catch(err=>{
+    //             console.log(err)
+    //             toast.error(err)
+    //         })
+    // }
+
     useEffect(() => {
-        loadAd()
+        console.log("Start restore ads")
         if( localStorage.getItem('user')){ // если есть данные по пользователю - востановить их
             setUser(JSON.parse(localStorage.getItem('user')))
         }
+
+        loadAd()
     }, [])
 
 
@@ -84,6 +115,7 @@ export default function AllAd(){
     return (
         <>
             <div>{user.name}</div>
+            {/*<CreateAd></CreateAd>*/}
             <ul>
                 {ads.map(ad =>(
                     <li key={ad._id}>
