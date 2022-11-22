@@ -14,8 +14,9 @@ const adSchema = new mongoose.Schema({
     city: String, // Город
     imgMain: String, // Ссылка на главное изображение
     images: [String], // Набор дополнительныхизоброжений
-    isOpen: Boolean, // Октивно ли обьявление
+    isOpen: Boolean, // Актуально ли обьявление
     category: Number, // Кодкатегории 0 - недвижимость, 1 - быт тех, 2 - авто
+    count: Number, // Остаток на складе ( нет в наличии )
 
 
     // One To Many

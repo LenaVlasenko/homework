@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
 import "./olxAd.css"
-import CreateAd from "./CreateAd";
+
 
 export default function AllAd(){
 
@@ -11,6 +11,7 @@ export default function AllAd(){
     const [page, setPage] = useState(1)
     const [per_page, setPerPage] = useState(2)
 
+    const totalPages = Math.ceil(total / per_page)
 
     const loadAd = function (){
         //toast.error('?page=' + page + "&per_page" + per_page)
@@ -110,7 +111,7 @@ export default function AllAd(){
     // }
 
     useEffect(() => {
-        console.log("Start restore ads")
+        //console.log("Start restore ads")
         if( localStorage.getItem('user')){ // если есть данные по пользователю - востановить их
             setUser(JSON.parse(localStorage.getItem('user')))
         }
@@ -141,7 +142,51 @@ export default function AllAd(){
         loadAd()
     }, [page])
 
-    const goPage = function () {
+    const goPage = function (ev) {
+        console.log(ev.target.dataset.pege)
+        setPage(ev.target.dataset.pege)
+
+    }
+
+    const loadMore = function (){
+        // //let newData page = page + 1
+        // fetch("http://localhost:3333/api"
+        //     + "/ad?page=" + page + "&per_page" + per_page, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'authorization': localStorage.getItem('jwtToken')
+        //
+        //     }
+        // })
+        //     .then(res => {
+        //         //console.log(res)
+        //         if (res.status !== 200){
+        //             toast.error("Ошибка")
+        //             return null
+        //         }
+        //         return res.json()
+        //     })
+        //     .then(data =>{
+        //         if (data === null) {
+        //             // Ответ от сервера с ошибкой
+        //             console.log("Я ничего не делаю")
+        //             return
+        //         }
+        //         //toast.success("Вы успешно получили обьявление")
+        //         console.log(newData)
+        //         setTotal(newData.total)// ВСего обьявлений
+        //         //setPage(data.page)// номер текущей страници
+        //         //setPerPage(data.per_page)// показывать на странице
+        //         // loadPage - информация о том, какие страници я уже загрузил
+        //         let havingData = ads
+        //         havingData.append(newData.data) // ???
+        //         setAds(havingData)// Обьявление???
+        //     })
+        //     .catch(err=>{
+        //         console.log(err)
+        //         toast.error(err)
+        //     })
 
     }
 
@@ -151,7 +196,7 @@ export default function AllAd(){
         <>
             <div>{user.name}</div>
             {/*<CreateAd></CreateAd>*/}
-            <div>Page {page} Total: {total} Per_page:{per_page}</div>
+            <div> Page {page} Total: {total} Per_page:{per_page} : Total pages = {totalPages}</div>
             <ul>
                 {ads.map(ad =>(
                     <li key={ad._id}>
@@ -165,15 +210,28 @@ export default function AllAd(){
                 ))}
             </ul>
 
+            <div onClick={loadMore}>Загрузить еще</div>
+
             <nav aria-label="Page navigation example">
                 <ul className="pagination">
-                    <li className="page-item"><a className="page-link" onClick={goPrev}>Previous</a></li>
-                    <li className="page-item"><a className="page-link">1</a></li>
-                    <li className="page-item"><a className="page-link">2</a></li>
-                    <li className="page-item"><a className="page-link">3</a></li>
-                    <li className="page-item"><a className="page-link" onClick={goNext}>Next</a></li>
+                    <li className="page-item"><a className="page-link" onClick={goPrev}> Previous </a></li>
+
+                    {/*{[...Array(totalPages)].map((x, i) =>*/}
+                    {/*    <li className="page-item"><a className="page-link" data-page={i+1} onClick={goPage}>{i+1}</a></li>*/}
+                    {/*)}*/}
+
+                    {(() => {
+                        let li = [];
+                        for (let i = 1; i <= totalPages; i++) {
+                            li.push(<li className="page-item"><a className="page-link" data-page={i} onClick={goPage}>{i}</a></li>);
+                        }
+                        return li;
+                    })()}
+
+                    <li className="page-item"><a className="page-link" onClick={goNext}> Next </a></li>
                 </ul>
             </nav>
+
 
         </>
     )
