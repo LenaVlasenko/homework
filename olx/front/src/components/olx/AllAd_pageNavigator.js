@@ -1,7 +1,7 @@
 import CreateAd from "./CreateAd";
 import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
-import "./olxAd.css"
+import "./olxAd_pageNavigator.css"
 
 export default function AllAd_pageNavigator(){
 
