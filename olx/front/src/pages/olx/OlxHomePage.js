@@ -5,7 +5,7 @@ export default function OlxHomePage(){
     return (
         <>
             Все обьявления страници
-            <AllAd_pageNavigator></AllAd_pageNavigator>
+            <AllAd></AllAd>
         </>
     )
 }
