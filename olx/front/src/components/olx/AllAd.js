@@ -1,6 +1,6 @@
-import CreateAd from "./CreateAd";
 import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
+import "./olxAd.css"
 
 export default function AllAd(){
 
@@ -150,7 +150,7 @@ export default function AllAd(){
                 ))
                 }
             </ul>
-            <div onClick={loadMore}> Загрузить дальше </div>
+            <div className="lod" onClick={loadMore}> Загрузить дальше </div>
         </div>
     )
 }

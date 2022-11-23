@@ -1,7 +1,7 @@
 import CreateAd from "./CreateAd";
 import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
-import "./olxAd_pageNavigator.css"
+import "./olxAd.css"
 
 export default function AllAd_pageNavigator(){
 
@@ -55,7 +55,10 @@ export default function AllAd_pageNavigator(){
                 setTotal(data.total) // Всего объявлений
                 // setPage(data.page) // номер текущей страницы
                 // setPerPage(data.per_page) // показывать на странице
+
+
                 setAds(data.data) // Объявления ????
+                setAds(ads.concat(data.data))// load More
             })
             .catch(err=> {
                 console.log(err)
@@ -130,44 +133,13 @@ export default function AllAd_pageNavigator(){
         setPage(ev.target.dataset.page)
     }
 
+    //Загрузить еще
     const loadMore = function () {
-        // // page = page + 1
-        // fetch('http://localhost:3333/api'
-        //     + '/ad?page=' + page + "&per_page=" + per_page  ,{
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'authorization': localStorage.getItem('jwtToken')
-        //         // 'Content-Type': 'application/x-www-form-urlencoded',
-        //     }
-        // })
-        //     .then(res => {
-        //         // console.log(res)
-        //         if(res.status !==200) {
-        //             toast.error("Ошибка")
-        //             return null
-        //         }
-        //         return res.json()
-        //     })
-        //     .then(data => {
-        //         if(data === null) {
-        //             console.log("Я ничего не делаю")
-        //             return
-        //         }
-        //         // toast.success("Вы успешно получили объявления")
-        //         console.log(newData)
-        //         setTotal(newData.total) // Всего объявлений
-        //         // setPage(data.page) // номер текущей страницы
-        //         // setPerPage(data.per_page) // показывать на странице
-        //         // loadPages - информация о том - какие страницы я уже загрузил
-        //         let havingData = ads
-        //         havingData.append(newData.data) // &???
-        //         setAds(havingData) // Объявления ????
-        //     })
-        //     .catch(err=> {
-        //         console.log(err)
-        //         toast.error(err)
-        //     })
+        if (page * per_page > total) {
+            toast.info(" Вы достигли дна" + page + " " +  per_page + " " + total)
+            return
+        }
+        setPage(page+1)
     }
 
     return (
@@ -205,7 +177,7 @@ export default function AllAd_pageNavigator(){
                             li.push(<li className="page-item"><a className="page-link"> ... </a></li>);
                         }
                         for (let i = firstPage; i <= countPage; i++) {
-                            if (i === page ) {  } // Если я вывожу текущую страницу - добавить например класс
+                            if (i === page ) {} // Если я вывожу текущую страницу - добавить например класс
                             li.push(<li className="page-item"><a className="page-link" data-page={i} onClick={goPage}>{i}</a></li>);
                         }
                         if(countPage != totalPages) {
