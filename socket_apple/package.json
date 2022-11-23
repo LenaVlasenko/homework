@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "name": "socket_apple",
+  "version": "1.0.0",
+  "dependencies": {
+    "socket.io": "^4.5.4"
+  }
+}
