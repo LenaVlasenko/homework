@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dolly</title>
+    <style>
+        #Universe {width: 150%;}
+        #dollyName {position: absolute; left: 0; top: 0; }
+        #dressDiv  {position: absolute; top:110px; left: 10px; }
+        .blueSuit {top:110px; left: 10px;}
+        .brownDress {top:110px; left: 10px;}
+        .fullBody {top:110px; left: 10px;}
+        .greenDress {top:110px; left: 10px;}
+        .lightGreenDress {top:110px; left: 10px;}
+        .orangeDress {top:110px; left: 10px;}
+        #headdressDiv{position: absolute; left: 25%; top: 0;}
+        #headdressDiv ul{display: flex;}
+        #hatDiv{position: absolute; left: 0; top: 0;}
+
+
+        #closetDiv li {display: inline-block;}
+    </style>
+</head>
+<body>
+<div id="Universe">
+
+</div>
+<ul id="msg">
+
+</ul>
+
+<script src="dolly.js"></script>
+<script src="closet.js"></script>
+<script src="hat.js"></script>
+
+<script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+        integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+        crossorigin="anonymous"></script>
+
+
+<script>
+
+    // Создаем активный сокет - и устанавливаем соединение
+    const socket = io("ws://localhost:3000");
+
+    //Когда я буду выводить свои сообщения
+    const ul = document.getElementById('msg')
+    //Моя реакция когда с сервера сообщили о типе "plus"
+    socket.on('dresses', (Universe) =>{
+        let li = document.createElement('li')
+        li.innerText = (new Date).toLocaleTimeString() + " Долли переоделась:  " + name
+        ul.appendChild(li)
+        document.getElementById('dressDolly').value = Universe
+    })
+
+    //Моя реакция когда с сервера сообщили о типе "minus"
+    socket.on('hat', (Universe) =>{
+        let li = document.createElement('li')
+        li.innerText =  (new Date).toLocaleTimeString()  + " Долли надела шляпу " + name
+        ul.appendChild(li)
+        document.getElementById('dressDolly').value = Universe
+    })
+
+
+    //Просто слушаем что говорят
+    socket.on('message', (Universe) =>{
+        console.log(Universe)
+        document.getElementById('dressDolly').value = Universe
+    })
+
+    //Крикнуть что я принес яблоко
+    document.getElementById('dresses').onclick = () => {
+        //socket.send('plus')// тогда мое сообщение прийдет на сервер socket.on('message')
+        socket.emit('dresses')
+    }
+
+    //Крикнуть что я забрал яблоко
+    document.getElementById('hat').onclick = () => {
+        //socket.send('minus')// тогда мое сообщение прийдет на сервер socket.on('message')
+        socket.emit('hat')
+    }
+</script>
+
+</body>
+</html>
