@@ -1,7 +1,5 @@
 <script setup>
-import MySecond from "./components/first/MySecond.vue";
-import MyFirst from "./components/first/MyFirst.vue";
-import MyArray from "./components/first/MyArray.vue";
+import MyComputed from "./components/Vars/MyComputed.vue";
 </script>
 
 <template>
@@ -18,7 +16,7 @@ import MyArray from "./components/first/MyArray.vue";
   </header>
 
   <main>
-    <MyArray></MyArray>
+    <MyComputed></MyComputed>
   </main>
 </template>
 
