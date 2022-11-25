@@ -54,10 +54,27 @@
       <span v-text="userRef.name"> </span
     ></label>
   </div>
+
+  <button @click="doOnClick">Echo</button>
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { onMounted, onUnmounted, onUpdated, reactive, ref } from "vue";
+
+onMounted(() => {
+  console.log("mounted()");
+});
+onUpdated(() => {
+  console.log("updated()");
+});
+
+onUnmounted(() => {
+  console.log("unmounted()");
+});
+
+const doOnClick = () => {
+  console.log(userNoReactive);
+};
 
 let someVars = "Hello <strong> World </strong>";
 let someInputVars = "User Name";
