@@ -1,5 +1,5 @@
 <script setup>
-import MyComputed from "./components/Vars/MyComputed.vue";
+import NpAreas from "./components/novaPoshta/NpAreas.vue";
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import MyComputed from "./components/Vars/MyComputed.vue";
   </header>
 
   <main>
-    <MyComputed></MyComputed>
+    <NpAreas></NpAreas>
   </main>
 </template>
 
