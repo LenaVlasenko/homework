@@ -1,5 +1,5 @@
 <script setup>
-import NpAreas from "./components/novaPoshta/NpAreas.vue";
+import MyPhone from "./components/phoneBoock/MyPhone.vue";
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import NpAreas from "./components/novaPoshta/NpAreas.vue";
   </header>
 
   <main>
-    <NpAreas></NpAreas>
+    <MyPhone></MyPhone>
   </main>
 </template>
 
