@@ -14,6 +14,7 @@
 
 <script setup>
 import { ref } from "vue";
+
 const peoples = ref([]);
 const addPeople = function () {
   peoples.value.push(document.getElementById("newName").value);
