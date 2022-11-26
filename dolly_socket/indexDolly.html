@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Dolly</title>
     <style>
-        #Universe {width: 150%;}
+        #Universe {width: 100%;}
         #dollyName {position: absolute; left: 0; top: 0; }
         #dressDiv  {position: absolute; top:110px; left: 10px; }
         .blueSuit {top:110px; left: 10px;}
@@ -46,39 +46,40 @@
     //Когда я буду выводить свои сообщения
     const ul = document.getElementById('msg')
     //Моя реакция когда с сервера сообщили о типе "plus"
-    socket.on('dresses', (Universe) =>{
+    socket.on('none', (dress) =>{
         let li = document.createElement('li')
-        li.innerText = (new Date).toLocaleTimeString() + " Долли переоделась:  " + name
+        li.innerText = (new Date).toLocaleTimeString() + " Долли без одежды!Одень ее  " + dress
         ul.appendChild(li)
-        document.getElementById('dressDolly').value = Universe
+        document.getElementById('appleCount').value = dress
     })
 
     //Моя реакция когда с сервера сообщили о типе "minus"
-    socket.on('hat', (Universe) =>{
+    socket.on('minus', (dress) =>{
         let li = document.createElement('li')
-        li.innerText =  (new Date).toLocaleTimeString()  + " Долли надела шляпу " + name
+        li.innerText =  (new Date).toLocaleTimeString()  + " Долли переоделась " + dress
         ul.appendChild(li)
-        document.getElementById('dressDolly').value = Universe
+        document.getElementById('appleCount').value = dress
     })
 
 
     //Просто слушаем что говорят
-    socket.on('message', (Universe) =>{
-        console.log(Universe)
-        document.getElementById('dressDolly').value = Universe
+    socket.on('message', (dress) =>{
+        console.log(dress)
+        document.getElementById('appleCount').value = dress
     })
 
     //Крикнуть что я принес яблоко
-    document.getElementById('dresses').onclick = () => {
+    document.getElementById('none').onclick = () => {
         //socket.send('plus')// тогда мое сообщение прийдет на сервер socket.on('message')
-        socket.emit('dresses')
+        socket.emit('none')
     }
 
     //Крикнуть что я забрал яблоко
-    document.getElementById('hat').onclick = () => {
+    document.getElementById('minus').onclick = () => {
         //socket.send('minus')// тогда мое сообщение прийдет на сервер socket.on('message')
-        socket.emit('hat')
+        socket.emit('minus')
     }
+
 </script>
 
 </body>
