@@ -1,5 +1,5 @@
 <script setup>
-import ValidPass from "./components/MyPassword/ValidPass.vue";
+import PostElement from "./components/slots/post/PostElement.vue";
 </script>
 
 <template>
@@ -16,7 +16,15 @@ import ValidPass from "./components/MyPassword/ValidPass.vue";
   </header>
 
   <main>
-    <ValidPass></ValidPass>
+    <MyParent>
+      <PostElement>
+        <template #header>А это отправить в заголовок</template>
+        <template #footer>А это уйдет в подвал</template>
+        <div>Это попадает в место - где должен быть слот</div>
+        <template #body>А это отправить в тело</template>
+        <div>Это тоже попадает в место - где должен быть слот</div>
+      </PostElement>
+    </MyParent>
   </main>
 </template>
 
