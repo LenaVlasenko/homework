@@ -1,21 +1,11 @@
 <script setup>
-import PostElement from "./components/slots/post/PostElement.vue";
-import NpAreas from "./components/novaPoshta/NpAreas.vue";
+import MyParent from "./components/perentChildren/MyParent.vue";
 </script>
 
 <template>
   <main>
     <h1>Заголовок в обвертке (Main)</h1>
-    <PostElement>
-      <template #header>А это отправить в заголовок</template>
-      <template #footer>А это уйдет в подвал</template>
-      <div>Это попадает в место - где должен быть slot</div>
-      <template #body>А это отправить в тело</template>
-      <div>Это тоже попадает в место - где должен быть slot</div>
-    </PostElement>
-    <PostElement>
-      <template #header> <NpAreas /> </template>
-    </PostElement>
+    <MyParent propsName="propsValue" varName="5"> </MyParent>
   </main>
 </template>
 
