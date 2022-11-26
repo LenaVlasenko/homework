@@ -21,13 +21,13 @@ let user = reactive({ name: "Tom", age: 25 });
 const funByAge = () => {
   return user.age > 17
     ? "Добро пожаловать(функция со скрипта)"
-    : "Доступ запрещен Добро пожаловать(функция со скрипта)";
+    : "Доступ запрещен (функция со скрипта)";
 };
 
 const computedByAge = computed(() => {
   return user.age > 17
     ? "Добро пожаловать(функция со скрипта computed)"
-    : "Доступ запрещен Добро пожаловать(функция со скрипта computed)";
+    : "Доступ запрещен (функция со скрипта computed)";
 });
 
 const nameValid = computed(() => {
