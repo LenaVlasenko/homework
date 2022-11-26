@@ -24,7 +24,7 @@ const textValid = computed(() => {
 const textLetterValid = computed(() => {
   return !password.text.match(/(?=.*[A-Z])(?=.*[0-9])/)
     ? "Пароль должен содержать одну большую букву и одну цифру"
-    : "Все ок";
+    : "Все ок, super good";
 });
 </script>
 
