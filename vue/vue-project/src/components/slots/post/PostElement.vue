@@ -1,5 +1,6 @@
 <template>
-  <h2>Post Element</h2>
+  <h1>Заголовок в обвертке (Post Element)</h1>
+  <h3>Post Element</h3>
   <article style="border: 2px solid mediumseagreen">
     <header>
       <slot name="header"></slot>
@@ -18,4 +19,8 @@
 
 <script setup></script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  background: mediumseagreen;
+}
+</style>

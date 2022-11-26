@@ -46,4 +46,8 @@ const loadAreas = () => {
 onMounted(() => loadAreas());
 </script>
 
-<style scoped></style>
+<style scoped>
+h3 {
+  background: aquamarine;
+}
+</style>

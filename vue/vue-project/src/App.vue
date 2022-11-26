@@ -1,34 +1,28 @@
 <script setup>
 import PostElement from "./components/slots/post/PostElement.vue";
+import NpAreas from "./components/novaPoshta/NpAreas.vue";
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">hello</div>
-  </header>
-
   <main>
-    <MyParent>
-      <PostElement>
-        <template #header>А это отправить в заголовок</template>
-        <template #footer>А это уйдет в подвал</template>
-        <div>Это попадает в место - где должен быть слот</div>
-        <template #body>А это отправить в тело</template>
-        <div>Это тоже попадает в место - где должен быть слот</div>
-      </PostElement>
-    </MyParent>
+    <h1>Заголовок в обвертке (Main)</h1>
+    <PostElement>
+      <template #header>А это отправить в заголовок</template>
+      <template #footer>А это уйдет в подвал</template>
+      <div>Это попадает в место - где должен быть slot</div>
+      <template #body>А это отправить в тело</template>
+      <div>Это тоже попадает в место - где должен быть slot</div>
+    </PostElement>
+    <PostElement>
+      <template #header> <NpAreas /> </template>
+    </PostElement>
   </main>
 </template>
 
 <style scoped>
+h1 {
+  background: indianred;
+}
 header {
   line-height: 1.5;
 }
