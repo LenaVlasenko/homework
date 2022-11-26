@@ -1,5 +1,5 @@
 <script setup>
-import MyPhone from "./components/phoneBoock/MyPhone.vue";
+import ValidPass from "./components/MyPassword/ValidPass.vue";
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import MyPhone from "./components/phoneBoock/MyPhone.vue";
   </header>
 
   <main>
-    <MyPhone></MyPhone>
+    <ValidPass></ValidPass>
   </main>
 </template>
 

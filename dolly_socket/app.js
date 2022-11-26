@@ -11,8 +11,7 @@ const io = new Server(httpServer, {
 });
 
 //При открытии магазина у нас 20 яблок
-let Universe = 'dressDiv'
-
+let myDiv = document.getElementById("dollyDiv")
 /**
  * Поведение нашей системы - когда кто-то пытается присоединиться
  */
@@ -21,35 +20,38 @@ io.on("connection" , (socket) => {
 
     //Тому кто пришел говори что у нас 10 яблок
     // Тогда на фронт оно прийдет в socket.on('message'
-    socket.send(Universe)
+    socket.send(dress)
 
-    socket.on('dresses', () => {
-        socket.emit('dresses', Universe)// что б я тож знала, что произошло
-        socket.broadcast.emit('dresses', Universe)// всем кроме себя
+    socket.on('none', () => {
+
+        socket.emit('none', dress)// что б я тож знала, что произошло
+        socket.broadcast.emit('none', dress)// всем кроме себя
     })
 
-    socket.on('hat', () => {
-        socket.emit('hat', Universe)// что б я тож знала, что произошло
-        socket.broadcast.emit('hat', Universe)// всем кроме себя
+    socket.on('minus', () => {
+        socket.emit('minus', dress)// что б я тож знала, что произошло
+        socket.broadcast.emit('minus', dress)// всем кроме себя
     })
 
     //Просто слушаем что нам говорят
     socket.on('message',  (world) => {
-        console.log('Долли переоделась: ' + world);
+        console.log('Кто то сказал слово: ' + world);
+
         // Происходит разбор что мне сказали
-        if (world === 'dresses') {
-            socket.emit('dresses', Universe)// что б я тож знала, что произошло
-            socket.broadcast.emit('dresses', Universe)// всем кроме себя
+        if (world === 'none') {
+            socket.emit('none', dress)// что б я тож знала, что произошло
+            socket.broadcast.emit('none', dress)// всем кроме себя
         }
         else {
+            appleCount--
             // что б я тож знала, что произошло
-            socket.emit('hat', Universe)
-            socket.broadcast.emit('hat', Universe)// всем кроме себя
+            socket.emit('minus', dress)
+            socket.broadcast.emit('minus', dress)// всем кроме себя
         }
         //*-- Я говорю только одному - кто приходил
-        socket.send(Universe)
+        socket.send(dress)
         //*-- Я говорю всем кроме меня (поэтому верхняя сторока обязательна)
-        socket.broadcast.emit('message', Universe)
+        socket.broadcast.emit('message', dress)
 
 
     })
