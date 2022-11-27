@@ -70,8 +70,9 @@ h4 {
 }
 input {
   display: flex;
+  width: 70%;
   border-radius: 5px;
-  margin-left: 25%;
+  margin-left: 15%;
 }
 
 .All {
@@ -89,7 +90,7 @@ input {
 p {
   font-size: 10px;
   text-align: left;
-  margin-left: 3%;
+  padding-left: 2%;
 }
 .ans {
   background: lightgoldenrodyellow;
