@@ -1,14 +1,11 @@
 <script setup>
-import FormPerent from "./components/slotTest/post2/FormPerent.vue";
-import FormRegister from "./components/slotTest/post2/FormRegister.vue";
+import ChangePassword from "./components/auth/Password/ChangePassword.vue";
 </script>
 
 <template>
   <main>
-    <!--    <h1>Заголовок в обвертке (Main)</h1>-->
-    <FormPerent>
-      <FormRegister></FormRegister>
-    </FormPerent>
+    <h1>Заголовок в обвертке (Main)</h1>
+    <ChangePassword></ChangePassword>
   </main>
 </template>
 
