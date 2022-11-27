@@ -1,13 +1,19 @@
-<script setup>
-import ChangePassword from "./components/auth/Password/ChangePassword.vue";
-</script>
-
 <template>
   <main>
+    <nav>
+      <ul>
+        <!--Для формирования ссылки-->
+        <li><router-link to="/">Go to Home</router-link></li>
+        <li><router-link to="/about">Go to About</router-link></li>
+      </ul>
+    </nav>
     <h1>Заголовок в обвертке (Main)</h1>
-    <ChangePassword></ChangePassword>
+    <!--место для вывода компонента по этой ссылке-->
+    <router-view></router-view>
   </main>
 </template>
+
+<script setup></script>
 
 <style scoped>
 h1 {
