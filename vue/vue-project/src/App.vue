@@ -1,11 +1,14 @@
 <script setup>
-import MyParent from "./components/perentChildren/MyParent.vue";
+import FormPerent from "./components/slotTest/post2/FormPerent.vue";
+import FormRegister from "./components/slotTest/post2/FormRegister.vue";
 </script>
 
 <template>
   <main>
-    <h1>Заголовок в обвертке (Main)</h1>
-    <MyParent propsName="propsValue" varName="5"> </MyParent>
+    <!--    <h1>Заголовок в обвертке (Main)</h1>-->
+    <FormPerent>
+      <FormRegister></FormRegister>
+    </FormPerent>
   </main>
 </template>
 
