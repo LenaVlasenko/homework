@@ -1,5 +1,6 @@
 <template>
   <h3>Регионы</h3>
+  <button @click="loadAreas">Reload Areas</button>
   <select>
     <option v-for="(area, index) in areas" :key="index" :v-model="area.Ref">
       {{ area.Description }}
@@ -25,22 +26,31 @@ const loadAreas = () => {
     calledMethod: "getAreas",
   };
 
+  //Проверим, есть ли эти данные в localStorage
+  if (localStorage.getItem("npAreas")) {
+    console.log("Эти данные уже есть в хранилище");
+    areas.value = JSON.parse(localStorage.getItem("npAreas"));
+  } else {
+    fetch("https://api.novaposhta.ua/v2.0/json/", {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((inAreas) => {
+        console.log("Получено с сервера");
+        console.log(inAreas.data);
+        areas.value = inAreas.data;
+        //Сохраним данные в локальном хранилище
+        localStorage.setItem("npAreas", JSON.stringify(inAreas.data));
+      })
+      .catch((err) => {
+        console.log("err");
+        console.log(err);
+      });
+  }
   //появление данных
-  fetch("https://api.novaposhta.ua/v2.0/json/", {
-    method: "POST",
-    body: JSON.stringify(data),
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .then((inAreas) => {
-      console.log(inAreas.data);
-      areas.value = inAreas.data;
-    })
-    .catch((err) => {
-      console.log("err");
-      console.log(err);
-    });
 };
 
 onMounted(() => loadAreas());

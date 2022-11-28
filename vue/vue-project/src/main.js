@@ -1,12 +1,14 @@
-// Импортируем минимальный набор необходимый для работы с маршрутами
-import { createRouter, createWebHashHistory } from "vue-router/dist/vue-router";
-
 // Импортируется метод создания приложения
 import { createApp } from "vue";
+//Создать прилодение vue, с главным компонентом Арр
+const app = createApp(App);
 
 // Импортируется главный компонент
 import App from "./App.vue";
 import "./assets/main.css";
+
+// Импортируем минимальный набор необходимый для работы с маршрутами
+import { createRouter, createWebHashHistory } from "vue-router/dist/vue-router";
 
 // Расписываем, какой компонент будет импортироваться по маршруту
 const routes = [
@@ -26,8 +28,12 @@ const router = createRouter({
   routes,
 });
 
-//Создать прилодение vue, с главным компонентом Арр
-const app = createApp(App);
+//Создать хранилище (store)
+
+//Импортируем pinia
+import { createPinia } from "pinia";
+const pinia = createPinia();
+app.use(pinia);
 
 // Задействовать роутер для приложения
 app.use(router);
