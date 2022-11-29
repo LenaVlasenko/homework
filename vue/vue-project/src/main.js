@@ -15,6 +15,8 @@ const routes = [
   // Маршрут, компонент. В данном случае - компонент будет подгружаться с сервера
   { path: "/", component: () => import("./pages/MainPage.vue") },
   { path: "/about", component: () => import("./pages/AboutPage.vue") },
+  { path: "/contact", component: () => import("./pages/ContactPage.vue") },
+
   {
     // Описание не существующего маршрута - для вывода ошибки 404
     path: "/:pathMatch(.*)*",

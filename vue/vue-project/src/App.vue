@@ -5,6 +5,7 @@
         <!--Для формирования ссылки-->
         <li><router-link to="/">Go to Home</router-link></li>
         <li><router-link to="/about">Go to About</router-link></li>
+        <li><router-link to="/contact">Go to Contact</router-link></li>
       </ul>
     </nav>
     <h1>Заголовок в обвертке (Main)</h1>
